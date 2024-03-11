@@ -1,0 +1,172 @@
+.home {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro {
+    max-width: 540px;
+    text-align: center;
+}
+
+.home__img {
+    margin-bottom: 1.5rem;
+}
+
+.home__name {
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-bold);
+    margin-bottom: .5rem;
+
+}
+
+.home__socials {
+    display: flex;
+    gap: 1.75rem;
+    margin: 1.5rem 0;
+}
+
+.home__social-link {
+    color: var(--title-color);
+    font-size: 1.3rem;
+    transition: .3;
+    -webkit-transition: .3;
+    -moz-transition: .3;
+    -ms-transition: .3;
+    -o-transition: .3;
+}
+
+.home__social-link:hover {
+    color: hsl(22, 100%, 68%);
+}
+
+.scroll__down {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+}
+
+.home__scroll-name {
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+}
+
+.mouse {
+    border: 2px solid var(--text-color);
+    display: block;
+    height: 1.6rem;
+    width: 1.25rem;
+    margin: auto;
+    margin-top: .75rem;
+    border-radius: 1rem;
+    position: relative;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+@keyframes ani-mouse {
+    0% {
+        top: 29%;
+    }
+
+    15% {
+        top: 50%;
+    }
+
+    15% {
+        top: 50%;
+    }
+
+    100% {
+        top: 29%;
+    }
+
+}
+
+.wheel {
+    background-color: var(--title-color);
+    border-radius: 100%;
+    width: .25rem;
+    height: .25rem;
+    position: absolute;
+    top: .5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: ani-mouse 2s linear infinite;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-animation: ani-mouse 2s linear infinite;
+}
+
+.shapes {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.shape {
+    position: absolute;
+}
+
+.s1 {
+    left: 2%;
+    top: 10%;
+}
+.s2 {
+    left: 18%;
+    top: 30%;
+}
+.s3 {
+    left: 5%;
+    bottom: 30%;
+}
+.s4 {
+    left: 5%;
+    bottom: 10%;
+}
+.s5 {
+    left: 34%;
+    top: 2%;
+}
+.s6 {
+    left: 33%;
+    bottom: 18%;
+}
+.s7 {
+    top: 20%;
+    right: 25%;
+}
+.s8 {
+    right: 24%;
+    bottom: 20%;
+}
+.s9 {
+    right: 2%;
+    top: 10%;
+}
+.s10 {
+    right: 45%;
+    top: 11%;
+}
+.s11 {
+    bottom: 10%;
+    right: 2%;
+}
+@media screen and (max-width: 1024px){
+    .home__social-link{
+        font-size: 1.125rem;
+    }
+}
