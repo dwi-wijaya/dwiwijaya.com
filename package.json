@@ -9,12 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
+    "aos": "^2.3.4",
+    "axios": "^1.6.7",
+    "clsx": "^2.1.0",
+    "emailjs-com": "^3.2.0",
+    "framer-motion": "^11.0.12",
+    "next": "14.1.4",
+    "next-seo": "^6.5.0",
+    "next-themes": "^0.3.0",
+    "nprogress": "^0.2.0",
     "react": "^18",
+    "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18",
-    "next": "14.1.4"
+    "react-slick": "^0.30.2",
+    "react-topbar-progress-indicator": "^4.1.1",
+    "simple-line-icons": "^2.5.5",
+    "slick-carousel": "^1.8.1",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "14.1.4"
+    "eslint-config-next": "14.1.4",
+    "sass": "^1.72.0"
   }
 }

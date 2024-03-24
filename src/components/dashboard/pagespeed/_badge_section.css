@@ -1,0 +1,32 @@
+.badge__wrapper{
+    display: flex;
+    overflow-x: auto;
+    margin: 1rem 0;
+    gap: 5px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: hidden;
+    /* mt-4 flex space-x-1 overflow-x-auto */
+}
+.badge__menu{
+    background-color: var(--container-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    border: var(--border);
+    padding: .5rem .75rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    /* rounded-lg px-2 py-1 text-xs */
+}
+.badge__menu.active{
+    color: rgb(22 163 74);
+}
+
+.badge__menu:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+.badge__menu:active {
+    transform: scale(0.95);
+}

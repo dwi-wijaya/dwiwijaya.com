@@ -1,0 +1,296 @@
+/*  Google font  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*  Boxicons font  */
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+/* ============ VARIABLE CSS ============ */
+
+@import "_variable.css";
+
+/* ================== Base ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+main{
+    margin-left: 80px;
+    padding: 0 20px;
+}
+
+body,
+button,
+input,
+textarea {
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+}
+
+body {
+    background-color: var(--body-color);
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+h1,
+h2 {
+    columns: var(--text-color);
+    font-weight: var(--font-semibold);
+    line-height: 1.2;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* ================== Reusable CSS Class ============ */
+
+.container {
+    max-width: 1080px;
+    padding: 15px 0;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+}
+
+.card {
+    padding: 1rem 1.25rem;
+    border-radius: 20px;
+    background: var(--container-color);
+    border: var(--border);
+    text-align: start;
+}
+
+.section {
+    padding-right: .6rem;
+    padding-left: .6rem;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.header__container .section__title {
+    margin-bottom: 0;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: .5rem;
+    margin-bottom: 3.75rem;
+
+}
+
+.see-more {
+    margin-top: .25rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    transition: .3s;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+
+.see-more:hover {
+    gap: .75rem;
+}
+
+
+.section__title {
+    width: fit-content;
+    position: relative;
+    font-size: var(--h1-font-size);
+    margin-left: 0.875rem;
+    position: relative;
+    font-weight: var(--font-bold);
+
+}
+
+.section__title::before {
+    content: '';
+    background: var(--dots);
+    height: 2.25rem;
+    width: 2.25rem;
+    position: absolute;
+    left: -0.875rem;
+    top: -0.875rem;
+    z-index: -1;
+
+}
+
+.section__subtitle {
+    margin-bottom: .5rem;
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.2;
+}
+
+.section__subtitle-link {
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+}
+
+.btn {
+    padding: 0.65rem .65rem;
+    line-height: 1;
+    border-radius: .5rem;
+    box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+    border: 1px solid transparent;
+    color: #fff;
+    display: flex;
+    gap: .25rem;
+    width: fit-content;
+    font-weight: 500 !important;
+    align-items: center;
+    background-color: var(--text-color);
+    font-weight: 400 !important;
+    font-size: 15px;
+}
+.btn i{
+    font-size: larger;
+}
+.btn__flex {
+    display: inline-flex;
+    align-self: center;
+    justify-content: center;
+    gap: .5rem;
+    width: fit-content;
+    align-items: center;
+}
+
+@keyframes button-push {
+    50% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+.btn:hover {
+    animation: button-push 0.3s linear 1;
+}
+
+.border-section {
+    border: var(--border);
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.border {
+    border: var(--border);
+    margin-bottom: 2rem;
+    margin-top: 1.75rem;
+}
+
+.section__title-secondary {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 500;
+}
+.toggle:active img {
+    transform: rotate(90deg);
+}
+
+.toggle img {
+    transition: transform 0.3s ease; /* Mengatur transisi rotasi selama 0.3 detik dengan efek 'ease' */
+}
+
+.toggle {
+    border-radius: 5px;
+    position: fixed;
+    cursor: pointer;
+    height: 40px;
+    width: 45px;
+    background-color: var(--container-color);
+    color: var(--text-color);
+    border: var(--border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+
+.toggle:hover {
+    background-color: var(--body-color);
+}
+
+.theme__toggle {
+    top: 1.25rem;
+    right: 1.875rem;
+}
+
+.scrollup__toggle {
+    bottom: -20%;
+    right: 1.875rem;
+    transition: .4s ease;
+    -webkit-transition: .4s ease;
+    -moz-transition: .4s ease;
+    -ms-transition: .4s ease;
+    -o-transition: .4s ease;
+}
+
+.show-scroll {
+    bottom: 1.25rem;
+}
+
+@media screen and (max-width: 768px) {
+    .section__subtitle {
+        flex-direction: column;
+    }
+}
+.layout-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100% !important;
+    left: 0;
+    display: none;
+    background: #161616;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    z-index: 5;
+}
+.sidebar-expanded .layout-overlay{
+    display: block;
+}
+@media screen and (max-width: 1024px){
+    main{
+        margin-left: 0;
+        padding: 1.25rem;
+    }
+}

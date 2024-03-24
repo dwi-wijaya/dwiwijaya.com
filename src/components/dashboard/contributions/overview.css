@@ -1,0 +1,30 @@
+.overviews{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-bottom: 1.5rem;
+    gap: .5rem;
+}
+.overview__item{
+    background-color: var(--container-color);
+    border: var(--border);
+    border-radius: 10px;
+    padding: .75rem 1rem;
+    display: grid;
+}
+.overview__title{
+    line-height: 1.25rem;
+}
+.overview__item-number{
+    color: rgb(22 163 74);
+    font-size: var(--h3-font-size);
+    line-height: 1.75rem;
+}
+.overview__unit{
+    font-size: var(--small-font-size);
+}
+@media screen and (max-width: 767px){
+    .overviews{
+        grid-template-columns: repeat(2,1fr);
+    }   
+}

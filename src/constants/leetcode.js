@@ -1,0 +1,1 @@
+export const LEETCODE_API = 'https://leetcode-stats-api.herokuapp.com/dwi-wijaya';
