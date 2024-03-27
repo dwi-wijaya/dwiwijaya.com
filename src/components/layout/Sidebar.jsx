@@ -15,6 +15,8 @@ const Sidebar = () => {
     const sidebarRef = useRef(null);
 
     useEffect(() => {
+        document.body.setAttribute('class', toggle ? 'sidebar-expanded' : '');
+
         const handleClickOutside = (event) => {
             if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
                 setToggle(false);
