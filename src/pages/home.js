@@ -5,11 +5,7 @@ import styles from '../styles/HomePage.module.scss'
 const HomePage = () => {
   return (
     <>
-      <div className="header__wrapper">
-      </div>
-      <section data-aos="fade-right" data-section className="home container" id="home">
         <Home />
-      </section>
     </>
   )
 }

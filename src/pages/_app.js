@@ -6,6 +6,7 @@ import Aos from "aos";
 import { ThemeProvider } from "next-themes";
 import { useEffect } from "react";
 import ProgressBar from "../components/elements/ProgressBar";
+import 'aos/dist/aos.css';
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
