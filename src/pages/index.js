@@ -1,6 +1,6 @@
 // pages/index.js
 import { NextSeo } from "next-seo";
-import HomePage from "./homePage";
+import HomePage from "./home";
 
 export default function Home() {
   return (

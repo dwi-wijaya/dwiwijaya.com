@@ -1,16 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
-import LogoDark from '../../assets/logo-dark.svg';
-import LogoLight from '../../assets/logo-light.svg';
+import LogoDark from '../../assets/logo-dark.webp';
+import LogoLight from '../../assets/logo-light.webp';
 import 'simple-line-icons'
 import { MENU_ITEMS } from '../../constants/menu';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 
 const Sidebar = () => {
     const [mounted, setMounted] = useState(false)
     const [toggle, setToggle] = useState(false);
-    const { theme } = useTheme();
+    const { resolvedTheme } = useTheme();
     const sidebarRef = useRef(null);
 
     useEffect(() => {
@@ -41,7 +42,7 @@ const Sidebar = () => {
         <>
             <aside ref={sidebarRef} className={`aside ${toggle && 'show-menu'}`}>
                 <Link aria-label='go home' href="/" className="nav__logo">
-                    <Image src={theme == 'dark' ? LogoDark : LogoLight} alt="Dwi-logo" />
+                    <Image src={resolvedTheme == 'dark' ? LogoDark : LogoLight} alt="Dwi-logo" />
                 </Link>
                 <nav className="nav">
                     <div className="nav__menu">
@@ -67,4 +68,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default Sidebar

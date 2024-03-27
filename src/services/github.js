@@ -1,5 +1,7 @@
 import axios from "axios";
 import { GITHUB_ACCOUNTS } from "../constants/github";
+import { fetcher } from "./fetcher";
+import { LEETCODE_API } from "@/constants/leetcode";
 
 const GITHUB_USER_ENDPOINT = "https://api.github.com/graphql";
 
@@ -64,4 +66,16 @@ export const getGithubUser = async (type) => {
 
     const { username, token } = account;
     return await fetchGithubData(username, token);
+};
+export const getLeetcode = async () => {
+  const response = await axios.get(LEETCODE_API).then(response => response)
+
+  const status = response.status;
+  const responseJson = response.data;
+  if (status > 400) {
+    return { status, data: {} };
+  }
+
+
+  return { status, data: responseJson };
 };

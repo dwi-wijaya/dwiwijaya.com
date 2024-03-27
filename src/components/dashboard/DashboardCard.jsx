@@ -1,27 +1,27 @@
 import React from "react";
 import AnimateCounter from "../elements/AnimateCounter";
 
-const Number = ({ value }) => (
+const Number = ({ className, value }) => (
   <AnimateCounter
-    className='card__number'
+    className={className}
     total={value}
   />
 );
 
-const DashboardCard = ({ title, value, isMultiple = false, unit = '' }) => (
-  <div className='card__item'>
-    <span className='card__title'>{title}</span>
+const DashboardCard = ({ style, title, value, isMultiple = false, unit = '' }) => (
+  <div className={style.card__item}>
+    <span className={style.card__title}>{title}</span>
     <div>
       {isMultiple ? (
         value.map((val, index) => (
           <React.Fragment key={index}>
-            <Number value={val} /> {index !== value.length - 1 && <span> - </span>}
+            <Number className={style.card__number} value={val} /> {index !== value.length - 1 && <span> - </span>}
           </React.Fragment>
         ))
       ) : (
-        <Number value={value} />
+        <Number className={style.card__number} value={value} />
       )}
-      {unit && <span className='card__unit'> {unit}</span>}
+      {unit && <span className={style.card__unit}> {unit}</span>}
     </div>
   </div>
 );

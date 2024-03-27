@@ -1,11 +1,10 @@
 import React from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
-import '../dashboard/pagespeed/_speed_section.css'
 
-export default function CircleProgress({ value }) {
+export default function CircleProgress({ style, value }) {
   return (
-    <div data-testid="progress" className="speed__progress">
+    <div data-testid="progress" className={style.speed__progress}>
       <CircularProgressbar
         value={value}
         text={`${value}%`}

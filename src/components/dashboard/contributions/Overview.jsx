@@ -1,7 +1,6 @@
 import DashboardCard from "../DashboardCard";
-import './overview.css';
 
-const Overview = ({ data }) => {
+const Overview = ({ style, data }) => {
   const totalContributions = data?.totalContributions || 0;
   const weeks = data?.weeks || [];
 
@@ -24,11 +23,11 @@ const Overview = ({ data }) => {
   const averageContribution = totalContributions / totalContributionList.length;
 
   return (
-    <div className="dashboard__cards">
-      <DashboardCard title="Total" value={totalContributions} />
-      <DashboardCard title="This Week" value={totalThisWeekContribution} />
-      <DashboardCard title="Best Day" value={bestContribution} />
-      <DashboardCard title="Average" value={averageContribution} unit="/ day" />
+    <div className={style.dashboard__cards}>
+      <DashboardCard style={style} title="Total" value={totalContributions} />
+      <DashboardCard style={style} title="This Week" value={totalThisWeekContribution} />
+      <DashboardCard style={style} title="Best Day" value={bestContribution} />
+      <DashboardCard style={style} title="Average" value={averageContribution} unit="/ day" />
     </div>
   );
 };

@@ -1,7 +1,3 @@
-.home {
-    padding-top: 22vh !important;
-}
-
 .header__wrapper {
     height: 30vh;
     background-color: var(--container-color);
@@ -14,87 +10,74 @@
     top: 0;
     border: var(--border);
 }
+.home {
+    padding-top: 20vh !important;
+    .contact__header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
 
-.contact__header {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-}
+        h3 {
+            font-weight: 500;
+        }
+    }
 
-.contact__header h3 {
-    font-weight: 500;
-}
+    .contact__content {
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+    }
 
-.contact__content {
-    margin-top: .75rem;
-    margin-bottom: .75rem;
-    line-height: 1.4;
-}
+    .animate-waving-hand {
+        animation: wave 2s linear infinite;
+    }
 
-.animate-waving-hand {
-    animation: wave 2s linear infinite;
-}
+    .home__img {
+        margin-bottom: 1.5rem;
+        border-radius: 20px;
+        border: 0.35rem solid var(--body-color);
+    }
 
-.home__img {
-    margin-bottom: 1.5rem;
-    border-radius: 20px;
-    border: .35rem solid var(--body-color)
-}
+    .home__greeting {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        gap: 0.5rem;
 
-.home__greeting h1 {
-    margin-bottom: 0;
-}
+        h1 {
+            margin-bottom: 0;
+        }
+    }
 
-.home__greeting {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    gap: .5rem;
-}
+    .home__name {
+        font-size: var(--h1-font-size);
+        font-weight: var(--font-bold);
+        margin-bottom: 0.5rem;
+    }
 
-.home__name {
-    font-size: var(--h1-font-size);
-    font-weight: var(--font-bold);
-    margin-bottom: .5rem;
+    .home__role {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
 
-}
+    .home__socials {
+        display: flex;
+        gap: 1.75rem;
+        margin: 1rem 0;
 
-.home__role {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-}
+        .home__social-link {
+            color: var(--title-color);
+            font-size: 1.3rem;
+            transition: 0.3;
+    
+            &:hover {
+                color: hsl(22, 100%, 68%);
+            }
+        }
+    }
 
-.home__socials {
-    display: flex;
-    gap: 1.75rem;
-    margin: 1rem 0;
-}
 
-.home__social-link {
-    color: var(--title-color);
-    font-size: 1.3rem;
-    transition: .3;
-    -webkit-transition: .3;
-    -moz-transition: .3;
-    -ms-transition: .3;
-    -o-transition: .3;
-}
-
-.home__social-link:hover {
-    color: hsl(22, 100%, 68%);
-}
-
-.scroll__down {
-    position: absolute;
-    bottom: 4rem;
-    left: 0;
-    width: 100%;
-}
-
-.home__scroll-name {
-    font-size: var(--small-font-size);
-    color: var(--text-color);
 }
 
 @keyframes wave {
@@ -105,8 +88,8 @@
 
     10%,
     20% {
-        -webkit-transform: scale3d(.95, .95, .95) rotate3d(0, 0, 1, -10deg);
-        transform: scale3d(.95, .95, .95) rotate3d(0, 0, 1, -10deg);
+        -webkit-transform: scale3d(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -10deg);
+        transform: scale3d(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -10deg);
     }
 
     30%,
@@ -130,77 +113,9 @@
     }
 }
 
-.shapes {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-}
-
-.shape {
-    position: absolute;
-}
-
-.s1 {
-    left: 2%;
-    top: 10%;
-}
-
-.s2 {
-    left: 18%;
-    top: 30%;
-}
-
-.s3 {
-    left: 5%;
-    bottom: 30%;
-}
-
-.s4 {
-    right: 10%;
-    bottom: 40%;
-}
-
-.s5 {
-    left: 34%;
-    top: 2%;
-}
-
-.s6 {
-    left: 33%;
-    bottom: 18%;
-}
-
-.s7 {
-    top: 20%;
-    right: 25%;
-}
-
-.s8 {
-    right: 44%;
-    bottom: 35%;
-}
-
-.s9 {
-    right: 2%;
-    top: 10%;
-}
-
-.s10 {
-    right: 45%;
-    top: 11%;
-}
-
-.s11 {
-    bottom: 10%;
-    right: 12%;
-}
-
 @media screen and (max-width: 1024px) {
     .home {
-        padding-top: 20vh !important;
+        padding-top: 18vh !important;
     }
 
     .home__social-link {
@@ -214,4 +129,3 @@
     }
 }
 
-@media screen and (max-width: 767px) {}

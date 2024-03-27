@@ -2,8 +2,7 @@
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import './calendar.css';
-const Calendar = ({ data }) => {
+const Calendar = ({ style,data }) => {
     const [selectContribution, setSelectContribution] = useState({
         count: null,
         date: null,
@@ -42,11 +41,11 @@ const Calendar = ({ data }) => {
     return (
         <>
             <div className="relative flex flex-col">
-                <ul onScroll={() => syncScroll(wrapper1Ref, wrapper2Ref)} ref={wrapper1Ref} className="calendar-month">
+                <ul onScroll={() => syncScroll(wrapper1Ref, wrapper2Ref)} ref={wrapper1Ref} className={style['calendar-month']}>
                     {months.map((month) => (
                         <li
                             key={month.firstDay}
-                            className={clsx(`${month.totalWeeks < 2 ? "invisible" : ""}`)}
+                            className={clsx(`${month.totalWeeks < 2 ? style.invisible : ""}`)}
                             style={{ minWidth: 14.3 * month.totalWeeks }}
                         >
                             {month.name}
@@ -54,7 +53,7 @@ const Calendar = ({ data }) => {
                     ))}
                 </ul>
 
-                <div onScroll={() => syncScroll(wrapper2Ref, wrapper1Ref)} ref={wrapper2Ref} className="calendar-grid">
+                <div onScroll={() => syncScroll(wrapper2Ref, wrapper1Ref)} ref={wrapper2Ref} className={style['calendar-grid']}>
                     {weeks?.map((week) => (
                         <div key={week.firstDay}>
                             {week.contributionDays.map((contribution) => {
@@ -77,7 +76,7 @@ const Calendar = ({ data }) => {
                                                 transition: { delay: getRandomDelayAnimate },
                                             },
                                         }}
-                                        className="calendar-day"
+                                        className={style['calendar-day']}
                                         style={backgroundColor ? { backgroundColor } : undefined}
                                         onMouseEnter={() =>
                                             setSelectContribution({
@@ -96,11 +95,11 @@ const Calendar = ({ data }) => {
                 </div>
             </div>
 
-            <div className="calendar-footer">
-                <div className="calendar-info">
+            <div className={style['calendar-footer']}>
+                <div className={style['calendar-info']}>
                     <span className="">Less</span>
-                    <ul className="calendar-contribution">
-                        <motion.li className="calendar-day" />
+                    <ul className={style['calendar-contribution']}>
+                        <motion.li className={style['calendar-day']} />
                         {contributionColors.map((item, index) => (
                             <motion.li
                                 key={item}
@@ -113,7 +112,7 @@ const Calendar = ({ data }) => {
                                         transition: { delay: index * 0.3 },
                                     },
                                 }}
-                                className="calendar-day"
+                                className={style['calendar-day']}
                                 style={{ backgroundColor: item }}
                             />
                         ))}
@@ -122,12 +121,12 @@ const Calendar = ({ data }) => {
                 </div>
                 <div
                     className={clsx(
-                        `${selectContribution?.date ? 'opacity-100' : 'opacity-0'}`,
-                        'detail-contribution'
+                        `${selectContribution?.date ? style['opacity-100'] : style['opacity-0']}`,
+                        style['detail-contribution']
                     )}
                 >
                     {selectContribution?.count != null && (
-                        <span className="count">
+                        <span className={style.count}>
                             {selectContribution.count}
                         </span>
                     )} contributions on {selectContribution?.date}

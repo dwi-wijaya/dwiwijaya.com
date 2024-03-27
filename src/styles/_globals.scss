@@ -156,21 +156,23 @@ img {
     color: var(--text-color);
 }
 
+
 .btn {
     padding: 0.65rem .65rem;
     line-height: 1;
     border-radius: .5rem;
     box-shadow: 0 0 1px rgb(0 0 0 / 0%);
-    border: 1px solid transparent;
-    color: #fff;
+    background: hsl(22deg 100% 68% / 30%);
+    border: 1px solid rgb(255 160 70 / 40%);
+    color: var(--first-color);
     display: flex;
     gap: .25rem;
     width: fit-content;
     font-weight: 500 !important;
     align-items: center;
-    background-color: var(--text-color);
     font-weight: 400 !important;
     font-size: 15px;
+    transition: all .2s ease-in-out;
 }
 .btn i{
     font-size: larger;
@@ -198,10 +200,13 @@ img {
     position: relative;
 }
 
-.btn:hover {
+.btn:active {
     animation: button-push 0.3s linear 1;
 }
-
+.btn:hover{
+    background: #ff78154a;
+    color: #ffc6c6;
+}
 .border-section {
     border: var(--border);
     margin-bottom: 1rem;
@@ -220,11 +225,11 @@ img {
     gap: .5rem;
     font-weight: 500;
 }
-.toggle:active img {
+.toggle:active i.bx {
     transform: rotate(90deg);
 }
 
-.toggle img {
+.toggle i.bx {
     transition: transform 0.3s ease; /* Mengatur transisi rotasi selama 0.3 detik dengan efek 'ease' */
 }
 
@@ -287,6 +292,9 @@ img {
 }
 .sidebar-expanded .layout-overlay{
     display: block;
+}
+.nprogress{
+    z-index: 1000 !important;
 }
 @media screen and (max-width: 1024px){
     main{

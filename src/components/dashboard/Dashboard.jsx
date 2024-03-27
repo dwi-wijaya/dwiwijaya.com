@@ -10,31 +10,32 @@ import PageSpeed from "./pagespeed";
 import Letcode from "./letcode/Letcode";
 import { fetcher } from "../../services/fetcher";
 import { LEETCODE_API } from "../../constants/leetcode";
-import './dashboard.css'
-const Dashboard = () => {
-  const { data: githubData, error: githubError } = useSWR("personal", getGithubUser);
-  const { data: leetcodeData, error: leetcodeError } = useSWR(LEETCODE_API, fetcher);
+import style from './_dashboard.module.scss'
+import { GITHUB_ACCOUNTS } from "@/constants/github";
 
+
+const Dashboard = ({githubEndpoint, leetcodeEndpoint}) => {
+  console.log(GITHUB_ACCOUNTS);
+  const { data: leetcodeData, error: leetcodeError } = useSWR(leetcodeEndpoint, fetcher);
+  const { data: githubData, error: githubError } = useSWR(githubEndpoint, fetcher);
+// console.log(leetcodeData);
   if (githubError) {
-    console.error("Error fetching GitHub data:", githubError);
+    // console.error("Error fetching GitHub data:", githubError);
     return null; // or display an error message
   }
 
 
   if (leetcodeError) {
-    console.error("Error fetching LeetCode data:", leetcodeError);
+    // console.error("Error fetching LeetCode data:", leetcodeError);
     return null; // or display an error message
   }
 
-  if (!githubData) return "";
-  if (!leetcodeData) return "";
-
-  const contributionCalendar = githubData.data?.contributionsCollection?.contributionCalendar;
-
+  const contributionCalendar = githubData?.contributionsCollection?.contributionCalendar;
+console.log(contributionCalendar);
   return (
     <section
-      className="contact container section"
-      id="contact"
+      className="dashboard container section"
+      id="dashboard"
       data-aos="fade-up"
     >
       <PageHeading
@@ -48,7 +49,7 @@ const Dashboard = () => {
         linkText='@pagespeed'
         link='https://pagespeed.web.dev/'
       />
-      <PageSpeed />
+      <PageSpeed style={style} />
 
       <hr className="border-section" />
       <PageSubHeading
@@ -58,7 +59,7 @@ const Dashboard = () => {
         linkText='@dwi-wijaya'
         link='https://leetcode.com/dwi-wijaya'
       />
-      <Letcode data={leetcodeData}/>
+      <Letcode style={style} data={leetcodeData}/>
 
       <hr className="border-section" />
       <PageSubHeading
@@ -68,8 +69,17 @@ const Dashboard = () => {
         linkText='@dwi-wijaya'
         link='https://github.com/dwi-wijaya'
       />
-      {contributionCalendar && <Overview data={contributionCalendar} />}
-      {contributionCalendar && <Calendar data={contributionCalendar} />}
+      <section className="contribution__section">
+      {!githubData && <div className='dark:text-neutral-400'>No Github Data</div>}
+
+      {githubData && (
+        <div className='space-y-3'>
+          <Overview style={style} data={contributionCalendar} />
+          <Calendar style={style} data={contributionCalendar} />
+        </div>
+      )}
+
+      </section>
     </section>
   );
 };

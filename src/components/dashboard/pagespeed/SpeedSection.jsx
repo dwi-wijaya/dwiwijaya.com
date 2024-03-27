@@ -3,19 +3,18 @@ import CircleProgress from '../../elements/CircleProgress'
 import LoadingSpeedInsight from '../../elements/LoadingSpeedInsight'
 
 
-
-export default function SpeedSection({ data, isLoading }) {
+export default function SpeedSection({ data, isLoading, style }) {
   const categories = data?.lighthouseResult?.categories || {}
   const categoriesInArray = Object.keys(categories).map(key => ({ ...categories[key] }))
 
-  if (isLoading) return <LoadingSpeedInsight />
+  if (isLoading) return <LoadingSpeedInsight style={style} />
 
   return (
-    <div className="speed__wrapper">
+    <div className={style.speed__wrapper}>
       {categoriesInArray.map(category => (
-        <div key={category.id} className="speed__indicator">
+        <div key={category.id} className={style.speed__indicator}>
           <h3>{category.title}</h3>
-          <CircleProgress value={Number(category.score || 0) * 100} />
+          <CircleProgress style={style} value={Number(category.score || 0) * 100} />
         </div>
       ))}
     </div>

@@ -2,19 +2,19 @@ import React from 'react'
 
 import { MENU_ITEMS } from '../../../constants/menu'
 import clsx from 'clsx'
-import './_badge_section.css'
 
 
 
-export default function BadgeSection({ active, refetch }) {
+export default function BadgeSection({ style,  active, refetch }) {
+  console.log(style);
   const routes = MENU_ITEMS
   return (
-    <div className="badge__wrapper">
+    <div className={style.badge__wrapper}>
       {routes.map(route => (
         <button
           key={route.href}
           className={clsx(
-            'badge__menu',
+            style.badge__menu,
             active === route.href
               ? 'active'
               : ''
