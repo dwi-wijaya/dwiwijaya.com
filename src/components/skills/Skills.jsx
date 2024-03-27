@@ -1,6 +1,5 @@
 import React from "react";
 import Data from "./Data";
-import "./skills.css";
 import SkillItem from "./SkillItem";
 
 const SkillsCategory = ({ data, animationTime, reverseAnimation }) => {

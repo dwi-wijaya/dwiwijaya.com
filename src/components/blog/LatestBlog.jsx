@@ -1,5 +1,4 @@
 import React from 'react';
-import './blog.css'
 import Card from './Card';
 import Data from './Data';
 import PageSubHeading from '../elements/PageSubHeading';

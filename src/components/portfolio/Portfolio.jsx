@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./portfolio.css";
 import Menu from "./Menu";
 import PageHeading from "../elements/PageHeading";
 import Category from "./Category";

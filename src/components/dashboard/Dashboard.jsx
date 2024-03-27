@@ -11,7 +11,7 @@ import Letcode from "./letcode/Letcode";
 import { fetcher } from "../../services/fetcher";
 import { LEETCODE_API } from "../../constants/leetcode";
 import style from './_dashboard.module.scss'
-import { GITHUB_ACCOUNTS } from "@/constants/github";
+import { GITHUB_ACCOUNTS } from "../../constants/github";
 
 
 const Dashboard = ({githubEndpoint, leetcodeEndpoint}) => {

@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import "./contact.css";
 import PageHeading from "../elements/PageHeading";
 import toast, { Toaster } from "react-hot-toast";
 

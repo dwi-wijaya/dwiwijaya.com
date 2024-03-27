@@ -1,7 +1,7 @@
 import axios from "axios";
 import { GITHUB_ACCOUNTS } from "../constants/github";
 import { fetcher } from "./fetcher";
-import { LEETCODE_API } from "@/constants/leetcode";
+import { LEETCODE_API } from "../constants/leetcode";
 
 const GITHUB_USER_ENDPOINT = "https://api.github.com/graphql";
 
