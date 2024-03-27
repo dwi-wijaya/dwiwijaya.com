@@ -13,7 +13,7 @@ const ThemeToggle = () => {
     // useEffect only runs on the client, so now we can safely show the UI
     
     return (
-        <button className='toggle theme__toggle' onClick={toggleTheme}>
+        <button aria-label='theme toggle' className='toggle theme__toggle' onClick={toggleTheme}>
             <i className={` bx bx-${resolvedTheme == 'dark' ? 'moon' : 'sun'}`} alt="Theme Icon" />
         </button>
     );
