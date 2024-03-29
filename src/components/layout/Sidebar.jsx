@@ -62,7 +62,7 @@ const Sidebar = () => {
                 <div className="nav__footer">
                     <span className="text-subtext text-sm transform rotate-180 [writing-mode:vertical-lr]">&copy; {new Date().getFullYear()}</span>
                 </div>
-                <div onClick={() => setToggle(!toggle)} className={`toggle lg:-left-[45px] left-8 sidebar__toggle ${toggle ? '!left-[100px]' : ''}`}>
+                <div onClick={() => setToggle(!toggle)} className={`toggle lg:-left-[45px] left-5 sidebar__toggle ${toggle ? '!left-[100px]' : ''}`}>
                     <i className="icon-menu"></i>
                 </div>
             </aside>

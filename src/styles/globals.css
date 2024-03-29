@@ -33,7 +33,7 @@ body {
 
 @layer utilities {
   .toggle {
-    @apply rounded-lg fixed cursor-pointer h-10 w-fit px-3 bg-container text-text border border-stroke flex justify-center items-center z-10 transition-all duration-300 ease-in-out;
+    @apply top-5 rounded-lg fixed cursor-pointer h-10 w-fit px-3 bg-container text-text border border-stroke flex justify-center items-center z-10 transition-all duration-300 ease-in-out;
   }
   .text-balance {
     text-wrap: balance;

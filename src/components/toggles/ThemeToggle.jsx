@@ -17,7 +17,7 @@ const ThemeToggle = () => {
         return null
     }
     return (
-        <button className='group  active:ring toggle top-5 right-6 theme__toggle' onClick={toggleTheme}>
+        <button className='group  active:ring toggle right-5 theme__toggle' onClick={toggleTheme}>
             <i className={`group-active:rotate-90 transition-3s bx bx-${theme == 'dark' ? 'moon' : 'sun'}`}  />
         </button>
     );
