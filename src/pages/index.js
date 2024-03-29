@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <>
-      <div className='!text-primary toggle top-6 lg:left-[105px] left-[80px] gap-2'>
+      <div className='group-[.sidebar-expanded]:hidden !text-primary toggle top-6 lg:left-[105px] left-[80px] gap-2 transition-3s'>
         <span class="relative flex h-3 w-3 ">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
         <span class="relative inline-flex rounded-full h-3 w-3 bg-[#d87237]"></span>

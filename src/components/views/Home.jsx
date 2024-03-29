@@ -14,7 +14,7 @@ const Home = () => {
                 alt="Avatar Dwi"
                 className="outline outline-[0.35rem] outline-background rounded-2xl mb-8"
             />
-            <h2 className='text-xl text-subtext mb-0 '>Hi there<span className="animate-waving-hand">👋</span> </h2>
+            <h2 className='text-xl text-subtext mb-0 flex items-center gap-1 '>Hi there<span className="animate-waving-hand">👋</span> </h2>
             <div className="flex gap-2 self-center items-center mb-1">
                 <h1 className="font-bold text-3xl text-text">
                     {`I'm Dwi Wijaya`}
