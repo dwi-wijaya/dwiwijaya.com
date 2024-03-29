@@ -9,6 +9,7 @@
   --background-color: rgb(248, 247, 253);
   --container-color: rgb(255, 255, 255);
   --primary-color: rgb(255, 107, 77);
+  --primary-bg: #ff985c4d;
   --title-color: rgb(53, 50, 82);
   --text-color: rgb(94, 92, 127);
   --text-secondary: rgb(133, 131, 165);
@@ -19,7 +20,7 @@
   --foreground-color: rgb(159, 159, 159);
   --background-color: rgb(34, 40, 49);
   --container-color: rgb(49, 54, 63);
-  --primary-color: rgb(253, 123, 97);
+  --primary-color: rgb(255, 159, 140);
   --title-color: rgb(1, 2, 6);
   --text-color: rgb(163, 163, 163);
   --text-secondary: rgb(150, 150, 150);
@@ -33,7 +34,14 @@ body {
 }
 
 @layer utilities {
+  .toggle {
+    @apply rounded-lg fixed cursor-pointer h-10 w-11 bg-container text-text border border-stroke flex justify-center items-center z-10 transition-all duration-300 ease-in-out;
+  }
   .text-balance {
     text-wrap: balance;
   }
+  .transition-3s{
+    @apply transition-all duration-300 ease-in-out
+  }
+  
 }
