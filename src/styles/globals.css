@@ -64,4 +64,7 @@ body {
   .form-control{
     @apply relative mb-6 h-16 w-full;
   }
+  .timeline{
+    @apply before:content-[''] before:w-[1px] before:h-full before:absolute before:left-1 before:top-0 before:bg-primary
+  }
 }

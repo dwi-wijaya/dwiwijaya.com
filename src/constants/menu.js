@@ -15,14 +15,14 @@ export const MENU_ITEMS = [
         label: "About",
     },
     {
-        href: "/services",
-        iconClass: "icon-briefcase",
-        label: "Services",
-    },
-    {
         href: "/resume",
         iconClass: "icon-graduation",
         label: "Resume",
+    },
+    {
+        href: "/services",
+        iconClass: "icon-briefcase",
+        label: "Services",
     },
     {
         href: "/portfolio",
