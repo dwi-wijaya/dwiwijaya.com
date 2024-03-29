@@ -25,7 +25,7 @@ const Home = () => {
                 I&apos;m a Full-stack developer <i className="bx bx-code-alt"></i> &nbsp;
             </span>
             <HomeSocials/>
-            <hr className="border-stroke my-4" />
+            <hr className="border-stroke my-3 lg:my-4" />
             <div className='card'>
                 <div className='flex gap-3 items-center'>
                     <i className='bx bx-rocket'></i>
