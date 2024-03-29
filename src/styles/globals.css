@@ -1,29 +1,35 @@
+@import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-color: rgb(94, 92, 127);
+  --background-color: rgb(248, 247, 253);
+  --container-color: rgb(255, 255, 255);
+  --primary-color: rgb(255, 107, 77);
+  --title-color: rgb(53, 50, 82);
+  --text-color: rgb(94, 92, 127);
+  --text-secondary: rgb(133, 131, 165);
+  --stroke-color: #e7e7e7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.dark {
+  --foreground-color: rgb(159, 159, 159);
+  --background-color: rgb(34, 40, 49);
+  --container-color: rgb(49, 54, 63);
+  --primary-color: rgb(253, 123, 97);
+  --title-color: rgb(1, 2, 6);
+  --text-color: rgb(163, 163, 163);
+  --text-secondary: rgb(150, 150, 150);
+  --stroke-color: rgb(62, 68, 78);
+
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--foreground-color);
+  background: var(--background-color);
 }
 
 @layer utilities {
