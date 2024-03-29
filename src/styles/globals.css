@@ -12,6 +12,7 @@
   --text-color: rgb(94, 92, 127);
   --text-secondary: rgb(133, 131, 165);
   --stroke-color: #e7e7e7;
+  --dots: url('../assets/dots-light.svg');
 }
 
 .dark {
@@ -23,6 +24,7 @@
   --text-color: rgb(163, 163, 163);
   --text-secondary: rgb(150, 150, 150);
   --stroke-color: rgb(62, 68, 78);
+  --dots: url('../assets/dots-dark.svg');
 
 }
 
@@ -50,5 +52,16 @@ body {
   .hr{
     @apply border-stroke my-5;
   }
-  
+  .dots{
+    @apply before:content-[''] before:absolute before:bg-dots before:h-9 before:w-9 before:-left-3 before:-top-3 before:-z-[1]
+  }
+  .form-input{
+    @apply absolute top-0 left-0 w-full h-full border border-stroke bg-background text-text rounded-xl p-6 z-[1] ;
+  }
+  .form-label{
+    @apply absolute -top-3 left-5 p-1 bg-background z-[2];
+  }
+  .form-control{
+    @apply relative mb-6 h-16 w-full;
+  }
 }

@@ -19,8 +19,9 @@ module.exports = {
         subtext: 'var(--text-secondary)',
       },
       backgroundImage: {
+        'dots': 'var(--dots)',
         'endless-clouds': "url('../assets/endless-clouds.svg')"
-    }
+      }
     }
   },
   plugins: [],

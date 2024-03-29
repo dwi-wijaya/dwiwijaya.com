@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 const Container = ({ children, className = '', ...others }) => {
   return (
-    <div className={`mt-14 mb-10 lg:mt-0 p-8 ${className} `} {...others}>
+    <div className={`mt-[4.5rem] mb-10 p-6 ${className} `} {...others}>
       {children}
     </div>
   );
