@@ -6,7 +6,7 @@ import Profile from '@/assets/avatar-profile.webp'
 import HomeSocials from '../elements/HomeSocials'
 const Home = () => {
     return (
-        <>
+        <div className='absolute -top-[175%] w-[calc(100%-4rem+2px)]'>
             <Image
                 width={108}
                 height={108}
@@ -42,7 +42,7 @@ const Home = () => {
                     <i className="bx bx-envelope"></i>Contact me
                 </Link>
             </div>
-        </>
+        </div>
     )
 }
 

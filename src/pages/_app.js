@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }) {
 
       <ThemeToggle />
       <Sidebar/>
-      <main className={`${poppins.className} group lg:ml-[80px]  ml-0 px-8`}>
+      <main className={`${poppins.className} group lg:ml-[80px]  ml-0`}>
         <Overlay />
         <Component {...pageProps} />
       </main>
