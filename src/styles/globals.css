@@ -47,5 +47,8 @@ body {
   .btn{
     @apply px-3 py-2 leading-4 rounded-md shadow-sm bg-[#ff985c4d] border border-[#ffa04666] text-primary flex gap-1 items-center font-normal text-sm w-fit hover:border-primary transition-3s
   }
+  .hr{
+    @apply border-stroke my-5;
+  }
   
 }
