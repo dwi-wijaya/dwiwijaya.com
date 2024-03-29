@@ -19,7 +19,7 @@
   --background-color: rgb(34, 40, 49);
   --container-color: rgb(49, 54, 63);
   --primary-color: rgb(255, 159, 140);
-  --title-color: rgb(1, 2, 6);
+  --title-color: 	rgb(228, 230, 235);
   --text-color: rgb(163, 163, 163);
   --text-secondary: rgb(150, 150, 150);
   --stroke-color: rgb(62, 68, 78);
@@ -33,13 +33,19 @@ body {
 
 @layer utilities {
   .toggle {
-    @apply rounded-lg fixed cursor-pointer h-10 w-11 bg-container text-text border border-stroke flex justify-center items-center z-10 transition-all duration-300 ease-in-out;
+    @apply rounded-lg fixed cursor-pointer h-10 w-fit px-3 bg-container text-text border border-stroke flex justify-center items-center z-10 transition-all duration-300 ease-in-out;
   }
   .text-balance {
     text-wrap: balance;
   }
   .transition-3s{
     @apply transition-all duration-300 ease-in-out
+  }
+  .card {
+    @apply p-4 rounded-xl bg-container border border-stroke
+  }
+  .btn{
+    @apply px-3 py-2 leading-4 rounded-md shadow-sm bg-[#ff985c4d] border border-[#ffa04666] text-primary flex gap-1 items-center font-normal text-sm w-fit hover:border-primary transition-3s
   }
   
 }
