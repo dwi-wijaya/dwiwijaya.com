@@ -67,4 +67,7 @@ body {
   .timeline{
     @apply before:content-[''] before:w-[1px] before:h-full before:absolute before:left-1 before:top-0 before:bg-primary
   }
+  .badge{
+    @apply flex gap-2 whitespace-nowrap items-center p-2 border border-stroke rounded-md bg-container text-text
+  }
 }
