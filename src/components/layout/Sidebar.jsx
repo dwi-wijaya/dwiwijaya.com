@@ -13,7 +13,7 @@ import { usePathname } from 'next/navigation';
 const Sidebar = () => {
     const [mounted, setMounted] = useState(false)
     const [toggle, setToggle] = useState(false);
-    const { resolvedTheme } = useTheme();
+    const { theme } = useTheme();
     const sidebarRef = useRef(null);
     const pathname = usePathname()
 
@@ -44,7 +44,7 @@ const Sidebar = () => {
         <>
             <aside ref={sidebarRef} className={`${toggle && '!left-0'} fixed -left-[80px] lg:left-0 top-0 bg-container border-r border-stroke p-6 w-20 min-h-screen flex flex-col justify-between text-center transition-3s z-10`}>
                 <Link aria-label='go home' href="/" className="nav__logo">
-                    <Image src={resolvedTheme == 'dark' ? LogoDark : LogoLight} alt="Dwi-logo" />
+                    <Image src={theme == 'dark' ? LogoDark : LogoLight} alt="Dwi-logo" />
                 </Link>
                 <nav className="nav">
                     <div className="nav__menu">
