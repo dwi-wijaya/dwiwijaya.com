@@ -36,7 +36,7 @@ const Portfolio = () => {
         {items.map((elem) => {
           const { id, image, title, category, isFeatured, desc } = elem;
           return (
-            <div className="group/portfolio relative flex flex-col overflow-hidden rounded-xl " key={id}>
+            <div data-aos="fade-right" className="group/portfolio relative flex flex-col overflow-hidden rounded-xl " key={id}>
               <div className="work__thumbnail">
                 <div className="absolute flex items-center top-2 right-2 gap-2 z-[1]">
                   {isFeatured && (
