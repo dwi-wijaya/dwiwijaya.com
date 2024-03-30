@@ -2,7 +2,7 @@ import { useState } from 'react';
 import emailjs from 'emailjs-com';
 import toast from 'react-hot-toast';
 
-const useEmailService = () => {
+const EmailService = () => {
     const [loading, setLoading] = useState(false);
 
     const sendEmail = async (form) => {
@@ -33,4 +33,4 @@ const useEmailService = () => {
     return { sendEmail, loading };
 };
 
-export default useEmailService;
+export default EmailService;

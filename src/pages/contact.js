@@ -1,5 +1,5 @@
 import Container from '@/components/layout/Container'
-import Contact from '@/components/views/Contact'
+import Contact from '@/components/views/contact/Contact'
 import React from 'react'
 
 const contact = () => {

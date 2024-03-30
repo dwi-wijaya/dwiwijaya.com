@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import Collabs from '@/assets/handshake-regular.svg'
 import Profile from '@/assets/avatar-profile.webp'
-import HomeSocials from '../elements/HomeSocials'
+import HomeSocials from '../../elements/HomeSocials'
 const Home = () => {
     return (
         <div className='absolute -top-[175%] w-[calc(100%-40px)]'>

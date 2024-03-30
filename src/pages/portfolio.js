@@ -1,5 +1,5 @@
 import Container from '@/components/layout/Container'
-import Portfolio from '@/components/views/Portfolio'
+import Portfolio from '@/components/views/portfolio/Portfolio'
 
 const portfolio = () => {
     return (

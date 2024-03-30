@@ -1,5 +1,5 @@
 import Container from '@/components/layout/Container'
-import Dashboard from '@/components/views/Dashboard'
+import Dashboard from '@/components/views/dashboard/Dashboard'
 
 const dashboard = () => {
     return (

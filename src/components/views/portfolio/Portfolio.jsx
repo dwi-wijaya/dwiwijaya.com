@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Pin from "@/assets/pin.svg";
-import PageHeading from "../common/PageHeading";
+import PageHeading from "../../common/PageHeading";
 import Image from "next/image";
 import { portfolioData } from "@/constants/data/portfolio";
-import PortfolioCategory from "../elements/PortfolioCategory";
+import PortfolioCategory from "./PortfolioCategory";
 
 const Portfolio = () => {
   const [items, setItems] = useState(portfolioData);
@@ -43,7 +43,7 @@ const Portfolio = () => {
           return (
             <div className="group/portfolio relative flex flex-col overflow-hidden rounded-xl " key={id}>
               <div className="work__thumbnail">
-                <div className="absolute flex items-center top-2 right-2 gap-2">
+                <div className="absolute flex items-center top-2 right-2 gap-2 z-[1]">
                   {isFeatured && (
                     <span className="flex items-center gap-1 px-2 py-1 bg-orange-300 text-black rounded-md z-10">
                       <Image src={Pin} alt="" srcSet="" />

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
-import PageHeading from '../common/PageHeading'
+import PageHeading from '../../common/PageHeading'
 import toast from 'react-hot-toast';
-import useEmailService from '@/services/useEmailService';
+import useEmailService from '@/services/EmailService';
 import { Socials } from '@/constants/data/socials';
 import Image from 'next/image';
 

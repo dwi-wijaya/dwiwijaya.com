@@ -1,5 +1,5 @@
 import Container from "@/components/layout/Container"
-import About from "@/components/views/About"
+import About from "@/components/views/about/About"
 
 const about = () => {
     return (

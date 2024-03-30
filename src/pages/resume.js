@@ -1,5 +1,5 @@
 import Container from '@/components/layout/Container'
-import Resume from '@/components/views/Resume'
+import Resume from '@/components/views/resume/Resume'
 import React from 'react'
 
 const resume = () => {

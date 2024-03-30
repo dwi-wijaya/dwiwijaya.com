@@ -1,5 +1,5 @@
 import React from 'react'
-import PageHeading from '../common/PageHeading'
+import PageHeading from '../../common/PageHeading'
 
 const Blog = () => {
     return (

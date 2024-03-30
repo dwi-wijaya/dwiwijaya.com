@@ -1,5 +1,5 @@
 import Container from '@/components/layout/Container'
-import Services from '@/components/views/Services'
+import Services from '@/components/views/service/Services'
 import React from 'react'
 
 const services = () => {
