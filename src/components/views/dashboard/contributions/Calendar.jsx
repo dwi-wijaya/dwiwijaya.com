@@ -76,7 +76,7 @@ const Calendar = ({ style, data }) => {
                                                 transition: { delay: getRandomDelayAnimate },
                                             },
                                         }}
-                                        className='h-[15px] w-[15px] block rounded-sm bg-[#d4d4d4] dark:bg-container my-[7px]'
+                                        className='h-[15px] w-[15px] block rounded-[0.25rem] bg-[#d4d4d4] dark:bg-container my-[7px]'
                                         style={backgroundColor ? { backgroundColor } : undefined}
                                         onMouseEnter={() =>
                                             setSelectContribution({
@@ -99,7 +99,7 @@ const Calendar = ({ style, data }) => {
                 <div className='flex items-center gap-2 text-sm'>
                     <span className='dark:text-neutral-400'>Less</span>
                     <ul className='flex gap-1'>
-                        <motion.li className='h-[15px] w-[15px] rounded-sm bg-[#d4d4d4] dark:bg-container' />
+                        <motion.li className='h-[15px] w-[15px] rounded-[0.25rem] bg-[#d4d4d4] dark:bg-container' />
                         {contributionColors.map((item, index) => (
                             <motion.li
                                 key={item}
@@ -112,7 +112,7 @@ const Calendar = ({ style, data }) => {
                                         transition: { delay: index * 0.3 },
                                     },
                                 }}
-                                className='h-[15px] w-[15px] rounded-sm'
+                                className='h-[15px] w-[15px] rounded-[0.25rem]'
                                 style={{ backgroundColor: item }}
                             />
                         ))}
