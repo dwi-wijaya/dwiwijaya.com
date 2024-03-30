@@ -23,7 +23,7 @@ module.exports = {
         'endless-clouds': "url('../assets/endless-clouds.svg')"
       },
       gridTemplateColumns: {
-        '3fr': 'repeat(3, 140px)'
+        '3fr': 'repeat(3, 140px)',
       },
       keyframes: {
         scroll: {
