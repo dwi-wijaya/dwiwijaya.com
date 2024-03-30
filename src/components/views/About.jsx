@@ -6,6 +6,11 @@ import PageSubHeading from '../common/PageSubHeading'
 import Skills from '../elements/Skills'
 import Certificates from '../elements/Certificates'
 
+const Story = `I'm Dwi Wijaya from Indonesia a seasoned Full Stack Developer with over 2 years of professional experience.
+Currently pursuing further education while working, adept in frontend and backend development, 
+specializing in PHP and JavaScript, with experience in Yii, Laravel, React, Node.js, etc. 
+Passionate about creating intuitive user experiences, adaptable, efficient, committed to excellence, with problem-solving skills, and a passion for innovation. 
+Excels in teamwork, eager to contribute to collective achievements.`
 
 const About = () => {
   return (
@@ -19,8 +24,8 @@ const About = () => {
         <Image src={Freelance} alt="Freelance" className='justify-self-center w-[420px] lg:w-full' />
         <div className="text-center lg:text-start">
           <Info />
-          <p className='p-2 mb-3 text-subtext text-md'>I'm Dwi Wijaya from Indonesia a seasoned Full Stack Developer with over 2 years of professional experience.
-            Currently pursuing further education while working, adept in frontend and backend development, specializing in PHP and JavaScript, with experience in Yii, Laravel, React, Node.js, etc. Passionate about creating intuitive user experiences, adaptable, efficient, committed to excellence, with problem-solving skills, and a passion for innovation. Excels in teamwork, eager to contribute to collective achievements.
+          <p className='p-2 mb-3 text-subtext text-md'>
+            {Story}
           </p>
           <a aria-label='download cv' href="" className="btn !inline-block">
             <i className="icon-doc"></i>
