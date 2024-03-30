@@ -1,11 +1,12 @@
 import Overlay from "@/components/layout/Overlay";
 import Sidebar from "@/components/layout/Sidebar";
+import CollabsToggle from "@/components/toggles/CollabsToggle";
 import ThemeToggle from "@/components/toggles/ThemeToggle";
 import "@/styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import { Poppins } from 'next/font/google'
 import { Toaster } from "react-hot-toast";
- 
+
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
@@ -15,6 +16,7 @@ export default function App({ Component, pageProps }) {
     <ThemeProvider attribute='class'>
 
       <ThemeToggle />
+
       <Toaster
         toastOptions={{
           style: {
@@ -24,8 +26,10 @@ export default function App({ Component, pageProps }) {
         }}
         position="top-right"
       />
-      <Sidebar/>
+
+      <Sidebar />
       <main className={`${poppins.className} group lg:ml-[80px]  ml-0`}>
+        <CollabsToggle />
         <Overlay />
         <Component {...pageProps} />
       </main>
