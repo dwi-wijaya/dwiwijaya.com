@@ -41,16 +41,7 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
       />
       <PageSpeed/>
 
-      <hr className="hr" />
-      <PageSubHeading
-        title="LeetCode Statistics"
-        description="My LeetCode progress and performance."
-        icon="bx bx-code"
-        linkText='@dwi-wijaya'
-        link='https://leetcode.com/dwi-wijaya'
-      />
-      <Letcode data={leetcodeData} />
-
+      
       <hr className="hr" />
       <PageSubHeading
         title="Contributions"
@@ -70,6 +61,17 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
         )}
 
       </section>
+
+      <hr className="hr" />
+      <PageSubHeading
+        title="LeetCode Statistics"
+        description="My LeetCode progress and performance."
+        icon="bx bx-code"
+        linkText='@dwi-wijaya'
+        link='https://leetcode.com/dwi-wijaya'
+      />
+      <Letcode data={leetcodeData} />
+
     </section>
   );
 };

@@ -11,7 +11,7 @@ const resume = () => {
     return (
         <>
             <NextSeo title={`${PAGE_TITLE} - Dwi Wijaya`} />
-            <Container>
+            <Container data-aos='fade-up'>
                 <PageHeading
                     title={PAGE_TITLE}
                     description={PAGE_DESCRIPTION}
