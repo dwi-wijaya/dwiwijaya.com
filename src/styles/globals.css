@@ -74,7 +74,7 @@ html {
   }
 
   .form-label {
-    @apply absolute -top-3 left-5 p-1 bg-background z-[2];
+    @apply absolute -top-4 left-5 px-2 py-1 bg-background z-[2];
   }
 
   .form-control {
