@@ -37,6 +37,7 @@ html {
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  letter-spacing: .3px;
 }
 
 @layer utilities {
@@ -53,7 +54,7 @@ html {
   }
 
   .card {
-    @apply p-4 rounded-xl bg-container border border-stroke transition-3s
+    @apply px-4 py-3 rounded-xl bg-container border border-stroke transition-3s
   }
 
   .btn {
@@ -85,7 +86,7 @@ html {
   }
 
   .badge {
-    @apply flex gap-2 whitespace-nowrap items-center p-2 border border-stroke rounded-md bg-container text-text
+    @apply flex gap-2 whitespace-nowrap items-center py-2 px-3 border border-stroke rounded-md bg-container text-text
   }
 
   .scroll {
