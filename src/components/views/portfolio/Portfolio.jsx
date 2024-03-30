@@ -30,11 +30,6 @@ const Portfolio = () => {
 
   return (
     <>
-      <PageHeading
-        title="My Works"
-        description="Explore my latest projects and creations."
-      />
-
       <PortfolioCategory filter={filterItems} active={activeCategory} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-5">

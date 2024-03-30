@@ -1,6 +1,4 @@
 import React, { useRef, useState } from 'react'
-import PageHeading from '../../common/PageHeading'
-import toast from 'react-hot-toast';
 import useEmailService from '@/services/EmailService';
 import { Socials } from '@/constants/data/socials';
 import Image from 'next/image';
@@ -17,7 +15,6 @@ const Contact = () => {
 
     return (
         <>
-            <PageHeading title={'Get in touch'} description={'Reach out and start a conversation about potential collaborations or inquiries.'} />
             <div className="contact__container">
                 <div className="mb-8">
                     <h3 className="mb-4 font-semibold">Find me on social media</h3>

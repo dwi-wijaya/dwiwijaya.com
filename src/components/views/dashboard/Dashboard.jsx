@@ -32,10 +32,6 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
   console.log(contributionCalendar);
   return (
     <section>
-      <PageHeading
-        title="Dashboard"
-        description="This is my personal dashboard portfolio."
-      />
       <PageSubHeading
         title="Pagespeed Insight"
         description="My pagespeed index by google APIs"

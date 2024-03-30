@@ -4,11 +4,6 @@ import PageHeading from "../../common/PageHeading";
 const Services = () => {
   return (
     <>
-      <PageHeading
-        title='Services'
-        description='Learn about the specialized services I offer to clients.'
-      />
-      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-4">
         {ServicesData.map(({ id, icon, title, description }) => {
           return (

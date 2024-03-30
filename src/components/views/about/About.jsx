@@ -1,7 +1,6 @@
 import Freelance from '@/assets/freelance.svg'
 import Image from 'next/image'
 import Info from './Info'
-import PageHeading from '../../common/PageHeading'
 import PageSubHeading from '../../common/PageSubHeading'
 import Skills from './Skills'
 import Certificates from './Certificates'
@@ -15,11 +14,6 @@ Excels in teamwork, eager to contribute to collective achievements.`
 const About = () => {
   return (
     <>
-      <PageHeading
-        title='About Me'
-        description='Get to know me a little better, beyond the resume.'
-      />
-
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-x-16 gap-y-8">
         <Image src={Freelance} alt="Freelance" className='justify-self-center w-[420px] lg:w-full' />
         <div className="text-center lg:text-start">

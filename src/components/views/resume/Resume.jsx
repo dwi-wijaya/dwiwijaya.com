@@ -5,11 +5,6 @@ import { _Resume, resumeData } from '@/constants/data/resume';
 const Resume = () => {
     return (
         <>
-            <PageHeading
-                title='Experience'
-                description='Discover my professional background and valuable experiences.'
-            />
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-6">
                 <div data-aos="fade-right" className="grid card relative !px-8 !py-6">
                     {resumeData.map((val, id) => {
