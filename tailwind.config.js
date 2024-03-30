@@ -14,14 +14,39 @@ module.exports = {
         container: 'var(--container-color)',
         stroke: 'var(--stroke-color)',
         primary: 'var(--primary-color)',
-        text: 'var(--title-color',
+        title: 'var(--title-color)',
         text: 'var(--text-color)',
         subtext: 'var(--text-secondary)',
       },
       backgroundImage: {
         'dots': 'var(--dots)',
         'endless-clouds': "url('../assets/endless-clouds.svg')"
-      }
+      },
+      gridTemplateColumns: {
+        '3fr': 'repeat(3, 140px)'
+      },
+      keyframes: {
+        scroll: {
+          '0%': {
+            transform: 'translateX(100%)',
+          },
+          '100%': {
+            transform: 'translateX(-100%)',
+          },
+        },
+        scroll2: {
+          '0%': {
+            transform: 'translateX(0)',
+          },
+          '100%': {
+            transform: 'translateX(-200%)',
+          },
+        },
+      },
+      animation: {
+        'loop-1' : 'scroll var(--time) linear infinite',
+        'loop-2' : 'scroll2 var(--time) linear infinite',
+      },
     }
   },
   plugins: [],
