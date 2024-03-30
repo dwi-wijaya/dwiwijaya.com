@@ -1,4 +1,4 @@
-import { ServicesData } from "@/constants/services";
+import { ServicesData } from "@/constants/data/services";
 import PageHeading from "../common/PageHeading";
 
 const Services = () => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import PageHeading from '../common/PageHeading';
-import { _Resume, resumeData } from '@/constants/resume';
+import { _Resume, resumeData } from '@/constants/data/resume';
 
 const Resume = () => {
     return (

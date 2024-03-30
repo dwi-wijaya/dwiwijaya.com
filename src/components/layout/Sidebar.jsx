@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import LogoDark from '@/assets/logo-dark.webp';
 import LogoLight from '@/assets/logo-light.webp';
 import 'simple-line-icons'
-import { MENU_ITEMS } from '@/constants/menu';
+import { MENU_ITEMS } from '@/constants/data/menu';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';

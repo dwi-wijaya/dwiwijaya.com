@@ -1,4 +1,4 @@
-import { portfolioCategory } from '@/constants/portfolioCategory';
+import { portfolioCategory } from '@/constants/data/portfolioCategory';
 
 const PortfolioCategory = ({ filter, active }) => {
     return (

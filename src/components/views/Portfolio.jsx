@@ -2,7 +2,7 @@ import { useState } from "react";
 import Pin from "@/assets/pin.svg";
 import PageHeading from "../common/PageHeading";
 import Image from "next/image";
-import { portfolioData } from "@/constants/portfolio";
+import { portfolioData } from "@/constants/data/portfolio";
 import PortfolioCategory from "../elements/PortfolioCategory";
 
 const Portfolio = () => {

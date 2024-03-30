@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import PageHeading from '../common/PageHeading'
 import toast from 'react-hot-toast';
 import useEmailService from '@/services/useEmailService';
-import { Socials } from '@/constants/socials';
+import { Socials } from '@/constants/data/socials';
 import Image from 'next/image';
 
 const Contact = () => {
