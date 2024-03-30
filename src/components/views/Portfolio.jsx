@@ -29,11 +29,7 @@ const Portfolio = () => {
   };
 
   return (
-    <section
-      className="work container section"
-      id="portfolio"
-      data-aos="fade-up"
-    >
+    <>
       <PageHeading
         title="My Works"
         description="Explore my latest projects and creations."
@@ -73,7 +69,7 @@ const Portfolio = () => {
           );
         })}
       </div>
-    </section>
+    </>
   );
 };
 
