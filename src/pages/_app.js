@@ -38,7 +38,7 @@ export default function App({ Component, pageProps }) {
       />
 
       <Sidebar />
-      <main className={`${poppins.className} group lg:ml-[80px]  ml-0`}>
+      <main className={`${poppins.className} group/main lg:ml-[80px]  ml-0`}>
         <CollabsToggle />
         <Overlay />
         <Component {...pageProps} />
