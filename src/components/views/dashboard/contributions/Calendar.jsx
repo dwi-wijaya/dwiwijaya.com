@@ -76,7 +76,7 @@ const Calendar = ({ style, data }) => {
                                                 transition: { delay: getRandomDelayAnimate },
                                             },
                                         }}
-                                        className='h-[15px] w-[15px] block rounded-[0.25rem] bg-[#d4d4d4] dark:bg-container my-[7px]'
+                                        className='h-[15px] w-[15px] block rounded-[0.25rem] bg-[#d4d4d4] dark:bg-container my-[4px]'
                                         style={backgroundColor ? { backgroundColor } : undefined}
                                         onMouseEnter={() =>
                                             setSelectContribution({
