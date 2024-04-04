@@ -133,3 +133,15 @@ html {
       bottom: -55px !important;
   }
 }
+
+/* NProgress */
+#nprogress .bar {
+  background: var(--primary-color) !important;
+  height: 3px !important;
+  position: fixed !important;
+  z-index: 9999999 !important;
+}
+
+#nprogress .peg {
+  box-shadow: none !important;
+}
