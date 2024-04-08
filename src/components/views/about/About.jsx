@@ -11,7 +11,7 @@ specializing in PHP and JavaScript, with experience in Yii, Laravel, React, Node
 Passionate about creating intuitive user experiences, adaptable, efficient, committed to excellence, with problem-solving skills, and a passion for innovation. 
 Excels in teamwork, eager to contribute to collective achievements.`
 
-const About = () => {
+const About = ({skills, certificates}) => {
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-x-16 gap-y-8">
@@ -29,10 +29,10 @@ const About = () => {
 
       <hr className="hr !my-8" />
       <PageSubHeading title='Skills' description='My professional skillset .' icon='bx bx-code-alt' />
-      <Skills/>
+      <Skills skills={skills}/>
       <hr className="hr !my-8" />
       <PageSubHeading title='Certificates' description='A showcase of my professional certificates .' icon='bx bx-file-blank' />
-      <Certificates/>
+      <Certificates certificates={certificates}/>
 
     </>
   )

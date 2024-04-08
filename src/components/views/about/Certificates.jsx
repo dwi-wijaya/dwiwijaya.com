@@ -58,12 +58,12 @@ const settings = {
     </div>
   )
   
-const Certificates = () => {
+const Certificates = ({certificates}) => {
   return (
     <div className="p-6">
         <Slider {...settings}>
-          {certificatesData.map((certificate,index) => (
-            <Image width={1000} height={200} src={certificate.certfile_url} key={index} />
+          {certificates.map((certificate,index) => (
+            <Image alt={certificate.name} width={1000} height={200} src={certificate.image} key={index} />
           ))}
         </Slider>
       </div>

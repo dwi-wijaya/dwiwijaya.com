@@ -5,15 +5,15 @@ import Image from "next/image";
 import { portfolioData } from "@/constants/data/portfolio";
 import PortfolioCategory from "./PortfolioCategory";
 
-const Portfolio = () => {
-  const [items, setItems] = useState(portfolioData);
+const Portfolio = ({portfolios}) => {
+  const [items, setItems] = useState(portfolios);
   const [activeCategory, setActiveCategory] = useState("all");
 
   const filterItems = (categoryItem) => {
     if (categoryItem === "all") {
-      setItems(portfolioData);
+      setItems(portfolios);
     } else {
-      const updatedItems = portfolioData.filter((curElem) => {
+      const updatedItems = portfolios.filter((curElem) => {
         return curElem.category === categoryItem;
       });
       setItems(updatedItems);
@@ -34,7 +34,7 @@ const Portfolio = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-5">
         {items.map((elem) => {
-          const { id, image, title, category, isFeatured, desc } = elem;
+          const { id, thumbnail, name, category, isFeatured, excerpt } = elem;
           return (
             <div data-aos="fade-right" className="group/portfolio relative flex flex-col overflow-hidden rounded-xl " key={id}>
               <div className="work__thumbnail">
@@ -50,15 +50,15 @@ const Portfolio = () => {
                   </div>
                 </div>
                 <div className="relative">
-                  <Image src={image} alt="" className="w-full object-cover h-48" />
+                  <Image src={thumbnail} alt="" width={999} height={999} className="w-full object-cover h-48" />
                   <div className="flex gap-1 absolute top-0 left-0 w-full h-full bg-black opacity-0 transition-opacity duration-300 justify-center items-center text-white group-hover/portfolio:opacity-80 ">
                     View Project<i className="bx bx-right-arrow-alt"></i>
                   </div>
                 </div>
               </div>
               <div className="p-5 flex flex-col justify-between h-full gap-3  bg-container border border-stroke">
-                <h3 className="font-semibold group-hover/portfolio:text-primary">{title}</h3>
-                <p className="text-sm overflow-hidden whitespace-normal overflow-ellipsis line-clamp-2 text-subtext">{desc}</p>
+                <h3 className="font-semibold group-hover/portfolio:text-primary">{name}</h3>
+                <p className="text-sm overflow-hidden whitespace-normal overflow-ellipsis line-clamp-2 text-subtext">{excerpt}</p>
               </div>
             </div>
           );
