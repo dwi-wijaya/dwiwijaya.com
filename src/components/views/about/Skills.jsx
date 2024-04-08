@@ -17,13 +17,12 @@ const SkillsCategory = ({ data, animationTime, reverseAnimation }) => {
 
 const Skills = ({skills}) => {
 
-console.log(skills.length);
     if (skills && skills.length > 0) {
+
         const Backend = skills.filter((item) => item.type === 'backend');
         const Frontend = skills.filter((item) => item.type === 'frontend');
         const Utilities = skills.filter((item) => item.type === 'utility');
-      console.log(Frontend);
-        // Lakukan apa pun yang perlu Anda lakukan dengan hasil filter, misalnya menampilkan atau memprosesnya lebih lanjut.
+
         return (
             <div className="section__skills">
                 <SkillsCategory data={Backend} animationTime="120s" reverseAnimation={false} />

@@ -8,7 +8,7 @@ import { SWRConfig } from "swr";
 const PAGE_TITLE = 'About';
 const PAGE_DESCRIPTION = "Get to know me a little better, beyond the resume.";
 
-const about = ({skills,certificates}) => {
+const about = ({skills,certificates,about}) => {
     return (
         <>
 
@@ -19,7 +19,7 @@ const about = ({skills,certificates}) => {
                     title={PAGE_TITLE}
                     description={PAGE_DESCRIPTION}
                 />
-                <About skills={skills} certificates={certificates} />
+                <About skills={skills} certificates={certificates} about={about} />
             </Container>
         </>
     )
@@ -29,12 +29,12 @@ export default about
 export const getStaticProps = async () => {
     // const readStats = await getReadStats();
     const skills = await fetcher(`${process.env.API_URL}/skill`)
-    console.log(skills)
     const certificates = await fetcher(`${process.env.API_URL}/certificate`)
-
+    let about = await fetcher(`${process.env.API_URL}/about`)
+    about = about[0]
     return {
         props: {
-            skills,certificates
+            skills,certificates,about
         },
         revalidate: 1,
     };
