@@ -51,7 +51,7 @@ const Sidebar = () => {
                         <ul className="flex flex-col items-center gap-y-7">
                             {MENU_ITEMS.map((item, index) => (
                                 <li key={index} className='nav__item '>
-                                    <Link href={item.href} title={item.label} className={`${pathname === item.href ? 'active px-3 py-2 bg-[#a64d182b] border border-[#ff9d8454] !text-primary rounded-md' : ''} hover:text-primary text-2xl text-text font-bold flex items-center h-full transition-3s`}>
+                                    <Link href={item.href} title={item.label} className={`${pathname === item.href ? 'active px-3 py-2 bg-[#ff985c4d] border border-[#ffa04666] !text-primary rounded-md' : ''} hover:text-primary text-2xl text-text font-bold flex items-center h-full transition-3s`}>
                                         <i className={item.iconClass}></i>
                                     </Link>
                                 </li>

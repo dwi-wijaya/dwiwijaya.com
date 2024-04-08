@@ -9,11 +9,17 @@ import { useEffect } from "react";
 import "@/styles/globals.css";
 import 'aos/dist/aos.css';
 import Aos from "aos";
+import dynamic from "next/dynamic";
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
 })
+const ProgressBar = dynamic(
+  () => import('../components/elements/ProgressBar'),
+  { ssr: false }
+);
+
 export default function App({ Component, pageProps }) {
   useEffect(() => {
     Aos.init({
@@ -36,6 +42,7 @@ export default function App({ Component, pageProps }) {
         }}
         position="top-right"
       />
+      <ProgressBar />
 
       <Sidebar />
       <main className={`${poppins.className} group/main lg:ml-[80px]  ml-0`}>
