@@ -10,6 +10,8 @@ import "@/styles/globals.css";
 import 'aos/dist/aos.css';
 import Aos from "aos";
 import dynamic from "next/dynamic";
+import { DefaultSeo } from "next-seo";
+import defaultSEOConfig from '../../next-seo.config';
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -29,6 +31,8 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return <>
+    <DefaultSeo {...defaultSEOConfig} />
+
     <ThemeProvider attribute='class'>
 
       <ThemeToggle />
