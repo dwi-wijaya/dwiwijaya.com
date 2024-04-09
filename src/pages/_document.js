@@ -4,7 +4,10 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <meta name="google-site-verification" content="S1rDLWd3VsUHpwRkB-BVpQG4Xf6Hk4hOe6lOKKsNmNo" />
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+        <link rel="icon" type="image/svg+xml" href="/logo.svg" sizes="any"/>
+        {/* <link rel="icon" href="/logo.jpg" sizes="any" /> */}
       </Head>
       <body>
         <Main />
