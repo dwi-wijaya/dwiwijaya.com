@@ -11,9 +11,9 @@ const WorkDuration = ({ startMonth, endMonth }) => {
             let yearDiff = end.getFullYear() - start.getFullYear();
             let monthDiff = end.getMonth() - start.getMonth();
 
-            yearDiff = monthDiff < 0 ? yearDiff - 1 : yearDiff;
+            yearDiff = monthDiff < 0  && yearDiff != 0 ? yearDiff - 1 : yearDiff;
             monthDiff = monthDiff < 0 ? 12  + monthDiff : monthDiff;
-
+            
             if (yearDiff === 0 && monthDiff === 0) {
                 setDuration("Less than a Month");
             } else if (yearDiff === 0) {
