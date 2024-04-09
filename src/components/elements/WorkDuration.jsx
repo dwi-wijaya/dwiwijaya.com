@@ -29,7 +29,7 @@ const WorkDuration = ({ startMonth, endMonth }) => {
     }, [startMonth, endMonth]);
 
     return (
-        <p className='text-subtext'><i class='bx bx-calendar' ></i> {duration}</p>
+        <p className='text-subtext'><i className='bx bx-calendar' ></i> {duration}</p>
     );
 };
 
