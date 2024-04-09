@@ -8,8 +8,11 @@ const WorkDuration = ({ startMonth, endMonth }) => {
             const start = new Date(startMonth);
             const end = endMonth ? new Date(endMonth) : new Date();
 
-            const yearDiff = end.getFullYear() - start.getFullYear();
-            const monthDiff = Math.abs(end.getMonth() - start.getMonth());
+            let yearDiff = end.getFullYear() - start.getFullYear();
+            let monthDiff = end.getMonth() - start.getMonth();
+
+            yearDiff = monthDiff < 0 ? yearDiff - 1 : yearDiff;
+            monthDiff = monthDiff < 0 ? 12  + monthDiff : monthDiff;
 
             if (yearDiff === 0 && monthDiff === 0) {
                 setDuration("Less than a month");
