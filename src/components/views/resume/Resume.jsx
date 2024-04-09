@@ -15,13 +15,13 @@ const Resume = ({ experience }) => {
                                     <i className="absolute -left-[0.6rem] -top-1 text-xl text-primary bg-container p-1 icon-graduation"></i>
                                     <span className="text-sm text-subtext">{val.startMonth} - {val.endDate ?? 'present'}</span>
                                     <p className='text-sm text-subtext mt-3'><i className='bx bx-map-pin'></i> {val.location}</p> 
-                                    <h3 className="my-2 font-semibold text-lg">{val.major}</h3>
+                                    <p className="text-sm text-subtext mt-1"><i className='bx bx-book'></i> {val.degree}</p>
+                                    <h3 className="mt-2 font-semibold text-lg">{val.major}</h3>
                                     <div className="flex gap-2">
                                         <a href={val.link} className="timeline__text mb-1 pb-0 border-b border-[#727272] hover:border-text hover:text-primary transition-3s">
                                             {val.institution}
                                         </a>
                                     </div>
-                                    <p className="text-subtext"><i className='bx bx-book'></i> {val.degree}</p>
                                 </div>
                             );
                         }
@@ -38,13 +38,13 @@ const Resume = ({ experience }) => {
                                     <i className="absolute -left-[0.6rem] -top-1 text-xl text-primary bg-container p-1 icon-briefcase"></i>
                                     <span className="text-sm text-subtext">{val.startMonth} - {val.endDate ?? 'present'}</span>
                                     <p className='text-sm text-subtext mt-3'><i className='bx bx-map-pin'></i> {val.location}</p> 
-                                    <h3 className="my-2 font-semibold text-lg">{val.position}</h3>
+                                    <WorkDuration startMonth={val.startMonth} endMonth={val.endMonth} />
+                                    <h3 className="mt-2 font-semibold text-lg">{val.position}</h3>
                                     <div className="flex gap-2">
                                         <a href="" className="timeline__text mb-1 pb-0 border-b border-[#727272] hover:border-text hover:text-primary transition-3s">
                                             {val.institution}
                                         </a>
                                     </div>
-                                    <WorkDuration startMonth={val.startMonth} endMonth={val.endMonth} />
                                 </div>
                             );
                         }

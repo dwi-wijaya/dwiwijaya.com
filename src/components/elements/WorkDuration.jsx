@@ -15,13 +15,13 @@ const WorkDuration = ({ startMonth, endMonth }) => {
             monthDiff = monthDiff < 0 ? 12  + monthDiff : monthDiff;
 
             if (yearDiff === 0 && monthDiff === 0) {
-                setDuration("Less than a month");
+                setDuration("Less than a Month");
             } else if (yearDiff === 0) {
-                setDuration(`${monthDiff} month${monthDiff > 1 ? 's' : ''}`);
+                setDuration(`${monthDiff} Month${monthDiff > 1 ? 's' : ''}`);
             } else if (yearDiff === 1 && monthDiff === 0) {
-                setDuration("1 year");
+                setDuration("1 Year");
             } else {
-                setDuration(`${yearDiff} year${yearDiff > 1 ? 's' : ''} ${monthDiff} month${monthDiff > 1 ? 's' : ''}`);
+                setDuration(`${yearDiff} Year${yearDiff > 1 ? 's' : ''} ${monthDiff} Month${monthDiff > 1 ? 's' : ''}`);
             }
         };
 
@@ -29,7 +29,7 @@ const WorkDuration = ({ startMonth, endMonth }) => {
     }, [startMonth, endMonth]);
 
     return (
-        <p className='text-subtext'><i className='bx bx-calendar' ></i> {duration}</p>
+        <p className='text-sm text-subtext mt-1'><i className='bx bx-calendar' ></i> {duration}</p>
     );
 };
 
