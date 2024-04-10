@@ -145,3 +145,13 @@ html {
 #nprogress .peg {
   box-shadow: none !important;
 }
+
+/* React MDE */
+.wmde-markdown {
+  padding: 1rem !important;
+  /* background-color: transparent !important; */
+}
+
+.dark .wmde-markdown {
+  background-color: var(--container-color) !important;
+}
