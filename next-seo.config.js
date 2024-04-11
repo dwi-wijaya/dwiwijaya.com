@@ -1,6 +1,6 @@
 const canonicalUrl = 'https://dwiwijaya.vercel.app';
 const metaImage =
-  'https://firebasestorage.googleapis.com/v0/b/portfolio-dwiwijaya.appspot.com/o/dwiwijaya.dev.jpg?alt=media&token=bef241f9-3df5-4c54-b87c-f9e624e32267';
+  'https://firebasestorage.googleapis.com/v0/b/portfolio-dwiwijaya.appspot.com/o/dwiwijaya.dev.jpg?alt=media&token=34ec0077-44d6-4f16-98b3-c39135c7bb4d';
 const metaDescription =
   'Seasoned Software Engineer especially in Frontend side, with a passion for creating pixel-perfect web experiences';
 
