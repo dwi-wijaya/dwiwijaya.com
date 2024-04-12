@@ -149,6 +149,7 @@ html {
 /* React MDE */
 .wmde-markdown {
   padding: 1rem !important;
+  border: 1px solid var(--stroke-color);
   /* background-color: transparent !important; */
 }
 
