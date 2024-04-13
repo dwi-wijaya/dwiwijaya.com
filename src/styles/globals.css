@@ -90,7 +90,7 @@ html {
   }
 
   .scroll {
-    @apply mb-4 relative flex w-full overflow-hidden;
+    @apply relative flex w-full overflow-hidden;
     -webkit-mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
   }
 
@@ -114,7 +114,9 @@ html {
     animation-delay: calc(var(--time)/-2);
   }
 }
-
+.scroll:hover *{
+    animation-play-state: paused;
+}
 /* Override Style */
 .slick-track {
   display: flex !important;
@@ -155,4 +157,18 @@ html {
 
 .dark .wmde-markdown {
   background-color: var(--container-color) !important;
+}
+.glass {
+  /* From https://css.glass */
+  position: fixed;
+
+  top: 12px;
+  height: 3.58rem;
+  background: var(--background-color);
+  /* backdrop-filter: blur(5px); */
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid var(--stroke-color);
+  border: 1px solid rgb(255, 255, 255 , 0.1);
+  z-index: 8;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
