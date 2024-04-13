@@ -1,4 +1,3 @@
-import CollabsToggle from "@/components/toggles/CollabsToggle";
 import ThemeToggle from "@/components/toggles/ThemeToggle";
 import Overlay from "@/components/layout/Overlay";
 import Sidebar from "@/components/layout/Sidebar";
@@ -50,7 +49,6 @@ export default function App({ Component, pageProps }) {
 
       <Sidebar />
       <main className={`${poppins.className} group/main lg:ml-[80px]  ml-0`}>
-        <CollabsToggle />
         <Overlay />
         <Component {...pageProps} />
       </main>
