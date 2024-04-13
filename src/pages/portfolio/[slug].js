@@ -1,5 +1,6 @@
 import PageHeading from '@/components/common/PageHeading'
 import Container from '@/components/layout/Container'
+import BackToggle from '@/components/toggles/BackToggle'
 import DetailPortfolio from '@/components/views/portfolio/DetailPortfolio'
 import { fetcher } from '@/services/fetcher'
 import { NextSeo } from 'next-seo'
@@ -9,6 +10,7 @@ const DetailPortfolioPage = ({portfolio}) => {
     return (
         <>
             <NextSeo title={`${portfolio.name} - Dwi Wijaya`} />
+            <BackToggle/>
             <Container data-aos='fade-up'>
                 <DetailPortfolio portfolio={portfolio}/>
             </Container>
