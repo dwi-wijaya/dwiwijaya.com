@@ -55,7 +55,7 @@ const Portfolio = ({ portfolios }) => {
                 <Link href={`portfolio/${slug}`}>
                   <div className="group/portfolio relative flex flex-col overflow-hidden rounded-xl h-full lg:hover:scale-[102%] transition-3s">
 
-                    <div className="work__thumbnail">
+                    <div className="work__thumbnail aspect-thumbnail">
                       <div className="absolute flex items-center top-2 right-2 gap-2 z-[1]">
                         {isFeatured && (
                           <span className="flex items-center gap-1 px-2 py-1 bg-orange-300 text-black rounded-md z-10">
@@ -68,7 +68,7 @@ const Portfolio = ({ portfolios }) => {
                         </div>
                       </div>
                       <div className="relative">
-                        <Image blurDataURL={thumbnail} src={thumbnail} alt="" width={999} height={999} className={`w-full object-cover h-48 ${isLoading ? 'scale-[1.02] blur-xl grayscale' : 'scale-100 blur-0 grayscale-0'}`} quality={100}
+                        <Image blurDataURL={thumbnail} src={thumbnail} alt="" width={999} height={999} className={`aspect-thumbnail object-cover ${isLoading ? 'scale-[1.02] blur-xl grayscale' : 'scale-100 blur-0 grayscale-0'}`} quality={100}
                           onLoadingComplete={() => setLoading(false)} />
                         <div className="flex gap-1 absolute top-0 left-0 w-full h-full bg-black opacity-0 transition-opacity duration-300 justify-center items-center text-white group-hover/portfolio:opacity-80 ">
                           View Project<i className="bx bx-right-arrow-alt"></i>

@@ -25,6 +25,9 @@ module.exports = {
       gridTemplateColumns: {
         '3fr': 'repeat(3, 140px)',
       },
+      aspectRatio: {
+        'thumbnail': '2',
+      },
       keyframes: {
         scroll: {
           '0%': {
