@@ -15,7 +15,6 @@ const MDEditorPreview = dynamic(
 
 const DetailPortfolio = ({ portfolio }) => {
 
-    console.log(portfolio);
     return (
         <div className=''>
             <h1 className='text-2xl font-medium'>{portfolio.name}</h1>

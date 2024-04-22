@@ -6,7 +6,6 @@ import Skills from './Skills'
 import Certificates from './Certificates'
 
 const About = ({skills, certificates,about}) => {
-  console.log(about);
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-x-16 gap-y-8">

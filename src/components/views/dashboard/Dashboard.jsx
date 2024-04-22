@@ -13,23 +13,20 @@ import Calendar from "./contributions/Calendar";
 
 
 const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
-  console.log(GITHUB_ACCOUNTS);
   const { data: leetcodeData, error: leetcodeError } = useSWR(leetcodeEndpoint, fetcher);
   const { data: githubData, error: githubError } = useSWR(githubEndpoint, fetcher);
-  // console.log(leetcodeData);
+
   if (githubError) {
-    // console.error("Error fetching GitHub data:", githubError);
     return null; // or display an error message
   }
 
 
   if (leetcodeError) {
-    // console.error("Error fetching LeetCode data:", leetcodeError);
     return null; // or display an error message
   }
 
   const contributionCalendar = githubData?.contributionsCollection?.contributionCalendar;
-  console.log(contributionCalendar);
+
   return (
     <section>
       <PageSubHeading

@@ -12,7 +12,6 @@ const Contact = () => {
         e.preventDefault();
         sendEmail(formRef.current);
     };
-    console.log(process.env.EMAILJS_SERVICE_ID);
 
     return (
         <>

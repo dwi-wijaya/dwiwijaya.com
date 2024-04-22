@@ -14,7 +14,6 @@ export default function PageSpeed({ style }) {
     const { data, isLoading, mutate } = useSwr(url, fetcher)
 
     function refetch(path) {
-        console.log(path);
         setActive(path)
         setUrl(PAGESPEED_API + path)
         mutate()
