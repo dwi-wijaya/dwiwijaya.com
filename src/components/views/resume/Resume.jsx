@@ -11,7 +11,7 @@ const Resume = ({ experience }) => {
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.05, delay: 1 * 0.1 }} data-aos="fade-right" className="grid card relative !px-8 !py-6">
+                    transition={{ duration: 0.05, delay: 1 * 0.1 }}  className="grid card relative !px-8 !py-6">
                     {experience.map((val, id) => {
                         if (val.type === "education") {
                             return (
