@@ -11,6 +11,8 @@ import Aos from "aos";
 import dynamic from "next/dynamic";
 import { DefaultSeo } from "next-seo";
 import defaultSEOConfig from '../../next-seo.config';
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -31,7 +33,8 @@ export default function App({ Component, pageProps }) {
 
   return <>
     <DefaultSeo {...defaultSEOConfig} />
-
+    <SpeedInsights />
+    <Analytics />
     <ThemeProvider attribute='class'>
 
       <ThemeToggle />
