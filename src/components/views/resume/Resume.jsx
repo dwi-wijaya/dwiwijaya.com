@@ -2,12 +2,16 @@ import React from 'react'
 import PageHeading from '../../common/PageHeading';
 import { _Resume, resumeData } from '@/constants/data/resume';
 import WorkDuration from '@/components/elements/WorkDuration';
+import { motion } from "framer-motion";
 
 const Resume = ({ experience }) => {
     return (
         <>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-6">
-                <div data-aos="fade-right" className="grid card relative !px-8 !py-6">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.05, delay: 1 * 0.1 }} data-aos="fade-right" className="grid card relative !px-8 !py-6">
                     {experience.map((val, id) => {
                         if (val.type === "education") {
                             return (
@@ -26,8 +30,11 @@ const Resume = ({ experience }) => {
                             );
                         }
                     })}
-                </div>
-                <div data-aos="fade-right" className="grid card relative !px-8 !py-6">
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.05, delay: 2 * 0.1 }} className="grid card relative !px-8 !py-6">
                     {experience.map((val, id) => {
                         if (val.type === "work") {
                             return (
@@ -46,7 +53,7 @@ const Resume = ({ experience }) => {
                             );
                         }
                     })}
-                </div>
+                </motion.div>
             </div>
         </>
     )
