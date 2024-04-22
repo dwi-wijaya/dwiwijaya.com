@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import useEmailService from '@/services/EmailService';
 import { Socials } from '@/constants/data/socials';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Contact = () => {
     const formRef = useRef();
@@ -20,10 +21,10 @@ const Contact = () => {
                     <h3 className="mb-4 font-semibold">Find me on social media</h3>
                     <div className="flex flex-col md:flex-row gap-y-2 md:gap-2 justify-center">
                         {Socials.map((social, index) => (
-                            <div className={`w-full flex gap-2 justify-center p-2 text-white rounded-md`} style={{ backgroundColor: social.background }} key={index}>
+                            <Link href={social.link} target='_blank' className={`w-full flex gap-2 justify-center p-2 text-white rounded-md`} style={{ backgroundColor: social.background }} key={index}>
                                 <Image src={social.icon} alt="" srcSet="" />
                                 {social.label}
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
