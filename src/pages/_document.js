@@ -13,6 +13,7 @@ export default function Document() {
       </Head>
       <body>
         <SpeedInsights />
+        <Analytics />
         <Main />
         <NextScript />
       </body>
