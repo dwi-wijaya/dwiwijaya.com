@@ -11,6 +11,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
     "@uiw/react-md-editor": "^4.0.4",
+    "@vercel/speed-insights": "^1.0.10",
     "aos": "^2.3.4",
     "axios": "^1.6.7",
     "clsx": "^2.1.0",

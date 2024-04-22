@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export default function Document() {
   return (
@@ -10,6 +11,7 @@ export default function Document() {
         {/* <link rel="icon" href="/logo.jpg" sizes="any" /> */}
       </Head>
       <body>
+        <SpeedInsights />
         <Main />
         <NextScript />
       </body>
