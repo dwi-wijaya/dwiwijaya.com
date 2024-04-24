@@ -6,7 +6,7 @@
   --foreground-color: rgb(94, 92, 127);
   --background-color: rgb(248, 247, 253);
   --container-color: rgb(255, 255, 255);
-  --primary-color: rgb(255, 107, 77);
+  --primary-color: rgb(255, 127, 101);
   --primary-bg: #ff985c4d;
   --title-color: rgb(53, 50, 82);
   --text-color: rgb(94, 92, 127);
@@ -58,7 +58,7 @@ html {
   }
 
   .btn {
-    @apply px-3 py-2 leading-4 rounded-md shadow-sm bg-[#ff985c4d] border border-[#ffa04666] text-primary flex gap-1 items-center font-normal text-sm w-fit hover:border-primary transition-3s
+    @apply px-5 py-3 leading-4 rounded-md shadow-sm  border border-[#ff9c3d] dark:border-[#ff77134c] bg-[#ff985c4d] dark:bg-[#4d4036] text-[#d42400] dark:text-[#ffab00] flex gap-2 items-center font-normal w-fit hover:border-primary transition-3s
   }
 
   .hr {
@@ -162,13 +162,13 @@ html {
   /* From https://css.glass */
   position: fixed;
 
-  top: 12px;
-  height: 3.58rem;
-  background: var(--background-color);
-  /* backdrop-filter: blur(5px); */
+  /* top: 12px; */
+  height: 4.5rem;
+  /* background: var(--background-color); */
+  backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid var(--stroke-color);
   border: 1px solid rgb(255, 255, 255 , 0.1);
-  z-index: 8;
+  z-index: 5;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
