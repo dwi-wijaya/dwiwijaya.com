@@ -18,11 +18,11 @@ const Contact = () => {
             <div className="contact__container">
                 <div className="mb-8">
                     <h3 className="mb-4 font-semibold">Find me on social media</h3>
-                    <div className="flex flex-col md:flex-row gap-y-2 md:gap-2 justify-center">
+                    <div className="flex md:flex-row gap-2 justify-center">
                         {Socials.map((social, index) => (
-                            <Link href={social.link} target='_blank' className={`w-full flex gap-2 justify-center p-2 text-white rounded-md`} style={{ backgroundColor: social.background }} key={index}>
+                            <Link title={social.label} href={social.link} target='_blank' className={`w-full flex gap-2 justify-center p-2 text-white rounded-md`} style={{ backgroundColor: social.background }} key={index}>
                                 <Image src={social.icon} alt="" srcSet="" />
-                                {social.label}
+                                <div className="hidden md:block">{social.label}</div>
                             </Link>
                         ))}
                     </div>
