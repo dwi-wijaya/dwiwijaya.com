@@ -31,7 +31,7 @@ const Home = () => {
                     <i className='bx bx-rocket'></i>
                     <h2 className='text-xl font-medium'>Lets work together!</h2>
                 </div>
-                <p className='text-sm text-subtext mt-2 mb-3'>
+                <p className='text-subtext mt-2 mb-5'>
                     I&apos;m open for freelance projects, feel free to email me to see how
                     can we collaborate.
                 </p>
