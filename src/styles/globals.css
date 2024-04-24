@@ -58,7 +58,7 @@ html {
   }
 
   .btn {
-    @apply px-5 py-3 leading-4 rounded-md shadow-sm  border border-[#ff9c3d] dark:border-[#ff77134c] bg-[#ff985c4d] dark:bg-[#4d4036] text-[#d42400] dark:text-[#ffab00] flex gap-2 items-center font-normal w-fit hover:border-primary transition-3s
+    @apply px-5 py-3 leading-4 rounded-md shadow-sm  border border-[#febe82] dark:border-[#ff77134c] bg-[#ff985c4d] dark:bg-[#4d4036] text-[#d42400] dark:text-[#ffab00] flex gap-2 items-center font-normal w-fit hover:border-primary transition-3s
   }
 
   .hr {
@@ -163,7 +163,6 @@ html {
   position: fixed;
 
   /* top: 12px; */
-  height: 4.5rem;
   /* background: var(--background-color); */
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
