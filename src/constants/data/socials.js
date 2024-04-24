@@ -2,7 +2,7 @@ import Email from '@/assets/socials/email.svg'
 import Instagram from '@/assets/socials/instagram.svg'
 import Linkedin from '@/assets/socials/linkedin.svg'
 import Github from '@/assets/socials/github.svg'
-import Dribbble from '@/assets/socials/dribbble.svg'
+import Whatsapp from '@/assets/socials/whatsapp.svg'
 
 export const Socials = [
     {
@@ -27,11 +27,11 @@ export const Socials = [
         label: 'Linkedin',            
     },
     {
-        icon: Dribbble,
-        boxIcon: 'dribbble',
-        background: '#e64d89',
-        link: 'https://dribbble.com/dwiwijaya_',
-        label: 'Dribbble',
+        icon: Whatsapp,
+        boxIcon: 'whatsapp',
+        background: '#075e54',
+        link: 'https://wa.me/6287700304010',
+        label: 'Whatsapp',
     },
     {
         icon: Github,

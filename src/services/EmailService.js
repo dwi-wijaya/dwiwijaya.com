@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import emailjs from 'emailjs-com';
 import toast from 'react-hot-toast';
+import emailjs from "@emailjs/browser";
 
 const EmailService = () => {
     const [loading, setLoading] = useState(false);
@@ -10,11 +10,11 @@ const EmailService = () => {
             setLoading(true);
 
             const response = await emailjs.sendForm(
-                `${process.env.EMAILJS_SERVICE_ID}`,
-                `${process.env.EMAILJS_TEMPLATE_ID}`,
+                `${process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID}`,
+                `${process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID}`,
                 form,
                 {
-                    publicKey: `${process.env.EMAILJS_PUBLIC_KEY}`,
+                    publicKey: `${process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY}`,
                 }
             );
 
