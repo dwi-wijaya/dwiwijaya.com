@@ -51,7 +51,7 @@ const Sidebar = () => {
                         <ul className="flex flex-col items-center gap-y-7">
                             {MENU_ITEMS.map((item, index) => (
                                 <li key={index} className='nav__item '>
-                                    <Link href={item.href} title={item.label} className={`${pathname === item.href ? 'active px-3 py-2 bg-[#ff985c4d] border border-[#ffa04666] !text-primary rounded-md' : ''} hover:text-primary text-2xl text-text font-bold flex items-center h-full transition-3s`}>
+                                    <Link href={item.href} title={item.label} className={`${pathname === item.href ? 'active p-2 border border-primary !text-primary rounded-md' : ''} hover:text-primary text-2xl text-text font-bold flex items-center h-full transition-3s`}>
                                         <i className={item.iconClass}></i>
                                     </Link>
                                 </li>
@@ -62,6 +62,7 @@ const Sidebar = () => {
                 <div className="nav__footer">
                     <span className="text-subtext text-sm transform rotate-180 [writing-mode:vertical-lr]">&copy; {new Date().getFullYear()}</span>
                 </div>
+                <div className="glass top-0 left-2 w-[4rem] rounded-b-lg lg:hidden"></div>
                 <div onClick={() => setToggle(!toggle)} className={`toggle lg:-left-[45px] left-5 sidebar__toggle ${toggle ? '!left-[100px]' : ''}`}>
                     <i className="icon-menu"></i>
                 </div>
