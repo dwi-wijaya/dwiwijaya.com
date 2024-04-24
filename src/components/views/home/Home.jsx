@@ -35,7 +35,7 @@ const Home = () => {
                     I&apos;m open for freelance projects, feel free to email me to see how
                     can we collaborate.
                 </p>
-                <Link href='contact'
+                <Link href='contact mb-1'
                     aria-label='contact me'
                     className='btn'
                 >
