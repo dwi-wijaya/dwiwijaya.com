@@ -12,9 +12,8 @@ const Services = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.05, delay: index * 0.1 }}
-              className="card text-center !p7-6 ring-0 hover:ring-1 hover:ring-primary dark:hover:ring-1 dark:hover:ring-[#ff9f8c68]"
+              className="card text-center !p7-6 hover:ring-offset-2  ring-offset-background hover:ring-2 hover:ring-stroke hover:!border-slate-300 dark:hover:!border-slate-500 !transition-3s"
               key={id}
-              data-aos="fade-right"
             >
               <i className={`text-5xl text-primary bx bx-${icon}`}></i>
               <h3 className="my-3 font-semibold">{title}</h3>
