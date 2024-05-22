@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import Collabs from '@/assets/handshake-regular.svg'
-import Profile from '@/assets/avatar-profile.webp'
+import Profile from '@/assets/avatar-profile.jpg'
 import HomeSocials from './HomeSocials'
 const Home = () => {
     return (
