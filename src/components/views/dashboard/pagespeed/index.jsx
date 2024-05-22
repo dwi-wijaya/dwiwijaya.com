@@ -8,7 +8,7 @@ import SpeedSection from './SpeedSection'
 
 export default function PageSpeed({ style }) {
 
-    const [url, setUrl] = useState(PAGESPEED_API)
+    const [url, setUrl] = useState(PAGESPEED_API + '/')
     const [active, setActive] = useState('/')
 
     const { data, isLoading, mutate } = useSwr(url, fetcher)
