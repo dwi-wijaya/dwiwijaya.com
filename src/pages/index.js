@@ -4,12 +4,17 @@ import Container from "@/components/layout/Container";
 import Homepage from "@/components/views//home/Home";
 import { NextSeo } from "next-seo";
 import CollabsToggle from "@/components/toggles/CollabsToggle";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <link rel="canonical" href="https://dwiwijaya.vercel.app" />
+      </Head>
+
       <NextSeo title='Dwi Wijaya - Personal Website' />
       <CollabsToggle />
       
