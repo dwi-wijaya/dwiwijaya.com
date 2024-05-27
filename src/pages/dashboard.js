@@ -32,14 +32,14 @@ const DashboardPage = ({ fallback }) => {
 export default DashboardPage;
 
 export const getStaticProps = async () => {
-    // const readStats = await getReadStats();
+
     const githubUserPersonal = await getGithubUser('personal');
     const leetcodeStats = await getLeetcode();
+
     return {
         props: {
             fallback: {
-                // '/api/read-stats': readStats.data,
-                '/api/leetcode': leetcodeStats,
+                '/api/leetcode': leetcodeStats?.data,
                 '/api/github?type=personal': githubUserPersonal?.data,
             },
         },
