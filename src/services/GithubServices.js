@@ -6,23 +6,23 @@ const GITHUB_USER_ENDPOINT = "https://api.github.com/graphql";
 const GITHUB_USER_QUERY = `query($username: String!) {
     user(login: $username) {
         contributionsCollection {
-        contributionCalendar {
-            colors
-            totalContributions
-            months {
-            firstDay
-            name
-            totalWeeks
+            contributionCalendar {
+                colors
+                totalContributions
+                months {
+                    firstDay
+                    name
+                    totalWeeks
+                }
+                weeks {
+                    contributionDays {
+                        color
+                        contributionCount
+                        date
+                    }
+                    firstDay
+                }
             }
-            weeks {
-            contributionDays {
-                color
-                contributionCount
-                date
-            }
-            firstDay
-            }
-        }
         }
     }
 }`;
