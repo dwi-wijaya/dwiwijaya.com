@@ -17,7 +17,7 @@ const Sidebar = ({ className }) => {
     const { theme } = useTheme();
     const sidebarRef = useRef(null);
     const pathname = usePathname()
-
+    
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
@@ -26,20 +26,30 @@ const Sidebar = ({ className }) => {
         };
         document.querySelector('main').classList.toggle('sidebar-expanded', toggle);
 
-
-        document.addEventListener("mousedown", handleClickOutside);
-        const handleResize = () => {
-            if (window.innerWidth <= 1024) {
-                setToggle(false); // Jika lebar layar <= 767px, kelas dihapus
+        const handleBodyScroll = () => {
+            if (toggle) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
             }
         };
 
-        window.addEventListener('resize', handleResize); // Tambahkan event listener untuk resize
+        document.addEventListener('mousedown', handleClickOutside);
+        handleBodyScroll();
 
-        // Hapus event listener saat komponen di-unmount
+        const handleResize = () => {
+            if (window.innerWidth <= 1024) {
+                setToggle(false); // If the screen width is <= 1024px, close the sidebar
+            }
+        };
+
+        window.addEventListener('resize', handleResize); // Add event listener for resize
+
+        // Cleanup event listeners when the component unmounts
         return () => {
             window.removeEventListener('resize', handleResize);
-            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.body.style.overflow = ''; // Reset body overflow when component unmounts
         };
     }, [toggle]);
 
