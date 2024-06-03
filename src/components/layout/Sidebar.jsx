@@ -53,7 +53,7 @@ const Sidebar = ({ className }) => {
 
     return (
         <>
-            <aside ref={sidebarRef} className={`${className} ${toggle && '!left-0'} max-h-[100vh] overflow-x-auto fixed -left-64 lg:left-0 top-0 bg-container border border-stroke pl-0 p-6 w-64 min-h-screen flex flex-col gap-10 text-center transition-3s z-10 shadow-sm`}>
+            <aside ref={sidebarRef} className={`${className} ${toggle && '!left-0'} max-h-[100vh] scrollbar-hide overflow-x-auto fixed -left-64 lg:left-0 top-0 bg-container border border-stroke pl-0 p-6 w-64 min-h-screen flex flex-col gap-8 text-center transition-3s z-10 shadow-sm`}>
                 <Link aria-label='go home' href="/" className="nav__logo pl-6 flex gap-2 items-center text-xl  tracking-wider">
                     <Image width={32} src={theme == 'dark' ? LogoDark : LogoLight} alt="Dwi-logo" />
 
@@ -65,12 +65,15 @@ const Sidebar = ({ className }) => {
                     </span>
                 </div>
 
-                <div className="flex gap-3 items-center ml-6">
-                    <span className="relative flex h-3 w-3 ">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-3 w-3 bg-[#ff7322]"></span>
-                    </span>
-                    Open for collabs !
+                <div className="flex ml-6 gap-2 flex-col">
+                    <ThemeToggle />
+                    <div className="flex gap-3 items-center bg-background border border-stroke px-5 py-3 rounded-xl" >
+                        <span className="relative flex h-3 w-3 ">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-[#ff7322]"></span>
+                        </span>
+                        Open for collabs !
+                    </div>
                 </div>
                 <nav className="nav">
                     <div className="nav__menu p-6 bg-background rounded-l-none rounded-2xl">
@@ -85,14 +88,9 @@ const Sidebar = ({ className }) => {
                         </ul>
                     </div>
                 </nav>
-                <div className="flex ml-6 gap-2">
-                    <ThemeToggle />
-                    <button className="btn !p-3"><i className="bx bx-fullscreen"></i></button>
-                </div>
                 <div className="nav__footer text-left pl-6">
                     <span className="text-subtext text-sm transform rotate-180 ">&copy; {new Date().getFullYear()} Dwi Wijaya</span>
                 </div>
-                <div className="glass top-0 left-2 w-[4rem] rounded-b-lg lg:hidden"></div>
                 <div onClick={() => setToggle(!toggle)} className={`toggle lg:-left-64 left-5 sidebar__toggle ${toggle ? '!left-[17rem]' : ''}`}>
                     <i className="fa-duotone fa-bars-staggered"></i>
                 </div>
