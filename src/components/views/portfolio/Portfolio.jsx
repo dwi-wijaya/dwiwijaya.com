@@ -21,16 +21,16 @@ const Portfolio = ({ portfolios }) => {
       });
       updatedItems.length == 0 ?
         setItems(`~ Apologies, there are currently no portfolios available for ${categoryItem}`)
-        : setItems(updatedItems);;
+        : setItems(updatedItems);
     }
     setActiveCategory(categoryItem);
   };
 
   const IconCategory = {
-    code: "bx bx-code-alt",
-    uiux: "bx bx-palette",
-    design: "bx bx-pen",
-    others: "bx bx-customize",
+    code: "fad fa-code",
+    uiux: "fad fa-pencil-ruler",
+    design: "fad fa-palette",
+    others: "fad fa-grid-2-plus",
   };
 
   return (

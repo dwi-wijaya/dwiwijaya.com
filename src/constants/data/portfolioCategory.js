@@ -1,26 +1,26 @@
 export const portfolioCategory = [
     {
-        icon: 'bx bx-grid',
+        icon: 'fad fa-grid',
         slug: 'all',
         label: 'All'
     },
     {
-        icon: 'bx bx-code-alt',
+        icon: 'fad fa-code',
         slug: 'code',
         label: 'Code',
     },
     {
-        icon: 'bx bx-palette',
+        icon: 'fad fa-pencil-ruler',
         slug: 'uiux',
         label: 'UI-UX',
     },
     {
-        icon: 'bx bx-pen',
+        icon: 'fad fa-palette',
         slug: 'design',
         label: 'Design',
     },
     {
-        icon: 'bx bx-customize',
+        icon: 'fad fa-grid-2-plus',
         slug: 'others',
         label: 'Others',
     }
