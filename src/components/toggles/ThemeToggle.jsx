@@ -21,7 +21,7 @@ const ThemeToggle = () => {
     }
 
     return (
-        <div className="w-full p-1 bg-background rounded-lg border border-stroke">
+        <div className="w-full p-1 bg-background rounded-2xl border border-stroke">
             <label className="relative flex h-10 items-center cursor-pointer">
                 <input
                     type="checkbox"
@@ -29,9 +29,9 @@ const ThemeToggle = () => {
                     checked={theme === "dark"}
                     onChange={toggleTheme}
                 />
-                <div className="slider bg-background peer-checked:bg-background flex rounded-lg justify-between items-center w-full h-full  transition-all duration-300 relative">
+                <div className="slider bg-background peer-checked:bg-background flex rounded-2xl justify-between items-center w-full h-full  transition-all duration-300 relative">
                     <span
-                        className={`absolute left-0 w-1/2 h-full bg-white border border-stroke rounded-lg transition-all duration-300 transform ${theme === "dark" ? 'translate-x-full' : ''}`}
+                        className={`absolute left-0 w-1/2 h-full bg-white border border-stroke rounded-2xl transition-all duration-300 transform ${theme === "dark" ? 'translate-x-full' : ''}`}
                         style={{ content: '""', zIndex: 1 }}
                     ></span>
                     <p className={`z-10 pl-4 leading-4 flex items-center gap-2 ${theme == 'light' ? 'text-slate-800' : ''}`}><i className="bx bxs-sun"></i>Light</p>
