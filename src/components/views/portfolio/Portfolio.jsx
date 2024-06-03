@@ -8,7 +8,6 @@ import Link from "next/link";
 import { motion } from 'framer-motion';
 
 const Portfolio = ({ portfolios }) => {
-  const [isLoading, setLoading] = useState(true);
   const [items, setItems] = useState(portfolios);
   const [activeCategory, setActiveCategory] = useState("all");
 
@@ -68,8 +67,7 @@ const Portfolio = ({ portfolios }) => {
                         </div>
                       </div>
                       <div className="relative">
-                        <Image blurDataURL={thumbnail} src={thumbnail} alt="" width={999} height={999} className={`aspect-thumbnail object-cover ${isLoading ? 'scale-[1.02] blur-xl grayscale' : 'scale-100 blur-0 grayscale-0'}`} quality={100}
-                          onLoadingComplete={() => setLoading(false)} />
+                        <Image blurDataURL={thumbnail} src={thumbnail} alt="" width={999} height={999} className={`aspect-thumbnail object-cover `} quality={100} />
                         <div className="flex gap-1 absolute top-0 left-0 w-full h-full bg-black opacity-0 transition-opacity duration-300 justify-center items-center text-white group-hover/portfolio:opacity-80 ">
                           View Project<i className="bx bx-right-arrow-alt"></i>
                         </div>
