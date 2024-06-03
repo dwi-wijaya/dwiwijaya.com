@@ -21,8 +21,8 @@ const ThemeToggle = () => {
         return null;
     }
     return (
-        <button aria-label="theme toggle" className='group  active:ring toggle right-5 theme__toggle' onClick={toggleTheme}>
-            <i className={`group-active:rotate-90 transition-3s bx bx-${theme == 'dark' ? 'moon' : 'sun'}`}  />
+        <button aria-label=" " className='group btn !p-3 active:ring  right-5 ' onClick={toggleTheme}>
+            <i className={`group-active:rotate-90 transition-3s bx bx-${theme == 'dark' ? 'moon' : 'sun'}`}  /> 
         </button>
     );
 };

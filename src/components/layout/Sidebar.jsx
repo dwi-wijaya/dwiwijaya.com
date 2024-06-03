@@ -9,8 +9,9 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { usePathname } from 'next/navigation';
+import ThemeToggle from '../toggles/ThemeToggle';
 
-const Sidebar = () => {
+const Sidebar = ({ className }) => {
     const [mounted, setMounted] = useState(false)
     const [toggle, setToggle] = useState(false);
     const { theme } = useTheme();
@@ -52,29 +53,48 @@ const Sidebar = () => {
 
     return (
         <>
-            <aside ref={sidebarRef} className={`${toggle && '!left-0'} fixed -left-[80px] lg:left-0 top-0 bg-container border-r border-stroke p-6 w-20 min-h-screen flex flex-col justify-between text-center transition-3s z-10 shadow-sm`}>
-                <Link aria-label='go home' href="/" className="nav__logo">
-                    <Image src={theme == 'dark' ? LogoDark : LogoLight} alt="Dwi-logo" />
+            <aside ref={sidebarRef} className={`${className} ${toggle && '!left-0'} max-h-[100vh] overflow-x-auto fixed -left-64 lg:left-0 top-0 bg-container border border-stroke pl-0 p-6 w-64 min-h-screen flex flex-col gap-10 text-center transition-3s z-10 shadow-sm`}>
+                <Link aria-label='go home' href="/" className="nav__logo pl-6 flex gap-2 items-center text-xl  tracking-wider">
+                    <Image width={32} src={theme == 'dark' ? LogoDark : LogoLight} alt="Dwi-logo" />
+
                 </Link>
+                <div className="ml-6  text-left">
+                    <h2 className='text-2xl mb-2 leading-6 font-se'>Welcome to my website</h2>
+                    <span className="text-sm text-subtext">
+                        Last update, 06 Jun 2024
+                    </span>
+                </div>
+
+                <div className="flex gap-3 items-center ml-6">
+                    <span className="relative flex h-3 w-3 ">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-3 w-3 bg-[#ff7322]"></span>
+                    </span>
+                    Open for collabs !
+                </div>
                 <nav className="nav">
-                    <div className="nav__menu">
-                        <ul className="flex flex-col items-center gap-y-7">
+                    <div className="nav__menu p-6 bg-background rounded-l-none rounded-2xl">
+                        <ul className="flex flex-col items-center gap-y-6">
                             {MENU_ITEMS.map((item, index) => (
-                                <li key={index} className='nav__item '>
-                                    <Link href={item.href} title={item.label} className={`${pathname === item.href ? 'active px-3 py-2 border border-[#febe82] dark:border-[#ff77134c] bg-[#ff985c4d] dark:bg-[#4d4036] !text-[#d42400] dark:!text-[#ffab00] rounded-md' : ''} hover:text-primary text-2xl text-text font-bold flex items-center h-full transition-3s`}>
-                                        <i className={item.iconClass}></i>
+                                <li key={index} className='nav__item w-full'>
+                                    <Link href={item.href} title={item.label} className={`${pathname === item.href ? '!text-primary' : ''} hover:text-primary  text-text  flex items-center h-full transition-3s gap-3`}>
+                                        <i className={`${item.iconClass}`}></i> {item.label}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
                 </nav>
-                <div className="nav__footer">
-                    <span className="text-subtext text-sm transform rotate-180 [writing-mode:vertical-lr]">&copy; {new Date().getFullYear()}</span>
+                <div className="flex ml-6 gap-2">
+                    <ThemeToggle />
+                    <button className="btn !p-3"><i className="bx bx-fullscreen"></i></button>
+                </div>
+                <div className="nav__footer text-left pl-6">
+                    <span className="text-subtext text-sm transform rotate-180 ">&copy; {new Date().getFullYear()} Dwi Wijaya</span>
                 </div>
                 <div className="glass top-0 left-2 w-[4rem] rounded-b-lg lg:hidden"></div>
-                <div onClick={() => setToggle(!toggle)} className={`toggle lg:-left-[45px] left-5 sidebar__toggle ${toggle ? '!left-[100px]' : ''}`}>
-                    <i className="icon-menu"></i>
+                <div onClick={() => setToggle(!toggle)} className={`toggle lg:-left-64 left-5 sidebar__toggle ${toggle ? '!left-[17rem]' : ''}`}>
+                    <i className="fa-duotone fa-bars-staggered"></i>
                 </div>
             </aside>
         </>
