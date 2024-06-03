@@ -1,42 +1,42 @@
 export const MENU_ITEMS = [
     {
         href: "/",
-        iconClass: "icon-home",
+        iconClass: "fad fa-home",
         label: "Home",
     },
     {
         href: "/dashboard",
-        iconClass: "icon-grid",
+        iconClass: "fad fa-grid-2",
         label: "Dashboard",
     },
     {
         href: "/about",
-        iconClass: "icon-user",
+        iconClass: "fad fa-user",
         label: "About",
     },
     {
         href: "/resume",
-        iconClass: "icon-graduation",
-        label: "Resume",
+        iconClass: "fad fa-graduation-cap",
+        label: "Experience",
     },
     {
         href: "/services",
-        iconClass: "icon-briefcase",
-        label: "Services",
+        iconClass: "fad fa-briefcase",
+        label: "Service",
     },
     {
         href: "/portfolio",
-        iconClass: "icon-layers",
+        iconClass: "fad fa-layer-group",
         label: "Portofolio",
     },
     {
         href: "/blog",
-        iconClass: "icon-note",
-        label: "Blogs",
+        iconClass: "fad fa-newspaper",
+        label: "Blog",
     },
     {
         href: "/contact",
-        iconClass: "icon-envelope",
+        iconClass: "fad fa-envelope",
         label: "Contact",
     },
 ];
