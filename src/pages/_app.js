@@ -2,7 +2,7 @@ import ThemeToggle from "@/components/toggles/ThemeToggle";
 import Overlay from "@/components/layout/Overlay";
 import Sidebar from "@/components/layout/Sidebar";
 import { ThemeProvider } from "next-themes";
-import { Poppins } from 'next/font/google'
+import { Onest } from 'next/font/google'
 import { Toaster } from "react-hot-toast";
 import { useEffect } from "react";
 import "@/styles/globals.css";
@@ -14,7 +14,7 @@ import defaultSEOConfig from '../../next-seo.config';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 
-const poppins = Poppins({
+const onest = Onest({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
 })
@@ -36,9 +36,6 @@ export default function App({ Component, pageProps }) {
     <SpeedInsights />
     <Analytics />
     <ThemeProvider attribute='class'>
-
-      <ThemeToggle />
-
       <Toaster
         toastOptions={{
           style: {
@@ -50,9 +47,10 @@ export default function App({ Component, pageProps }) {
       />
       <ProgressBar />
 
-      <Sidebar />
-      <main className={`${poppins.className} group/main lg:ml-[80px]  ml-0`}>
+      <Sidebar className={`${onest.className}`} />
+      <main className={`${onest.className} group/main lg:ml-64  ml-0 min-h-[100vh]`}>
         <Overlay />
+        
         <Component {...pageProps} />
       </main>
     </ThemeProvider>
