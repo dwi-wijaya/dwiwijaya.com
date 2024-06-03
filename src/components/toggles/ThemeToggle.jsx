@@ -34,8 +34,8 @@ const ThemeToggle = () => {
                         className={`absolute left-0 w-1/2 h-full bg-white border border-stroke rounded-2xl transition-all duration-300 transform ${theme === "dark" ? 'translate-x-full' : ''}`}
                         style={{ content: '""', zIndex: 1 }}
                     ></span>
-                    <p className={`z-10 pl-4 leading-4 flex items-center gap-2 ${theme == 'light' ? 'text-slate-800' : ''}`}><i className="bx bxs-sun"></i>Light</p>
-                    <p className={`z-10 pr-4 leading-4 flex items-center gap-2 ${theme == 'dark' ? 'text-slate-800' : ''}`}><i className="bx bxs-moon"></i>Dark</p>
+                    <p className={`z-10 pl-4 leading-4 flex items-center gap-2 text-slate-500 ${theme == 'light' ? '!text-slate-800' : ''}`}><i className="bx bxs-sun"></i>Light</p>
+                    <p className={`z-10 pr-4 leading-4 flex items-center gap-2 text-slate-500 ${theme == 'dark' ? '!text-slate-800' : ''}`}><i className="bx bxs-moon"></i>Dark</p>
                 </div>
             </label>
         </div>

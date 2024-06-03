@@ -78,7 +78,7 @@ const Sidebar = ({ className }) => {
                             {MENU_ITEMS.map((item, index) => (
                                 <li key={index} className='nav__item w-full'>
                                     <Link href={item.href} title={item.label} className={`${pathname === item.href ? '!text-primary' : ''} hover:text-primary  text-text  flex items-center h-full transition-3s gap-3`}>
-                                        <i className={`${item.iconClass}`}></i> {item.label}
+                                        <i className={`${item.iconClass} min-w-5 flex justify-center items-center`}></i> {item.label}
                                     </Link>
                                 </li>
                             ))}
