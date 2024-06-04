@@ -71,7 +71,7 @@ const Sidebar = ({ className }) => {
                             <Image width={32} src={theme == 'dark' ? LogoDark : LogoLight} alt="Dwi-logo" />
 
                         </Link>
-                        <div className="text-left">
+                        <div className="text-left mt-8">
                             <h2 className='text-2xl mb-2 leading-6 font-se'>Welcome to my website</h2>
                             <span className="text-sm text-subtext">
                                 Last update, 06 Jun 2024
