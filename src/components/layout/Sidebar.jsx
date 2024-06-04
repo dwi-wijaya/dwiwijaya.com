@@ -10,6 +10,7 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from '../toggles/ThemeToggle';
+import CollabsToggle from '../toggles/CollabsToggle';
 
 const Sidebar = ({ className }) => {
     const [mounted, setMounted] = useState(false)
@@ -77,10 +78,7 @@ const Sidebar = ({ className }) => {
 
                 <div className="flex ml-6 gap-2 flex-col">
                     <ThemeToggle />
-                    <div className="flex gap-2 items-center bg-background border border-stroke px-5 py-3 rounded-2xl" >
-                        <div className="fad fa-toggle-on text-primary"></div>
-                        Open for collabs !
-                    </div>
+                    <CollabsToggle/>
                 </div>
                 <nav className="nav">
                     <div className="nav__menu p-6 bg-background rounded-l-none rounded-2xl">
