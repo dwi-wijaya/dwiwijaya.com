@@ -18,7 +18,7 @@ const Sidebar = ({ className }) => {
     const { theme } = useTheme();
     const sidebarRef = useRef(null);
     const pathname = usePathname()
-    
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
@@ -78,15 +78,15 @@ const Sidebar = ({ className }) => {
 
                 <div className="flex ml-6 gap-2 flex-col">
                     <ThemeToggle />
-                    <CollabsToggle/>
+                    <CollabsToggle />
                 </div>
                 <nav className="nav">
                     <div className="nav__menu p-6 bg-background rounded-l-none rounded-2xl">
                         <ul className="flex flex-col items-center gap-y-6">
                             {MENU_ITEMS.map((item, index) => (
-                                <li key={index} className='nav__item w-full'>
-                                    <Link href={item.href} title={item.label} className={`${pathname === item.href ? '!text-primary' : ''} hover:text-primary  text-text  flex items-center h-full transition-3s gap-3`}>
-                                        <i className={`${item.iconClass} min-w-5 flex justify-center items-center`}></i> {item.label}
+                                <li key={index} className='nav__item w-full group'>
+                                    <Link href={item.href} title={item.label} className={`${pathname === item.href ? '!text-primary' : ''} hover:text-primary  text-text   h-full transition-3s flex items-center justify-between`}>
+                                        <span className='flex items-center gap-3'><i className={`${item.iconClass} min-w-5 flex justify-center items-center group-hover:-rotate-[8deg] duration-300 transition-all`}></i> {item.label}</span> {pathname === item.href && <i className="fad fa-arrow-right animate-pulse"></i>}
                                     </Link>
                                 </li>
                             ))}
