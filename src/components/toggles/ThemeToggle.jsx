@@ -35,7 +35,7 @@ const ThemeToggle = () => {
                         style={{ content: '""', zIndex: 1 }}
                     ></span>
                     <p className={`z-10 pl-4 leading-4 flex items-center gap-2 text-slate-500 ${theme == 'light' ? '!text-slate-800' : ''}`}><i className="bx bxs-sun"></i>Light</p>
-                    <p className={`z-10 pr-4 leading-4 flex items-center gap-2 text-slate-500 ${theme == 'dark' ? '!text-slate-800' : ''}`}><i className="bx bxs-moon"></i>Dark</p>
+                    <p className={`z-10 pr-4 leading-4 flex items-center gap-2 text-slate-500 ${theme == 'dark' ? '!text-slate-800' : ''}`}><i className="bx bxs-moon rotate-45"></i>Dark</p>
                 </div>
             </label>
         </div>
