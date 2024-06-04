@@ -64,35 +64,39 @@ const Sidebar = ({ className }) => {
 
     return (
         <>
-            <aside ref={sidebarRef} className={`${className} ${toggle && '!left-0'} max-h-[100vh] scrollbar-hide overflow-x-auto fixed -left-64 lg:left-0 top-0 bg-container border border-stroke pl-0 p-6 w-64 min-h-screen flex flex-col gap-8 text-center transition-3s z-10 shadow-sm`}>
-                <Link aria-label='go home' href="/" className="nav__logo pl-6 flex gap-2 items-center text-xl  tracking-wider">
-                    <Image width={32} src={theme == 'dark' ? LogoDark : LogoLight} alt="Dwi-logo" />
+            <aside ref={sidebarRef} className={`${className} ${toggle && '!left-0'} max-h-[100vh] scrollbar-hide overflow-x-auto fixed -left-64 lg:left-0 top-0 bg-container border border-stroke pl-0 p-6 w-64 min-h-screen flex flex-col gap-8 justify-between text-center transition-3s z-10 shadow-sm`}>
+                <div className="flex flex-col gap-8">
+                    <div className="ml-6 flex flex-col gap-8">
+                        <Link aria-label='go home' href="/" className="nav__logo flex gap-2 items-center text-xl  tracking-wider">
+                            <Image width={32} src={theme == 'dark' ? LogoDark : LogoLight} alt="Dwi-logo" />
 
-                </Link>
-                <div className="ml-6  text-left">
-                    <h2 className='text-2xl mb-2 leading-6 font-se'>Welcome to my website</h2>
-                    <span className="text-sm text-subtext">
-                        Last update, 06 Jun 2024
-                    </span>
-                </div>
+                        </Link>
+                        <div className="text-left">
+                            <h2 className='text-2xl mb-2 leading-6 font-se'>Welcome to my website</h2>
+                            <span className="text-sm text-subtext">
+                                Last update, 06 Jun 2024
+                            </span>
+                        </div>
 
-                <div className="flex ml-6 gap-2 flex-col">
-                    <ThemeToggle />
-                    <CollabsToggle />
-                </div>
-                <nav className="nav">
-                    <div className="nav__menu p-6 bg-background rounded-l-none rounded-2xl">
-                        <ul className="flex flex-col items-center gap-y-6">
-                            {MENU_ITEMS.map((item, index) => (
-                                <li key={index} className='nav__item w-full group'>
-                                    <Link href={item.href} title={item.label} className={`${pathname === item.href ? '!text-primary' : ''} hover:text-primary  text-text   h-full transition-3s flex items-center justify-between`}>
-                                        <span className='flex items-center gap-3'><i className={`${item.iconClass} min-w-5 flex justify-center items-center group-hover:-rotate-[8deg] duration-300 transition-all`}></i> {item.label}</span> {pathname === item.href && <i className="fad fa-arrow-right animate-pulse"></i>}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
+                        <div className="flex gap-2 flex-col">
+                            <ThemeToggle />
+                            <CollabsToggle />
+                        </div>
                     </div>
-                </nav>
+                    <nav className="nav">
+                        <div className="nav__menu p-6 bg-background rounded-l-none rounded-2xl">
+                            <ul className="flex flex-col items-center gap-y-6">
+                                {MENU_ITEMS.map((item, index) => (
+                                    <li key={index} className='nav__item w-full group'>
+                                        <Link href={item.href} title={item.label} className={`${pathname === item.href ? '!text-primary' : ''} hover:text-primary  text-text   h-full transition-300 flex items-center justify-between`}>
+                                            <span className='flex items-center gap-3'><i className={`${item.iconClass} min-w-5 flex justify-center items-center group-hover:-rotate-[8deg] duration-300 transition-all`}></i> {item.label}</span> {pathname === item.href && <i className="fad fa-arrow-right animate-pulse"></i>}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
                 <div className="nav__footer text-left pl-6">
                     <span className="text-subtext text-sm transform rotate-180 ">&copy; {new Date().getFullYear()} Dwi Wijaya</span>
                 </div>
