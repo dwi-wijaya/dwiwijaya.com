@@ -19,7 +19,7 @@ const Home = () => {
                     <i className="fad fa-location-dot text-primary"></i> Based in Yogyakarta, ID
                 </div>
             </div>
-            <h2 className='text-xl text-subtext mb-0 flex items-center gap-1 '>Hi there<span className="">👋</span> </h2>
+            <h2 className='text-xl text-subtext mb-0 flex items-center gap-1 '>Hey there  <span className="">👋</span> </h2>
             <div className="flex gap-2 self-center items-center">
                 <h1 className="font-bold text-3xl text-text">
                     I&apos;m <span className='text-primary'>Dwi Wijaya</span>
@@ -30,9 +30,11 @@ const Home = () => {
                 I&apos;m a Full-stack developer <i className="bx bx-code-alt text-primary"></i> &nbsp;
             </p>
             <p className='text-subtext text-sm'>
-            Passionate about crafting seamless web experiences. I specialize in building efficient, scalable, and visually appealing web applications, collaborating with teams to bring ideas to life.
+                Passionate about crafting seamless web experiences,
+                I specialize in building efficient, scalable, and attractive web applications.
+                Bringing digital dreams to life.
             </p>
-            <HomeSocials/>
+            <HomeSocials />
             <hr className="hr" />
             <div className='card mb-6'>
                 <div className='flex gap-3 items-center'>
