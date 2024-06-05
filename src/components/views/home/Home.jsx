@@ -37,9 +37,9 @@ const Home = () => {
                 </p>
                 <Link href='contact'
                     aria-label='contact me'
-                    className='btn mb-1'
+                    className='btn mb-1 !gap-3'
                 >
-                    <i className="bx bx-envelope"></i>Contact me
+                    <i className="fad fa-envelope"></i>Get in Touch
                 </Link>
             </div>
         </div>

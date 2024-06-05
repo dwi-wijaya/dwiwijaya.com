@@ -74,7 +74,7 @@ const Contact = () => {
                             ) : (
                                 <i className="bx bx-mail-send"></i>
                             )}{" "}
-                            {loading ? "Sending..." : "Send Message"}
+                            {loading ? "Sending..." : "Send a Message"}
                         </button>
                     </form>
                 </div>
