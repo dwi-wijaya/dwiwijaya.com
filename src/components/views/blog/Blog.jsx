@@ -4,7 +4,7 @@ const Blog = () => {
     return (
         <>
             <div className="blog__container">
-                <h3><i className='bx bx-time-five'></i> Coming Soon</h3>
+                <h3 className='flex gap-2 items-center'><i className='fad fa-clock text-primary'></i> Coming Soon ...</h3>
             </div>
         </>
     )
