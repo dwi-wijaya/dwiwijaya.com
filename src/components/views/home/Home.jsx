@@ -17,7 +17,7 @@ const Home = () => {
             <h2 className='text-xl text-subtext mb-0 flex items-center gap-1 '>Hi there<span className="animate-waving-hand">👋</span> </h2>
             <div className="flex gap-2 self-center items-center mb-1">
                 <h1 className="font-bold text-3xl text-text">
-                    {`I'm Dwi Wijaya`}
+                    I&apos;m <span className='text-primary'>Dwi Wijaya</span>
                 </h1>
 
             </div>
@@ -26,9 +26,9 @@ const Home = () => {
             </span>
             <HomeSocials/>
             <hr className="hr" />
-            <div className='card'>
+            <div className='card mb-6'>
                 <div className='flex gap-3 items-center'>
-                    <i className='bx bx-rocket'></i>
+                    <i className='fad fa-rocket-launch text-primary'></i>
                     <h2 className='text-xl font-medium'>Lets work together!</h2>
                 </div>
                 <p className='text-subtext mt-2 mb-5'>
