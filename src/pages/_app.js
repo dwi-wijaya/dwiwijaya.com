@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }) {
     <DefaultSeo {...defaultSEOConfig} />
     <SpeedInsights />
     <Analytics />
-    <ThemeProvider attribute='class'>
+    <ThemeProvider attribute='class' enableSystem={false}>
       <Toaster
         toastOptions={{
           style: {
