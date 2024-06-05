@@ -80,7 +80,7 @@ const Sidebar = ({ className }) => {
 
                         <div className="flex gap-2 flex-col">
                             <ThemeToggle />
-                            <CollabsToggle />
+                            <CollabsToggle handleClick={() => setToggle(false)} />
                         </div>
                     </div>
                     <nav className="nav">
