@@ -15,7 +15,7 @@ const Home = () => {
                     alt="Avatar Dwi"
                     className="outline outline-[.5rem] outline-background rounded-2xl"
                 />
-                <div className="badge text-sm h-fit mb-1 w-full sm:w-fit text-end !gap-3 !py-[.6rem] !rounded-xl">
+                <div className="badge text-sm h-fit mb-1 w-full sm:w-fit text-end !gap-3 !py-[.6rem] !px-4 !rounded-xl">
                     <i className="fad fa-location-dot text-primary"></i> Based in Yogyakarta, ID
                 </div>
             </div>
