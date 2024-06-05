@@ -19,7 +19,7 @@ const Home = () => {
                     <i className="fad fa-location-dot text-primary"></i> Based in Yogyakarta, ID
                 </div>
             </div>
-            <h2 className='text-xl text-subtext mb-0 flex items-center gap-1 '>Hi there<span className="animate-waving-hand">👋</span> </h2>
+            <h2 className='text-xl text-subtext mb-0 flex items-center gap-1 '>Hi there<span className="">👋</span> </h2>
             <div className="flex gap-2 self-center items-center mb-1">
                 <h1 className="font-bold text-3xl text-text">
                     I&apos;m <span className='text-primary'>Dwi Wijaya</span>
