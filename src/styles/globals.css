@@ -59,7 +59,7 @@ html {
   }
 
   .btn {
-    @apply px-5 py-3 leading-4 rounded-md shadow-sm border border-[#febe82] dark:border-[#ff77134c] bg-[#ff985c4d] dark:bg-[#ffc2af] text-[#d44e00]  flex gap-2 items-center font-normal w-fit hover:border-primary transition-3s
+    @apply px-5 py-3 leading-4 rounded-md shadow-sm border border-[#febe82] dark:border-[#ff77134c] bg-[#ff985c4d] dark:bg-[#ffc2af] text-[#ae4407] flex gap-2 items-center font-normal w-fit hover:border-primary transition-3s
   }
 
   .hr {
@@ -127,21 +127,25 @@ html {
   gap: .5rem;
 }
 
-.slick-prev:before,.slick-next:before{
+.slick-prev:before,
+.slick-next:before {
   transition: all .2s;
 }
+
 .slick-prev:before,
 .slick-next:before {
   color: var(--text-color) !important;
 }
+
 .slick-prev:hover:before,
 .slick-next:hover:before {
   color: var(--primary-color) !important;
 }
 
-.slick-dots li.slick-active button:before{
+.slick-dots li.slick-active button:before {
   color: var(--primary-color) !important;
 }
+
 .slick-dots li button:before {
   color: var(--text-color) !important;
 }
@@ -204,7 +208,8 @@ html {
     background-color: transparent;
   }
 }
-.btn:hover i{
+
+.btn:hover i {
   transform: rotate(-10deg);
   transition: all .3s;
 }
