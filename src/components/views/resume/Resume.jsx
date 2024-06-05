@@ -1,10 +1,10 @@
 import React from 'react'
 import PageHeading from '../../common/PageHeading';
-import { _Resume, resumeData } from '@/constants/data/resume';
+import { _Experience, experienceData } from '@/constants/data/experience';
 import WorkDuration from '@/components/elements/WorkDuration';
 import { motion } from "framer-motion";
 
-const Resume = ({ experience }) => {
+const Experience = ({ experience }) => {
     return (
         <>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-6">
@@ -59,4 +59,4 @@ const Resume = ({ experience }) => {
     )
 }
 
-export default Resume
+export default Experience

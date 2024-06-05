@@ -2,8 +2,6 @@ import Freelance from '@/assets/freelance.svg'
 import Image from 'next/image'
 import Info from './Info'
 import PageSubHeading from '../../common/PageSubHeading'
-import Skills from './Skills'
-import Certificates from './Certificates'
 
 const About = ({skills, certificates,about}) => {
   return (
@@ -20,14 +18,6 @@ const About = ({skills, certificates,about}) => {
             Download CV</a>
         </div>
       </div>
-
-      <hr className="hr !my-8" />
-      <PageSubHeading title='Skills' description='My professional skillset .' icon='bx bx-code-alt' />
-      <Skills skills={skills}/>
-      <hr className="hr !my-8" />
-      <PageSubHeading title='Certificates' description='A showcase of my professional certificates .' icon='fad fa-file-certificate' />
-      <Certificates certificates={certificates}/>
-
     </>
   )
 }

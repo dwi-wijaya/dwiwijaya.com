@@ -1,37 +1,38 @@
 import PageHeading from '@/components/common/PageHeading';
-import Container from '@/components/layout/Container'
-import Resume from '@/components/views/resume/Resume'
+import Container from '@/components/layout/Container';
+import Skill from '@/components/views/skill/Skill';
 import { fetcher } from '@/services/fetcher';
 import { NextSeo } from 'next-seo';
 import React from 'react'
 
-const PAGE_TITLE = 'Experience';
-const PAGE_DESCRIPTION = "Discover my professional background and valuable experiences.";
+const PAGE_TITLE = 'Skillset';
+const PAGE_DESCRIPTION = "Explore professional skillset and expertise";
 
-const resume = ({experience}) => {
+const skillset = ({skills,certificates}) => {
     return (
         <>
+
             <NextSeo title={`${PAGE_TITLE} - Dwi Wijaya`} />
+
             <Container data-aos='fade-up'>
                 <PageHeading
                     title={PAGE_TITLE}
                     description={PAGE_DESCRIPTION}
                 />
-                <Resume experience={experience} />
+                <Skill skills={skills} certificates={certificates} />
             </Container>
         </>
     )
 }
 
-export default resume
+export default skillset
 export const getStaticProps = async () => {
     // const readStats = await getReadStats();
-    const experience = await fetcher(`${process.env.API_URL}/experience`)
-
+    const skills = await fetcher(`${process.env.API_URL}/skill`)
+    const certificates = await fetcher(`${process.env.API_URL}/certificate`)
     return {
         props: {
-            experience
+            skills,certificates
         },
-        revalidate: 1,
     };
 };

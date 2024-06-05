@@ -1,4 +1,4 @@
-export const resumeData = [
+export const experienceData = [
     {
         id: 1,
         category: "education",

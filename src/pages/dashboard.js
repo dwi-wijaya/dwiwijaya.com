@@ -40,7 +40,6 @@ export const getStaticProps = async () => {
         props: {
             fallback: {
                 '/api/leetcode': leetcodeStats?.data,
-                '/api/github?type=personal': githubUserPersonal?.data,
             },
         },
         revalidate: 1,

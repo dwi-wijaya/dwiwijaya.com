@@ -15,14 +15,19 @@ export const MENU_ITEMS = [
         label: "About",
     },
     {
-        href: "/resume",
+        href: "/skillset",
+        iconClass: "fad fa-rectangle-code",
+        label: "Skillset",
+    },
+    {
+        href: "/experience",
         iconClass: "fad fa-graduation-cap",
         label: "Experience",
     },
     {
         href: "/services",
         iconClass: "fad fa-briefcase",
-        label: "Service",
+        label: "Services",
     },
     {
         href: "/portfolio",

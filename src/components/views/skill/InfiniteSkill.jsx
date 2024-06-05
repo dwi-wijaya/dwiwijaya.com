@@ -15,7 +15,7 @@ const SkillsCategory = ({ data, animationTime, reverseAnimation }) => {
     );
 };
 
-const Skills = ({skills}) => {
+const InfiniteSkill = ({skills}) => {
 
     if (skills && skills.length > 0) {
 
@@ -36,4 +36,4 @@ const Skills = ({skills}) => {
     }
 };
 
-export default Skills;
+export default InfiniteSkill;
