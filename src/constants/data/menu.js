@@ -31,7 +31,7 @@ export const MENU_ITEMS = [
     },
     {
         href: "/blog",
-        iconClass: "fad fa-newspaper",
+        iconClass: "fad fa-rss",
         label: "Blog",
     },
     {
