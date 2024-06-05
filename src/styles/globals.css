@@ -127,11 +127,21 @@ html {
   gap: .5rem;
 }
 
+.slick-prev:before,.slick-next:before{
+  transition: all .2s;
+}
 .slick-prev:before,
 .slick-next:before {
   color: var(--text-color) !important;
 }
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: var(--primary-color) !important;
+}
 
+.slick-dots li.slick-active button:before{
+  color: var(--primary-color) !important;
+}
 .slick-dots li button:before {
   color: var(--text-color) !important;
 }

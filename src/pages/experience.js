@@ -1,6 +1,6 @@
 import PageHeading from '@/components/common/PageHeading';
 import Container from '@/components/layout/Container'
-import Resume from '@/components/views/resume/Resume'
+import Experience from '@/components/views/experience/Experience'
 import { fetcher } from '@/services/fetcher';
 import { NextSeo } from 'next-seo';
 import React from 'react'
@@ -17,7 +17,7 @@ const experience = ({experience}) => {
                     title={PAGE_TITLE}
                     description={PAGE_DESCRIPTION}
                 />
-                <Resume experience={experience} />
+                <Experience experience={experience} />
             </Container>
         </>
     )

@@ -5,12 +5,12 @@ export const portfolioCategory = [
         label: 'All'
     },
     {
-        icon: 'fad fa-code',
+        icon: 'fad fa-code-simple',
         slug: 'code',
         label: 'Code',
     },
     {
-        icon: 'fad fa-pencil-ruler',
+        icon: 'fad fa-pen-nib',
         slug: 'uiux',
         label: 'UI-UX',
     },

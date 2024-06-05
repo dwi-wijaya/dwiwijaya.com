@@ -18,8 +18,8 @@ const Experience = ({ experience }) => {
                                 <div key={id} className="relative pl-8 pb-8 md:pl-12 timeline">
                                     <i className="absolute -left-[0.6rem] -top-1 text-xl text-primary bg-container p-1 icon-graduation"></i>
                                     <span className="text-sm text-subtext">{val.startMonth} - {val.endMonth ? val.endMonth : 'present'}</span>
-                                    <p className='text-sm text-subtext mt-3'><i className='bx bx-map-pin'></i> {val.location}</p>
-                                    <p className="text-sm text-subtext mt-1"><i className='bx bx-book'></i> {val.degree}</p>
+                                    <p className='text-sm text-subtext mt-3'><i className='text-primary bx bx-map-pin'></i> {val.location}</p>
+                                    <p className="text-sm text-subtext mt-1"><i className='text-primary bx bx-book'></i> {val.degree}</p>
                                     <h3 className="mt-2 font-semibold text-lg">{val.major}</h3>
                                     <div className="flex gap-2">
                                         <a href={val.link} className="timeline__text mb-1 pb-0 border-b border-[#727272] hover:border-primary hover:text-primary transition-3s">
@@ -41,7 +41,7 @@ const Experience = ({ experience }) => {
                                 <div key={id} className="relative pl-8 pb-8 md:pl-12 timeline">
                                     <i className="absolute -left-[0.6rem] -top-1 text-xl text-primary bg-container p-1 icon-briefcase"></i>
                                     <span className="text-sm text-subtext">{val.startMonth} - {val.endMonth ? val.endMonth : 'present'}</span>
-                                    <p className='text-sm text-subtext mt-3'><i className='bx bx-map-pin'></i> {val.location}</p>
+                                    <p className='text-sm text-subtext mt-3'><i className='text-primary bx bx-map-pin'></i> {val.location}</p>
                                     <WorkDuration startMonth={val.startMonth} endMonth={val.endMonth} />
                                     <h3 className="mt-2 font-semibold text-lg">{val.position}</h3>
                                     <div className="flex gap-2">

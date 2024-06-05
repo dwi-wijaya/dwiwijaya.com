@@ -26,8 +26,8 @@ const Portfolio = ({ portfolios }) => {
   };
 
   const IconCategory = {
-    code: "fad fa-code",
-    uiux: "fad fa-pencil-ruler",
+    code: "fad fa-code-simple",
+    uiux: "fad fa-pen-nib",
     design: "fad fa-palette",
     others: "fad fa-grid-2-plus",
   };
