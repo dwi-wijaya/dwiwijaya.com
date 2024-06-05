@@ -15,8 +15,8 @@ const About = ({skills, certificates,about}) => {
           <p className='p-2 mb-3 text-subtext text-md'>
             {about.description}
           </p>
-          <a aria-label='download cv' href={about.resume.replace('preview','edit')} target='_blank' className="btn !inline-block">
-            <i className="icon-doc"></i>
+          <a aria-label='download cv' href={about.resume.replace('preview','edit')} target='_blank' className="btn inline-flex !gap-3">
+            <i className="fad fa-file-lines"></i>
             Download CV</a>
         </div>
       </div>
@@ -25,7 +25,7 @@ const About = ({skills, certificates,about}) => {
       <PageSubHeading title='Skills' description='My professional skillset .' icon='bx bx-code-alt' />
       <Skills skills={skills}/>
       <hr className="hr !my-8" />
-      <PageSubHeading title='Certificates' description='A showcase of my professional certificates .' icon='bx bx-file-blank' />
+      <PageSubHeading title='Certificates' description='A showcase of my professional certificates .' icon='fad fa-file-certificate' />
       <Certificates certificates={certificates}/>
 
     </>

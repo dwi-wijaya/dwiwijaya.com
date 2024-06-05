@@ -194,3 +194,7 @@ html {
     background-color: transparent;
   }
 }
+.btn:hover i{
+  transform: rotate(-10deg);
+  transition: all .3s;
+}
