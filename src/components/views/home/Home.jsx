@@ -20,15 +20,18 @@ const Home = () => {
                 </div>
             </div>
             <h2 className='text-xl text-subtext mb-0 flex items-center gap-1 '>Hi there<span className="">👋</span> </h2>
-            <div className="flex gap-2 self-center items-center mb-1">
+            <div className="flex gap-2 self-center items-center">
                 <h1 className="font-bold text-3xl text-text">
                     I&apos;m <span className='text-primary'>Dwi Wijaya</span>
                 </h1>
 
             </div>
-            <span className="flex items-center gap-2">
-                I&apos;m a Full-stack developer <i className="bx bx-code-alt"></i> &nbsp;
-            </span>
+            <p className="flex items-center gap-2 my-2 text-text">
+                I&apos;m a Full-stack developer <i className="bx bx-code-alt text-primary"></i> &nbsp;
+            </p>
+            <p className='text-subtext text-sm'>
+            Passionate about crafting seamless web experiences. I specialize in building efficient, scalable, and visually appealing web applications, collaborating with teams to bring ideas to life.
+            </p>
             <HomeSocials/>
             <hr className="hr" />
             <div className='card mb-6'>
