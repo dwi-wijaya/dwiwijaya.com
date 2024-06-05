@@ -15,7 +15,7 @@ const About = ({skills, certificates,about}) => {
           <p className='p-2 mb-3 text-subtext text-md'>
             {about.description}
           </p>
-          <a aria-label='download cv' href={about.resume.replace('preview','edit')} target='_blank' className="btn inline-flex !gap-3">
+          <a aria-label='download cv' href={about.resume.replace('preview','edit')} target='_blank' className="btn !inline-flex !gap-3">
             <i className="fad fa-file-lines"></i>
             Download CV</a>
         </div>
