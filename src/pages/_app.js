@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import { useEffect } from "react";
 import "@/styles/globals.css";
 import 'aos/dist/aos.css';
+import 'boxicons/css/boxicons.min.css';
 import Aos from "aos";
 import dynamic from "next/dynamic";
 import { DefaultSeo } from "next-seo";
