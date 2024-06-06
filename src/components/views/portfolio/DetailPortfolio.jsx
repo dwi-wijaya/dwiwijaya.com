@@ -34,11 +34,15 @@ const DetailPortfolio = ({ portfolio }) => {
                 }
             </div>
 
-            <Image alt={portfolio.name} src={portfolio.thumbnail} width={0}
+            <Image
+                alt={portfolio.name}
+                src={portfolio.thumbnail}
+                width={0}
                 height={0}
                 sizes="100vw"
                 className='rounded-md'
                 style={{ width: '100%', height: 'auto' }}
+                loading='lazy'
             />
             <div className='flex gap-2 items-center mt-4 overflow-y-hidden scrollbar-hide' >
                 {portfolio.skill.map((skill, index) => (
