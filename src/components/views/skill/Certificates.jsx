@@ -12,6 +12,7 @@ const settings = {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    dots: false,
     initialSlide: 0,
     autoplay: true,
     autoplaySpeed: 2000,
