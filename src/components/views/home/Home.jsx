@@ -45,12 +45,25 @@ const Home = () => {
                     I&apos;m open for freelance projects, feel free to email me to see how
                     can we collaborate.
                 </p>
-                <Link href='contact'
-                    aria-label='contact me'
-                    className='btn mb-1 !gap-3'
-                >
-                    <i className="fad fa-envelope"></i>Get in Touch
-                </Link>
+                <div className="flex gap-2">
+                    <Link
+                        href='contact'
+                        aria-label='contact me'
+                        className='btn !gap-3 justify-center !w-1/2 sm:!w-fit whitespace-nowrap'
+                    >
+                        <i className="fad fa-envelope"></i>Get in Touch
+                    </Link>
+                    <a
+                        href="https://docs.google.com/document/d/1O7gzfe11VSWRa-zy8hzBO9ndZ-f4IFQlVgPITh2O8tY/preview"
+                        aria-label="resume"
+                        rel="noopener noreferrer"
+                        target='_blank'
+                        className="btn !gap-3 justify-center !w-1/2 sm:!w-fit whitespace-nowrap"
+                    >
+                        <i className="fad fa-file-lines"></i>Get Resume
+                    </a>
+                </div>
+
             </div>
         </div>
     )
