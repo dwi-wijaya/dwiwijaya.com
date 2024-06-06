@@ -13,17 +13,8 @@ import Calendar from "./contributions/Calendar";
 
 
 const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
-  const { data: leetcodeData, error: leetcodeError } = useSWR(leetcodeEndpoint, fetcher);
-  const { data: githubData, error: githubError } = useSWR(githubEndpoint, fetcher);
-
-  if (githubError) {
-    return null; // or display an error message
-  }
-
-
-  if (leetcodeError) {
-    return null; // or display an error message
-  }
+  const { data: leetcodeData} = useSWR(leetcodeEndpoint, fetcher);
+  const { data: githubData } = useSWR(githubEndpoint, fetcher);
 
   const contributionCalendar = githubData?.contributionsCollection?.contributionCalendar;
 

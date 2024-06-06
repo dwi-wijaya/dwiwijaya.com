@@ -15,8 +15,8 @@ const PAGE_DESCRIPTION = "This is my personal dashboard portfolio.";
 const DashboardPage = ({ fallback }) => {
     return (
         <>
-            <NextSeo title={`${PAGE_TITLE} - Dwi Wijaya`} />
             <SWRConfig value={{ fallback }}>
+                <NextSeo title={`${PAGE_TITLE} - Dwi Wijaya`} />
                 <Container data-aos='fade-up'>
                     <PageHeading
                         title={PAGE_TITLE}
@@ -33,12 +33,13 @@ export default DashboardPage;
 
 export const getStaticProps = async () => {
 
-    const githubUserPersonal = await getGithubUser('personal');
+    const githubContribution = await getGithubUser('personal');
     const leetcodeStats = await getLeetcode();
 
     return {
         props: {
             fallback: {
+                '/api/github': githubContribution?.data,
                 '/api/leetcode': leetcodeStats?.data,
             },
         },
