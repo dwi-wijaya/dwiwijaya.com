@@ -1,7 +1,7 @@
 export const ServicesData = [
     {
       id: 2,
-      icon: "code-block",
+      icon: "browser",
       title: "Web Development",
       description:
         "Build dynamic and responsive websites tailored to your needs, ensuring seamless functionality and optimal performance.",
@@ -15,14 +15,14 @@ export const ServicesData = [
     },
     {
       id: 3,
-      icon: "pen",
+      icon: "pen-nib",
       title: "Design",
       description:
         "Create captivating visuals and branding materials that leave a lasting impression on your audience.",
     },
     {
       id: 4,
-      icon: "chat",
+      icon: "messages-question",
       title: "Others",
       description:
         "Discuss any other specific needs or services you require, let's tailor a solution to meet your unique requirements.",

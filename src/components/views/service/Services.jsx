@@ -12,12 +12,12 @@ const Services = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.05, delay: index * 0.1 }}
-              className="card text-center !p7-6 hover:ring-offset-2  ring-offset-background hover:ring-2 hover:ring-stroke hover:!border-slate-300 dark:hover:!border-slate-500 !transition-3s"
+              className="card text-center !p-6 hover:ring-offset-2  ring-offset-background hover:ring-2 hover:ring-stroke hover:!border-slate-300 dark:hover:!border-slate-500 !transition-3s"
               key={id}
             >
-              <i className={`text-5xl text-primary bx bx-${icon}`}></i>
-              <h3 className="my-3 font-semibold">{title}</h3>
-              <p className="text-sm font-light text-subtext">{description}</p>
+              <i className={`text-5xl text-primary fad fa-${icon}`}></i>
+              <h3 className="mt-4 font-semibold">{title}</h3>
+              <p className="mt-1 text-sm font-light text-subtext">{description}</p>
             </motion.div>
           );
         })}
