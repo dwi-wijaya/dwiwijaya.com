@@ -10,7 +10,7 @@ export default function Document() {
         <meta name="google-site-verification" content="vSWLUOfzaGmniX0J55YW3eB1xePdFkyD6_jSK6___Ww" />
         <link
           rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css"
+          href="https://site-assets.fontawesome.com/releases/v6.5.2/css/duotone.css"
         />
       </Head>
       <body>
