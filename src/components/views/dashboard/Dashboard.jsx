@@ -35,10 +35,10 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
         icon="bx bx-tachometer"
         linkText='@pagespeed'
         link='https://pagespeed.web.dev/'
+        tintIcon={false}
       />
-      <PageSpeed/>
+      <PageSpeed />
 
-      
       <hr className="hr" />
       <PageSubHeading
         title="Contributions"
@@ -46,6 +46,7 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
         icon="bx bxl-github"
         linkText='@dwi-wijaya'
         link='https://github.com/dwi-wijaya'
+        tintIcon={false}
       />
       <section className="contribution__section">
         {!githubData && <div className='dark:text-neutral-400'>No Github Data</div>}
@@ -66,6 +67,7 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
         icon="bx bx-code"
         linkText='@dwi-wijaya'
         link='https://leetcode.com/dwi-wijaya'
+        tintIcon={false}
       />
       <Letcode data={leetcodeData} />
 

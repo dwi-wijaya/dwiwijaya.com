@@ -1,12 +1,12 @@
 import React from "react";
 
-const PageSubHeading = ({ title, description, icon, link, linkText }) => {
+const PageSubHeading = ({ title, description, icon, link, linkText, tintIcon = true }) => {
   return (
     <>
       <h3 className="flex items-center gap-2 font-medium text-lg">
-        {icon && <i className={`${icon} text-primary`}></i>}{title}
+        {icon && <i className={`${icon} ${tintIcon && 'text-primary'}`}></i>}{title}
       </h3>
-      <div className="flex flex-col md:flex-row  text-subtext mb-3 flex justify-between leading-relaxed">
+      <div className="flex flex-col md:flex-row  text-subtext mb-3 justify-between leading-relaxed">
         <p className="text-sm leading-5">
           {description}
         </p>
