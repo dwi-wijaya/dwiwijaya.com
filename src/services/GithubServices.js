@@ -65,3 +65,11 @@ export const getGithubUser = async (type) => {
     const { username, token } = account;
     return await fetchGithubData(username, token);
 };
+export const getLastCommitDate = async () => {
+    const response = await fetch(`https://api.github.com/repos/dwi-wijaya/portfolio-next/commits`);
+    const commits = await response.json();
+    if (commits && commits.length > 0) {
+        return commits[0].commit.author.date;
+    }
+    return null;
+}

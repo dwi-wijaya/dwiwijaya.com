@@ -13,6 +13,7 @@ import { DefaultSeo } from "next-seo";
 import defaultSEOConfig from '../../next-seo.config';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { getLastCommitDate } from "@/services/GithubServices";
 
 const onest = Onest({
   subsets: ['latin'],
@@ -22,7 +23,7 @@ const ProgressBar = dynamic(
   { ssr: false }
 );
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps, lastCommitDate }) {
   useEffect(() => {
     Aos.init({
       duration: 800,
@@ -46,7 +47,7 @@ export default function App({ Component, pageProps }) {
       />
       <ProgressBar />
 
-      <Sidebar className={`${onest.className}`} />
+      <Sidebar className={`${onest.className}`} lastUpdate={lastCommitDate}/>
       <main className={`${onest.className} group/main lg:ml-64  ml-0 min-h-[100vh]`}>
         <Overlay />
         
@@ -55,3 +56,7 @@ export default function App({ Component, pageProps }) {
     </ThemeProvider>
   </>
 }
+App.getInitialProps = async () => {
+  const lastCommitDate = await getLastCommitDate();
+  return { lastCommitDate };
+};
