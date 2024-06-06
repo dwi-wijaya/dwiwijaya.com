@@ -1,0 +1,24 @@
+{
+  "name": "Dwi Wijaya - Personal Website",
+  "short_name": "Dwi Wijaya",
+  "description": "Personal Portfolio, I'am  Passionate about crafting seamless web experiences, I specialize in building efficient, scalable, and attractive web applications. Bringing digital dreams to life",
+  "icons": [
+    {
+      "src": "/icon-144.svg",
+      "sizes": "144x144",
+      "purpose": "maskable any",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "purpose": "maskable any",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ff774d",
+  "background_color": "#f8f7fd",
+  "orientation": "portrait"
+}

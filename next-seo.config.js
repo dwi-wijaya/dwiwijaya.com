@@ -2,7 +2,7 @@ const canonicalUrl = 'https://dwiwijaya.vercel.app';
 const metaImage =
   'https://firebasestorage.googleapis.com/v0/b/portfolio-dwiwijaya.appspot.com/o/meta-image.jpg?alt=media&token=45e644b5-1655-40e7-83b6-dc73bf3ecfa6';
 const metaDescription =
-  'Seasoned Software Engineer especially in Frontend side, with a passion for creating pixel-perfect web experiences';
+  'Passionate about crafting seamless web experiences, I specialize in building efficient, scalable, and attractive web applications. Bringing digital dreams to life';
 
 const defaultSEOConfig = {
   defaultTitle: 'Dwi Wijaya - Personal Website',
