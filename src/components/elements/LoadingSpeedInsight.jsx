@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function LoadingSpeedInsight() {
   return (
-    <div className="my-2 flex items-center justify-start text-xs gap-4 overflow-y-hidden">
+    <div className="my-2 flex items-center justify-start text-xs gap-4 overflow-y-hidden scrollbar-hide">
       {[1, 2, 3, 4].map(item => (
         <div key={item} className="flex w-max gap-3 flex-col items-center justify-center space-y-2 text-center">
           <div className="mt-2 h-3 w-20 animate-pulse rounded-full bg-slate-300 dark:bg-container md:w-[82px]"></div>
