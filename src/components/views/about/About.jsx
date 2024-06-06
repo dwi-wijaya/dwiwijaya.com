@@ -14,7 +14,7 @@ const About = () => {
         </p>
 
         <PageSubHeading icon={'fad fa-route'} title="My Journey" />
-        <p className='mb-3'>My career in web development began during my college years at the High School,
+        <p className='mb-3'>My career in web development began during my years at the High School,
           where I majored in Software Engineering. My first job was at a small software house,
           where I learned the ropes of web development and discovered my passion for coding.
           Over the years, I have had the opportunity to work on numerous exciting projects.
