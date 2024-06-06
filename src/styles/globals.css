@@ -59,7 +59,7 @@ html {
   }
 
   .btn {
-    @apply px-5 py-3 leading-4 rounded-md shadow-sm border border-[#febe82] dark:border-[#ff77134c] bg-[#ff985c4d] dark:bg-[#ffc2af] text-[#ae4407] flex gap-2 items-center font-normal w-fit hover:border-primary transition-3s
+    @apply px-5 py-3 leading-4 rounded-md shadow-sm border border-[#febe82] dark:border-[#ff77134c] bg-[#ffbcaa61] dark:bg-[#f7b8a4] text-[#ff784f] dark:text-[#e04848] flex gap-2 items-center font-normal w-fit hover:border-primary transition-3s
   }
 
   .hr {
