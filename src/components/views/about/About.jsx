@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Info from './Info'
 import PageSubHeading from '../../common/PageSubHeading'
 
-const About = ({ skills, certificates, about }) => {
+const About = () => {
   return (
     <>
       <div className="">

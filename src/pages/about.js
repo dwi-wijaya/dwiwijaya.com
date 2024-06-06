@@ -7,7 +7,7 @@ import { NextSeo } from "next-seo";
 const PAGE_TITLE = 'About';
 const PAGE_DESCRIPTION = "Get to know me a little better, beyond the resume.";
 
-const about = ({ skills, certificates, about }) => {
+const about = () => {
     return (
         <>
 
@@ -18,21 +18,10 @@ const about = ({ skills, certificates, about }) => {
                     title={PAGE_TITLE}
                     description={PAGE_DESCRIPTION}
                 />
-                <About about={about} />
+                <About />
             </Container>
         </>
     )
 }
 
 export default about
-export const getStaticProps = async () => {
-    // const readStats = await getReadStats();
-
-    let about = await fetcher(`${process.env.API_URL}/about`)
-    about = about[0]
-    return {
-        props: {
-            about
-        },
-    };
-};
