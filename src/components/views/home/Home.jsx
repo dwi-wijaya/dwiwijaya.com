@@ -8,17 +8,15 @@ const Home = () => {
     return (
         <div className='absolute -top-[175%] w-[calc(100%-40px)] '>
             <div className="flex justify-between gap-2 items-end  mb-8">
-                <div className="flex w-full">
-                <Image
-                    src={Profile}
-                    alt='Dwi Wijaya'
-                    width={108}
-                    height={108}
-                    rounded='rounded-2xl outline outline-[.5rem] outline-background'
-                    className=""
-                />
+                <div className="!min-w-[108px] max-w-[108px] outline outline-[.5rem] outline-background rounded-2xl">
+                    <Image
+                        src={Profile}
+                        alt='Dwi Wijaya'
+                        rounded='rounded-2xl'
+                        className=""
+                    />
                 </div>
-                <div className="badge text-sm h-fit mb-1 w-full sm:w-fit text-end !gap-3 !py-[.6rem] !px-4 !rounded-xl">
+                <div className="badge text-sm h-fit w-full sm:w-fit text-end !gap-3 !py-[.7rem] !px-4 !rounded-xl">
                     <i className="fad fa-location-dot text-primary"></i> Based in Yogyakarta, ID
                 </div>
             </div>
