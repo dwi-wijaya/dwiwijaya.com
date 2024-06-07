@@ -2,9 +2,7 @@ import React from 'react'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Image from 'next/image';
-import { certificatesData } from '@/constants/data/certificate';
-
+import Image from '@/components/elements/Image';
 
 const settings = {
     dots: true,
@@ -44,27 +42,13 @@ const settings = {
       }
     ]
   };
-  const Card = (props) => (
-    <div className="cert_card">
-      <div className="thumb">
-        <a aria-label="" href=""><img src={props.img} alt="" className="blog__img" /></a>
-      </div>
-      <div className="details">
-        <h3 className="title">{props.title}</h3>
-        <div className="meta">
-          <span>@Coursera</span>
-          <a className='credential' href=''><i className="bx bx-link"></i>Credential</a>
-        </div>
-      </div>
-    </div>
-  )
   
 const Certificates = ({certificates}) => {
   return (
     <div className="p-6">
         <Slider {...settings}>
           {certificates.map((certificate,index) => (
-            <Image blurDataURL={certificate.image} className='rounded-md' alt={certificate.name} width={1000} height={200} src={certificate.image} key={index} loading='lazy' />
+            <Image rounded='rounded-md' alt={certificate.name} width={1000} height={200} src={certificate.image} key={index} loading='lazy' />
           ))}
         </Slider>
       </div>

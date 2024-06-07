@@ -8,13 +8,12 @@ const Image = (props) => {
 
   return (
     <div
-      className={`
-        'overflow-hidden' ${isLoading ? 'animate-pulse' : ''} rounded`}
+      className={`overflow-hidden ${isLoading ? 'animate-pulse' : ''} ${rounded} relative`}
     >
       <NextImage
         className={`
           duration-700 ease-in-out
-          ${className} ${isLoading
+          ${className} ${rounded} ${isLoading
             ? 'scale-[1.02] blur-xl grayscale'
             : 'scale-100 blur-0 grayscale-0'} `}
         src={src}
