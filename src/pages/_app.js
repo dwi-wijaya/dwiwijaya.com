@@ -6,6 +6,7 @@ import { Onest } from 'next/font/google'
 import { Toaster } from "react-hot-toast";
 import { useEffect } from "react";
 import "@/styles/globals.css";
+import "@/styles/css/fa.min.css";
 import 'aos/dist/aos.css';
 import 'boxicons/css/boxicons.min.css';
 import Aos from "aos";
