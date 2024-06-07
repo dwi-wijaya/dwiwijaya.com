@@ -1,4 +1,3 @@
-const canonicalUrl = 'https://dwiwijaya.vercel.app';
 const metaImage =
   'https://firebasestorage.googleapis.com/v0/b/portfolio-dwiwijaya.appspot.com/o/meta-image.jpg?alt=media&token=45e644b5-1655-40e7-83b6-dc73bf3ecfa6';
 const metaDescription =
@@ -10,7 +9,6 @@ const defaultSEOConfig = {
   canonical: canonicalUrl,
 
   openGraph: {
-    canonical: canonicalUrl,
     title: 'Dwi Wijaya - Personal Website',
     description: metaDescription,
     type: 'website',
