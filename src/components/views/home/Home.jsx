@@ -39,7 +39,7 @@ const Home = () => {
             </p>
             <HomeSocials />
             <hr className="hr" />
-            <div className='card mb-6'>
+            <div className='card mb-6 !pb-4'>
                 <div className='flex gap-3 items-center'>
                     <i className='fad fa-rocket-launch text-primary'></i>
                     <h2 className='text-xl font-medium'>Lets work together!</h2>
