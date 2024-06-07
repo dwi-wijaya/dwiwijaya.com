@@ -13,24 +13,13 @@ import Calendar from "./contributions/Calendar";
 
 
 const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
-  const { data: leetcodeData} = useSWR(leetcodeEndpoint, fetcher);
+  const { data: leetcodeData } = useSWR(leetcodeEndpoint, fetcher);
   const { data: githubData } = useSWR(githubEndpoint, fetcher);
 
   const contributionCalendar = githubData?.contributionsCollection?.contributionCalendar;
 
   return (
     <section>
-      <PageSubHeading
-        title="Pagespeed Insight"
-        description="My pagespeed index by google APIs"
-        icon="bx bx-tachometer"
-        linkText='@pagespeed'
-        link='https://pagespeed.web.dev/'
-        tintIcon={false}
-      />
-      <PageSpeed />
-
-      <hr className="hr" />
       <PageSubHeading
         title="Contributions"
         description="My contributions from last year on github."
@@ -39,7 +28,7 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
         link='https://github.com/dwi-wijaya'
         tintIcon={false}
       />
-      <section className="contribution__section">
+      <section className="contribution__section mb-6">
         {!githubData && <div className='dark:text-neutral-400'>No Github Data</div>}
 
         {githubData && (
@@ -50,8 +39,6 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
         )}
 
       </section>
-
-      <hr className="hr" />
       <PageSubHeading
         title="LeetCode Statistics"
         description="My LeetCode progress and performance."
@@ -61,6 +48,16 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
         tintIcon={false}
       />
       <Letcode data={leetcodeData} />
+      <PageSubHeading
+        title="Pagespeed Insight"
+        description="My pagespeed index by google APIs"
+        icon="bx bx-tachometer"
+        linkText='@pagespeed'
+        link='https://pagespeed.web.dev/'
+        tintIcon={false}
+      />
+      <PageSpeed />
+
 
     </section>
   );
