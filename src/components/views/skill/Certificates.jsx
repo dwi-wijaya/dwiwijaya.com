@@ -48,7 +48,7 @@ const Certificates = ({certificates}) => {
     <div className="p-6">
         <Slider {...settings}>
           {certificates.map((certificate,index) => (
-            <Image rounded='rounded-md' alt={certificate.name} width={1000} height={200} src={certificate.image} key={index} loading='lazy' />
+            <Image rounded='rounded-md bg-container' alt={certificate.name} width={1000} height={200} src={certificate.image} key={index} loading='lazy' />
           ))}
         </Slider>
       </div>

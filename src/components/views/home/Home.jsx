@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div className='absolute -top-[175%] w-[calc(100%-40px)] '>
             <div className="flex justify-between gap-2 items-end  mb-8">
-                <div className="!min-w-[108px] max-w-[108px] outline outline-[.5rem] outline-background rounded-2xl">
+                <div className="!min-w-[108px] max-w-[108px] outline outline-[.5rem] outline-background rounded-2xl bg-container">
                     <Image
                         src={Profile}
                         alt='Dwi Wijaya'
