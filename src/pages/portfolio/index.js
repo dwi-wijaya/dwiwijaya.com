@@ -3,28 +3,37 @@ import Container from '@/components/layout/Container'
 import Portfolio from '@/components/views/portfolio/Portfolio'
 import { fetcher } from '@/services/fetcher';
 import { NextSeo } from 'next-seo';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 const PAGE_TITLE = 'My Works';
 const PAGE_DESCRIPTION = "Explore my latest projects and creations.";
 
-const portfolio = ({portfolios}) => {
+const PortfolioPage = ({ portfolios }) => {
+
+    const router = useRouter();
+    const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`;
+
     return (
         <>
+            <Head>
+                <link rel="canonical" href={canonicalUrl} />
+            </Head>
             <NextSeo title={`${PAGE_TITLE} - Dwi Wijaya`} />
             <Container data-aos='fade-up'>
                 <PageHeading
                     title={PAGE_TITLE}
                     description={PAGE_DESCRIPTION}
                 />
-                <Portfolio portfolios={portfolios}/>
+                <Portfolio portfolios={portfolios} />
             </Container>
         </>
     )
 }
 
-export default portfolio
+export default PortfolioPage
 export const getStaticProps = async () => {
-    // const readStats = await getReadStats();
+    
     const portfolios = await fetcher(`${process.env.API_URL}/portfolio`)
 
     return {

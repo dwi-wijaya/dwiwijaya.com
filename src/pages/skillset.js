@@ -3,15 +3,23 @@ import Container from '@/components/layout/Container';
 import Skill from '@/components/views/skill/Skill';
 import { fetcher } from '@/services/fetcher';
 import { NextSeo } from 'next-seo';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 import React from 'react'
 
 const PAGE_TITLE = 'Skillset';
 const PAGE_DESCRIPTION = "Explore professional skillset and expertise";
 
-const skillset = ({skills,certificates}) => {
+const SkillsetPage = ({ skills, certificates }) => {
+
+    const router = useRouter();
+    const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`;
+
     return (
         <>
-
+            <Head>
+                <link rel="canonical" href={canonicalUrl} />
+            </Head>
             <NextSeo title={`${PAGE_TITLE} - Dwi Wijaya`} />
 
             <Container data-aos='fade-up'>
@@ -25,14 +33,15 @@ const skillset = ({skills,certificates}) => {
     )
 }
 
-export default skillset
+export default SkillsetPage
 export const getStaticProps = async () => {
-    // const readStats = await getReadStats();
+
     const skills = await fetcher(`${process.env.API_URL}/skill`)
     const certificates = await fetcher(`${process.env.API_URL}/certificate`)
+
     return {
         props: {
-            skills,certificates
+            skills, certificates
         },
     };
 };

@@ -3,15 +3,25 @@ import Container from '@/components/layout/Container'
 import Experience from '@/components/views/experience/Experience'
 import { fetcher } from '@/services/fetcher';
 import { NextSeo } from 'next-seo';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 import React from 'react'
 
 const PAGE_TITLE = 'Experience';
 const PAGE_DESCRIPTION = "Discover my professional background and valuable experiences.";
 
-const experience = ({experience}) => {
+const ExperiencePage = ({ experience }) => {
+
+    const router = useRouter();
+    const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`;
+
     return (
         <>
+            <Head>
+                <link rel="canonical" href={canonicalUrl} />
+            </Head>
             <NextSeo title={`${PAGE_TITLE} - Dwi Wijaya`} />
+
             <Container data-aos='fade-up'>
                 <PageHeading
                     title={PAGE_TITLE}
@@ -23,7 +33,7 @@ const experience = ({experience}) => {
     )
 }
 
-export default experience
+export default ExperiencePage
 export const getStaticProps = async () => {
     // const readStats = await getReadStats();
     const experience = await fetcher(`${process.env.API_URL}/experience`)
