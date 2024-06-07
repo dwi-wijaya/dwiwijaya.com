@@ -21,6 +21,17 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
   return (
     <section>
       <PageSubHeading
+        title="Pagespeed Insight"
+        description="My pagespeed index by google APIs"
+        icon="bx bx-tachometer"
+        linkText='@pagespeed'
+        link='https://pagespeed.web.dev/'
+        tintIcon={false}
+      />
+      <PageSpeed />
+
+      <hr className="hr" />
+      <PageSubHeading
         title="Contributions"
         description="My contributions from last year on github."
         icon="bx bxl-github"
@@ -28,7 +39,7 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
         link='https://github.com/dwi-wijaya'
         tintIcon={false}
       />
-      <section className="contribution__section mb-6">
+      <section className="contribution__section">
         {!githubData && <div className='dark:text-neutral-400'>No Github Data</div>}
 
         {githubData && (
@@ -39,6 +50,8 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
         )}
 
       </section>
+
+      <hr className="hr" />
       <PageSubHeading
         title="LeetCode Statistics"
         description="My LeetCode progress and performance."
@@ -48,16 +61,6 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
         tintIcon={false}
       />
       <Letcode data={leetcodeData} />
-      <PageSubHeading
-        title="Pagespeed Insight"
-        description="My pagespeed index by google APIs"
-        icon="bx bx-tachometer"
-        linkText='@pagespeed'
-        link='https://pagespeed.web.dev/'
-        tintIcon={false}
-      />
-      <PageSpeed />
-
 
     </section>
   );
