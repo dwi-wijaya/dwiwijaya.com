@@ -52,7 +52,7 @@ const Home = () => {
                     <Link
                         href='contact'
                         aria-label='contact me'
-                        className='btn !gap-3 justify-center !w-1/2 sm:!w-fit whitespace-nowrap'
+                        className='btn sm:!gap-3 justify-center !w-1/2 sm:!w-fit whitespace-nowrap text-sm sm:text-base'
                     >
                         <i className="fad fa-envelope"></i>Get in Touch
                     </Link>
@@ -61,7 +61,7 @@ const Home = () => {
                         aria-label="resume"
                         rel="noopener noreferrer"
                         target='_blank'
-                        className="btn !gap-3 justify-center !w-1/2 sm:!w-fit whitespace-nowrap"
+                        className="btn sm:!gap-3 justify-center !w-1/2 sm:!w-fit whitespace-nowrap text-sm sm:text-base"
                     >
                         <i className="fad fa-file-lines"></i>Get Resume
                     </a>
