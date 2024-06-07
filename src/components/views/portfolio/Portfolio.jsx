@@ -1,11 +1,10 @@
 import { useState } from "react";
 import Pin from "@/assets/pin.svg";
-import PageHeading from "../../common/PageHeading";
-import Image from "next/image";
-import { PORTFOLIO_CATEGORIES, PORTFOLIO_TYPES, PORTFOLIO_TYPES_ICON, portfolioData } from "@/constants/data/portfolio";
+import { PORTFOLIO_TYPES, PORTFOLIO_TYPES_ICON } from "@/constants/data/portfolio";
 import PortfolioCategory from "./PortfolioCategory";
 import Link from "next/link";
 import { motion } from 'framer-motion';
+import Image from "@/components/elements/Image";
 
 const Portfolio = ({ portfolios }) => {
   const [items, setItems] = useState(portfolios);
@@ -67,7 +66,7 @@ const Portfolio = ({ portfolios }) => {
                         </div>
                       </div>
                       <div className="relative">
-                        <Image blurDataURL={thumbnail} src={thumbnail} alt="" width={999} height={999} className={`aspect-thumbnail object-cover `} quality={100} />
+                        <Image src={thumbnail} alt="" width={999} height={999} className={`aspect-thumbnail object-cover `} quality={100} />
                         <div className="flex gap-1 absolute top-0 left-0 w-full h-full bg-black opacity-0 transition-opacity duration-300 justify-center items-center text-white group-hover/portfolio:opacity-80 ">
                           View Project<i className="bx bx-right-arrow-alt"></i>
                         </div>
