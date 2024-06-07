@@ -6,8 +6,6 @@ const metaDescription =
 const defaultSEOConfig = {
   defaultTitle: 'Dwi Wijaya - Personal Website',
   description: metaDescription,
-  canonical: canonicalUrl,
-
   openGraph: {
     title: 'Dwi Wijaya - Personal Website',
     description: metaDescription,
