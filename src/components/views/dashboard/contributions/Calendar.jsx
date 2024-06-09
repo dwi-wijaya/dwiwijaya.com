@@ -69,7 +69,7 @@ const Calendar = ({ style, data }) => {
                                         initial='initial'
                                         animate='animate'
                                         variants={{
-                                            initial: { opacity: 0, translateY: -20 },
+                                            initial: { opacity: 0.1, translateY: -20 },
                                             animate: {
                                                 opacity: 1,
                                                 translateY: 0,
