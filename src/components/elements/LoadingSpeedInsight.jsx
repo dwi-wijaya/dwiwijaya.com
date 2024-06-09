@@ -1,7 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 export default function LoadingSpeedInsight() {
-  const DummyCategory = [{ 'title': 'Performance', }, { 'title': 'Accessibility', }, { 'title': 'Best Practices', }, { 'title': 'SEO', }]
+  const DummyCategory = [
+    { title: 'Performance' },
+    { title: 'Accessibility' },
+    { title: 'Best Practices' },
+    { title: 'SEO' }
+  ];
+
   return (
     <div className="my-2 flex items-center justify-start text-xs gap-4 overflow-y-hidden scrollbar-hide">
       {DummyCategory.map((item,index) => (
@@ -15,5 +21,5 @@ export default function LoadingSpeedInsight() {
         </div>
       ))}
     </div>
-  )
+  );
 }
