@@ -22,7 +22,7 @@ const Experience = ({ experience }) => {
                                     <p className="text-sm text-subtext mt-1"><i className='text-primary bx bx-book'></i> {val.degree}</p>
                                     <h3 className="mt-2 font-semibold text-lg">{val.major}</h3>
                                     <div className="flex gap-2">
-                                        <a href={val.link} className="timeline__text mb-1 pb-0 border-b border-[#727272] hover:border-primary hover:text-primary transition-3s">
+                                        <a umami-event={`Click Education School - ${val.institution}`} href={val.link} className="timeline__text mb-1 pb-0 border-b border-[#727272] hover:border-primary hover:text-primary transition-3s">
                                             {val.institution}
                                         </a>
                                     </div>
@@ -45,7 +45,7 @@ const Experience = ({ experience }) => {
                                     <WorkDuration startMonth={val.startMonth} endMonth={val.endMonth} />
                                     <h3 className="mt-2 font-semibold text-lg">{val.position}</h3>
                                     <div className="flex gap-2">
-                                        <a href="" className="timeline__text mb-1 pb-0 border-b border-[#727272] hover:border-primary hover:text-primary transition-3s">
+                                        <a umami-event={`Click Career Company - ${val.institution}`} href="" className="timeline__text mb-1 pb-0 border-b border-[#727272] hover:border-primary hover:text-primary transition-3s">
                                             {val.institution}
                                         </a>
                                     </div>

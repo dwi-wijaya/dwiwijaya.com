@@ -20,7 +20,7 @@ const Contact = () => {
                     <h3 className="mb-4 font-semibold">Find me on social media</h3>
                     <div className="flex md:flex-row gap-2 justify-center">
                         {Socials.map((social, index) => (
-                            <Link title={social.label} href={social.link} target='_blank' className={`w-full flex gap-2 justify-center p-2 text-white rounded-md`} style={{ backgroundColor: social.background }} key={index}>
+                            <Link umami-event={social.eventName} title={social.label} href={social.link} target='_blank' className={`w-full flex gap-2 justify-center p-2 text-white rounded-md`} style={{ backgroundColor: social.background }} key={index}>
                                 <Image src={social.icon} alt="" srcSet="" />
                                 <div className="hidden md:block">{social.label}</div>
                             </Link>
@@ -68,7 +68,7 @@ const Contact = () => {
                                 className="form-input resize-none "
                             ></textarea>
                         </div>
-                        <button className="btn !w-full md:!w-fit text-center justify-center">
+                        <button  data-umami-event='Send Contact Message'  className="btn !w-full md:!w-fit text-center justify-center" >
                             {loading ? (
                                 <i className="bx bx-loader bx-spin"></i>
                             ) : (

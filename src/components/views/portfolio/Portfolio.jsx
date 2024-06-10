@@ -50,7 +50,7 @@ const Portfolio = ({ portfolios }) => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
               >
-                <Link href={`portfolio/${slug}`}>
+                <Link umami-event={`Click Portfolio - ${name}`} href={`portfolio/${slug}`}>
                   <div className="group/portfolio relative flex flex-col overflow-hidden rounded-xl h-full lg:hover:scale-[102%] transition-3s">
 
                     <div className="work__thumbnail aspect-thumbnail">

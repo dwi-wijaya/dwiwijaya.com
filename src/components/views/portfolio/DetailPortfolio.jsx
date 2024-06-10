@@ -23,12 +23,12 @@ const DetailPortfolio = ({ portfolio }) => {
 
             <div className="flex item-center gap-2 justify-center sm:justify-normal">
                 {portfolio.demoLink &&
-                    <a href={portfolio.demoLink} className="badge text-sm mb-5">
+                    <a umami-event={`Click Live Demo - ${portfolio.name}`} href={portfolio.demoLink} className="badge text-sm mb-5">
                         <i className='bx bx-link-external'></i> Live Demo
                     </a>
                 }
                 {portfolio.githubLink &&
-                    <a href={portfolio.githubLink} className={`badge text-sm mb-5`}>
+                    <a umami-event={`Click Source Code - ${portfolio.name}`} href={portfolio.githubLink} className={`badge text-sm mb-5`}>
                         <i className='bx bxl-github'></i> Source Code
                     </a>
                 }
