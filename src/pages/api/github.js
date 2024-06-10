@@ -3,17 +3,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { getGithubUser } from '@/services/GithubServices';
 
 export default async function handler(req, res) {
-    const queryParams = req.query;
 
-    let type = '';
-
-    if (typeof queryParams.type === 'string') {
-        type = queryParams.type;
-    } else if (Array.isArray(queryParams.type)) {
-        type = queryParams.type[0];
-    }
-
-    const response = await getGithubUser(type);
+    const response = await getGithubUser('personal');
 
     res.setHeader(
         'Cache-Control',
