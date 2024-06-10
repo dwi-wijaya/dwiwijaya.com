@@ -67,7 +67,7 @@ const Sidebar = ({ className, lastUpdate }) => {
             <aside ref={sidebarRef} className={`${className} ${toggle && '!left-0'} max-h-[100svh] scrollbar-hide overflow-x-auto fixed -left-64 lg:left-0 top-0 bg-container border border-stroke pl-0 p-6 w-64 min-h-screen flex flex-col gap-8 justify-between text-center transition-3s z-10 shadow-sm`}>
                 <div className="flex flex-col gap-8">
                     <div className="ml-6 flex flex-col gap-8">
-                        <Link umami-event={`Click Logo`} onClick={() => setToggle(false)} aria-label='go home' href="/" className="nav__logo flex gap-2 items-center text-xl  tracking-wider">
+                        <Link data-umami-event={`Click Logo`} onClick={() => setToggle(false)} aria-label='go home' href="/" className="nav__logo flex gap-2 items-center text-xl  tracking-wider">
                             <Image width={32} src={theme == 'dark' ? LogoDark : LogoLight} alt="Dwi-logo" />
                         </Link>
                         <div className="text-left mt-8">

@@ -11,7 +11,7 @@ export default function BadgeSection({ active, refetch }) {
         <div className='flex gap-2 mb-3 overflow-y-hidden scrollbar-hide'>
             {routes.map(route => (
                 <button
-                    data-umami-event={`Click Pagespeed - ${route.label}`}
+                    data-data-umami-event={`Click Pagespeed - ${route.label}`}
                     key={route.href}
                     className={clsx(
                         'badge !px-4',

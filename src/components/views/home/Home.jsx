@@ -50,7 +50,7 @@ const Home = () => {
                 <div className="flex gap-2">
                     <Link
                         href='contact'
-                        umami-event='Get in Touch'
+                        data-umami-event='Get in Touch'
                         aria-label='contact me'
                         className='btn sm:!gap-3 justify-center !w-1/2 sm:!w-fit whitespace-nowrap text-sm sm:text-base !py-3 sm:!py-2'
                     >
@@ -59,7 +59,7 @@ const Home = () => {
                     <a
                         href="https://docs.google.com/document/d/1O7gzfe11VSWRa-zy8hzBO9ndZ-f4IFQlVgPITh2O8tY/preview"
                         aria-label="resume"
-                        umami-event='Get Resume'
+                        data-umami-event='Get Resume'
                         rel="noopener noreferrer"
                         target='_blank'
                         className="btn sm:!gap-3 justify-center !w-1/2 sm:!w-fit whitespace-nowrap text-sm sm:text-base !py-3 sm:!py-2"

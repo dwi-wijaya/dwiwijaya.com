@@ -10,7 +10,7 @@ const PageSubHeading = ({ title, description, icon, link, linkText, tintIcon = t
         <p className="text-sm leading-5">
           {description}
         </p>
-        {link && linkText && <a target="_blank" umami-event={`Click link ${title}`} className="section__subtitle-link" href={link}>{linkText}</a>}
+        {link && linkText && <a target="_blank" data-umami-event={`Click link ${title}`} className="section__subtitle-link" href={link}>{linkText}</a>}
       </div>
     </>
   );

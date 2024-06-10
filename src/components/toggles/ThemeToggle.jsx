@@ -24,7 +24,7 @@ const ThemeToggle = () => {
         <div className="w-full p-1 bg-background rounded-2xl border border-stroke">
             <label className="relative flex h-10 items-center cursor-pointer">
                 <input
-                    umami-event={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`}
+                    data-umami-event={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`}
                     type="checkbox"
                     className="sr-only peer"
                     checked={theme === "dark"}
