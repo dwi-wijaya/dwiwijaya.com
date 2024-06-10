@@ -31,9 +31,10 @@ const Home = () => {
                 I&apos;m a Full-stack developer <i className="bx bx-code-alt text-primary"></i> &nbsp;
             </p>
             <p className='text-subtext text-sm'>
-                Passionate about crafting seamless web experiences,
-                I specialize in building efficient, scalable, and attractive web applications.
-                Bringing digital dreams to life.
+                Passionate about crafting seamless web experiences, I specialize in building efficient, scalable, and attractive web applications.
+            </p>
+            <p className='text-subtext text-sm'>
+                ~ Bringing digital dreams to life.
             </p>
             <HomeSocials />
             <hr className="hr" />
