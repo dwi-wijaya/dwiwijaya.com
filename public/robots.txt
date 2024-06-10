@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://dwiwijaya.vercel.app/
+
+# Sitemaps
+Sitemap: https://dwiwijaya.vercel.app/sitemap.xml
