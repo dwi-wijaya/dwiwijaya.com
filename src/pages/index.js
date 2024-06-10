@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
 
   const router = useRouter();
-  const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`;
+  const canonicalUrl = `${process.env.SITE_URL}${router.asPath}`;
 
   return (
     <>

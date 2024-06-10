@@ -12,7 +12,7 @@ const PAGE_DESCRIPTION = "Explore my latest projects and creations.";
 const PortfolioPage = ({ portfolios }) => {
 
     const router = useRouter();
-    const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`;
+    const canonicalUrl = `${process.env.SITE_URL}${router.asPath}`;
 
     return (
         <>

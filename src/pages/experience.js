@@ -13,7 +13,7 @@ const PAGE_DESCRIPTION = "Discover my professional background and valuable exper
 const ExperiencePage = ({ experience }) => {
 
     const router = useRouter();
-    const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`;
+    const canonicalUrl = `${process.env.SITE_URL}${router.asPath}`;
 
     return (
         <>
