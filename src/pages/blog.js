@@ -11,7 +11,7 @@ const PAGE_DESCRIPTION = "Exploring the world of code, creativity, and constant 
 const BlogPage = () => {
 
     const router = useRouter();
-    const canonicalUrl = `${process.env.SITE_URL}${router.asPath}`;
+    const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${router.asPath}`;
 
     return (
         <>

@@ -17,7 +17,7 @@ const PAGE_DESCRIPTION = "This is my personal dashboard portfolio.";
 const DashboardPage = ({ fallback }) => {
 
     const router = useRouter();
-    const canonicalUrl = `${process.env.SITE_URL}${router.asPath}`;
+    const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${router.asPath}`;
 
     return (
         <>
