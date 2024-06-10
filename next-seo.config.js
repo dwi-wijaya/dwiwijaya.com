@@ -13,24 +13,24 @@ const defaultSEOConfig = {
     images: [
       {
         url: metaImage,
-        alt: 'dwiwijaya.vercel.app og-image',
+        alt: 'dwiwijaya.com og-image',
         width: 800,
         height: 600,
       },
       {
         url: metaImage,
-        alt: 'dwiwijaya.vercel.app og-image',
+        alt: 'dwiwijaya.com og-image',
         width: 1200,
         height: 630,
       },
       {
         url: metaImage,
-        alt: 'dwiwijaya.vercel.app og-image',
+        alt: 'dwiwijaya.com og-image',
         width: 1600,
         height: 900,
       },
     ],
-    site_name: 'dwiwijaya.vercel.app',
+    site_name: 'dwiwijaya.com',
   },
   twitter: {
     handle: '@handle',
