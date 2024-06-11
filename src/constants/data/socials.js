@@ -9,7 +9,7 @@ export const Socials = [
         icon: Email,
         boxIcon: 'gmail',
         background: '#16a34c',
-        link: 'mailto:dev.dwiwijaya@gmail.com',
+        link: 'mailto:work.dwiwijaya@gmail.com',
         eventName: 'Contact: Email',
         label: 'Email',
     },
