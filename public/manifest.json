@@ -4,13 +4,13 @@
   "description": "Personal Portfolio, I'am  Passionate about crafting seamless web experiences, I specialize in building efficient, scalable, and attractive web applications. Bringing digital dreams to life",
   "icons": [
     {
-      "src": "/icon-144.svg",
+      "src": "/icon-144.png",
       "sizes": "144x144",
       "purpose": "maskable any",
       "type": "image/png"
     },
     {
-      "src": "/icon-512.svg",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "purpose": "maskable any",
       "type": "image/png"
