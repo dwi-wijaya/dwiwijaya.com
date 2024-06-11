@@ -1,6 +1,3 @@
-import Freelance from '@/assets/freelance.svg'
-import Image from 'next/image'
-import Info from './Info'
 import PageSubHeading from '../../common/PageSubHeading'
 
 const About = () => {
