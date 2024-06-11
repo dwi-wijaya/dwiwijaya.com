@@ -3,6 +3,7 @@ import React from 'react'
 import Profile from '@/assets/avatar-profile.jpg'
 import HomeSocials from './HomeSocials'
 import Image from '@/components/elements/Image'
+import Router  from 'next/router'
 
 const Home = () => {
     return (
@@ -48,16 +49,16 @@ const Home = () => {
                     can we collaborate.
                 </p>
                 <div className="flex gap-2">
-                    <Link
-                        href='contact'
-                        data-umami-event='Get in Touch'
+                    <button
+                        onClick={() => Router.push('/contact')}
+                        data-umami-event='Click Get in Touch'
                         aria-label='contact me'
                         className='btn sm:!gap-3 justify-center !w-1/2 sm:!w-fit whitespace-nowrap text-sm sm:text-base !py-3 sm:!py-2'
                     >
                         <i className="fad fa-envelope"></i>Get in Touch
-                    </Link>
-                    <a
-                        href="https://docs.google.com/document/d/1O7gzfe11VSWRa-zy8hzBO9ndZ-f4IFQlVgPITh2O8tY/preview"
+                    </button>
+                    <Link
+                        href="https://bit.ly/cv-dwiwijaya"
                         aria-label="resume"
                         data-umami-event='Get Resume'
                         rel="noopener noreferrer"
@@ -65,7 +66,7 @@ const Home = () => {
                         className="btn sm:!gap-3 justify-center !w-1/2 sm:!w-fit whitespace-nowrap text-sm sm:text-base !py-3 sm:!py-2"
                     >
                         <i className="fad fa-file-lines"></i>Get Resume
-                    </a>
+                    </Link>
                 </div>
 
             </div>

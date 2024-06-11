@@ -20,10 +20,10 @@ const Contact = () => {
                     <h3 className="mb-4 font-semibold">Find me on social media</h3>
                     <div className="flex md:flex-row gap-2 justify-center">
                         {Socials.map((social, index) => (
-                            <Link data-umami-event={social.eventName} title={social.label} href={social.link} target='_blank' className={`w-full flex gap-2 justify-center p-2 text-white rounded-md`} style={{ backgroundColor: social.background }} key={index}>
+                            <button onClick={() => window.open(social.link, '_blank')} data-umami-event={social.eventName} title={social.label} className={`w-full flex gap-2 justify-center p-2 text-white rounded-md`} style={{ backgroundColor: social.background }} key={index}>
                                 <Image src={social.icon} alt="" srcSet="" />
                                 <div className="hidden md:block">{social.label}</div>
-                            </Link>
+                            </button>
                         ))}
                     </div>
                 </div>
