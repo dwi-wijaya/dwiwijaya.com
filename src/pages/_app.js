@@ -13,8 +13,6 @@ import Aos from "aos";
 import dynamic from "next/dynamic";
 import { DefaultSeo } from "next-seo";
 import defaultSEOConfig from '../../next-seo.config';
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/react";
 import { getLastCommitDate } from "@/services/GithubServices";
 
 const onest = Onest({
@@ -35,8 +33,6 @@ export default function App({ Component, pageProps, lastCommitDate }) {
 
   return <>
     <DefaultSeo {...defaultSEOConfig} />
-    <SpeedInsights />
-    <Analytics />
     <ThemeProvider attribute='class' enableSystem={false} disableTransitionOnChange={true}>
       <Toaster
         toastOptions={{
