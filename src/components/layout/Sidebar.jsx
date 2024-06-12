@@ -20,8 +20,6 @@ const Sidebar = ({ className, lastUpdate }) => {
     const sidebarRef = useRef(null);
     const pathname = usePathname()
 
-
-
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
@@ -63,6 +61,7 @@ const Sidebar = ({ className, lastUpdate }) => {
 
     const handlers = useSwipeable({
         trackMouse: true,
+        trackTouch: true,
         onSwipedLeft: () => setToggle(false)
     });
 
