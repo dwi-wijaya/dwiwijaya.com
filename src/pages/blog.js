@@ -32,3 +32,10 @@ const BlogPage = () => {
 }
 
 export default BlogPage
+export const getStaticProps = async () => {
+
+    return {
+        props: {
+        },
+    };
+};

@@ -33,3 +33,10 @@ const ServicesPage = () => {
 }
 
 export default ServicesPage
+export const getStaticProps = async () => {
+
+    return {
+        props: {
+        },
+    };
+};
