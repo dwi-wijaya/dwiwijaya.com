@@ -62,7 +62,9 @@ const Sidebar = ({ className, lastUpdate }) => {
     const handlers = useSwipeable({
         trackMouse: true,
         trackTouch: true,
-        onSwipedLeft: () => setToggle(false)
+        onSwipedLeft: () => setToggle(false),
+        preventScrollOnSwipe: true,
+        touchEventOptions: { passive: true },
     });
 
     if (!mounted) {
