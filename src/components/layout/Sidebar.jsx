@@ -11,6 +11,7 @@ import Router, { useRouter } from 'next/router';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from '../toggles/ThemeToggle';
 import CollabsToggle from '../toggles/CollabsToggle';
+import { useSwipeable } from 'react-swipeable';
 
 const Sidebar = ({ className, lastUpdate }) => {
     const [mounted, setMounted] = useState(false)
@@ -18,6 +19,11 @@ const Sidebar = ({ className, lastUpdate }) => {
     const { theme } = useTheme();
     const sidebarRef = useRef(null);
     const pathname = usePathname()
+
+    const handlers = useSwipeable({
+        trackMouse: true,
+        onSwipedLeft: () => setToggle(false)
+    });
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -64,7 +70,7 @@ const Sidebar = ({ className, lastUpdate }) => {
 
     return (
         <>
-            <aside ref={sidebarRef} className={`${className} ${toggle && '!left-0'} max-h-[100svh] scrollbar-hide overflow-x-auto fixed -left-64 lg:left-0 top-0 bg-container border border-stroke pl-0 p-6 w-64 min-h-screen flex flex-col gap-8 justify-between text-center transition-3s z-10 shadow-sm`}>
+            <aside  {...handlers} ref={sidebarRef} className={`${className} ${toggle && '!left-0'} max-h-[100svh] scrollbar-hide overflow-x-auto fixed -left-64 lg:left-0 top-0 bg-container border border-stroke pl-0 p-6 w-64 min-h-screen flex flex-col gap-8 justify-between text-center transition-3s z-10 shadow-sm`}>
                 <div className="flex flex-col gap-8">
                     <div className="ml-6 flex flex-col gap-8">
                         <button
