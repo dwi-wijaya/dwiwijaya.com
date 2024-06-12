@@ -24,6 +24,42 @@ const Sidebar = ({ className, lastUpdate }) => {
         setMounted(true)
     }, [])
 
+    useEffect(() => {
+        const sidebarElement = document.querySelector('.sidebar');
+
+        const handleClickOutside = (event) => {
+            if (sidebarElement && !sidebarElement.contains(event.target)) {
+                setToggle(false);
+            }
+        };
+
+        const handleBodyScroll = () => {
+            if (toggle) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        };
+
+        const handleResize = () => {
+            if (window.innerWidth <= 1024) {
+                setToggle(false); // If the screen width is <= 1024px, close the sidebar
+            }
+        };
+
+        document.querySelector('main').classList.toggle('sidebar-expanded', toggle);
+        handleBodyScroll();
+
+        document.addEventListener('mousedown', handleClickOutside);
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            window.removeEventListener('resize', handleResize);
+            document.body.style.overflow = ''; // Reset body overflow when component unmounts
+        };
+    }, [toggle]);
+
     const handlers = useSwipeable({
         trackMouse: true,
         trackTouch: true,
