@@ -20,10 +20,7 @@ const Sidebar = ({ className, lastUpdate }) => {
     const sidebarRef = useRef(null);
     const pathname = usePathname()
 
-    const handlers = useSwipeable({
-        trackMouse: true,
-        onSwipedLeft: () => setToggle(false)
-    });
+
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -63,6 +60,11 @@ const Sidebar = ({ className, lastUpdate }) => {
     useEffect(() => {
         setMounted(true)
     }, [])
+
+    const handlers = useSwipeable({
+        trackMouse: true,
+        onSwipedLeft: () => setToggle(false)
+    });
 
     if (!mounted) {
         return null
