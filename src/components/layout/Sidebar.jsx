@@ -21,41 +21,6 @@ const Sidebar = ({ className, lastUpdate }) => {
     const pathname = usePathname()
 
     useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-                setToggle(false);
-            }
-        };
-        document.querySelector('main').classList.toggle('sidebar-expanded', toggle);
-
-        const handleBodyScroll = () => {
-            if (toggle) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-        };
-
-        document.addEventListener('mousedown', handleClickOutside);
-        handleBodyScroll();
-
-        const handleResize = () => {
-            if (window.innerWidth <= 1024) {
-                setToggle(false); // If the screen width is <= 1024px, close the sidebar
-            }
-        };
-
-        window.addEventListener('resize', handleResize); // Add event listener for resize
-
-        // Cleanup event listeners when the component unmounts
-        return () => {
-            window.removeEventListener('resize', handleResize);
-            document.removeEventListener('mousedown', handleClickOutside);
-            document.body.style.overflow = ''; // Reset body overflow when component unmounts
-        };
-    }, [toggle]);
-
-    useEffect(() => {
         setMounted(true)
     }, [])
 
