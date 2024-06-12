@@ -81,7 +81,7 @@ const Sidebar = ({ className, lastUpdate }) => {
                             data-umami-event={`Click Logo`}
                             onClick={() => { setToggle(false); Router.push('/'); }}
                             aria-label='go home'
-                            className="nav__logo flex gap-2 mt-2 items-center "
+                            className="w-fit mt-2 "
                         >
                             <Image width={70} src={theme == 'dark' ? LogoDark : LogoLight} alt="Dwi-logo" />
                         </button>
