@@ -61,6 +61,7 @@ const Sidebar = ({ className, lastUpdate }) => {
     }, [toggle]);
 
     const handlers = useSwipeable({
+        delta: 75,
         trackMouse: true,
         trackTouch: true,
         onSwipedLeft: () => setToggle(false),
