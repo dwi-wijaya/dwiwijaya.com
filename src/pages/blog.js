@@ -1,5 +1,5 @@
 import PageHeading from "@/components/common/PageHeading"
-import Container from "@/components/layout/Container"
+import Container from "@/components/layouts/partials/Container"
 import Blog from "@/components/views/blog/Blog"
 import { NextSeo } from "next-seo";
 import Head from "next/head";

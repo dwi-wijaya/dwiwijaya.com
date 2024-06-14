@@ -1,5 +1,5 @@
 import PageHeading from '@/components/common/PageHeading'
-import Container from '@/components/layout/Container'
+import Container from '@/components/layouts/partials/Container'
 import BackToggle from '@/components/toggles/BackToggle'
 import DetailPortfolio from '@/components/views/portfolio/DetailPortfolio'
 import { fetcher } from '@/services/fetcher'

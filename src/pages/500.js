@@ -1,4 +1,4 @@
-import Container from '@/components/layout/Container'
+import Container from '@/components/layouts/partials/Container'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 import React from 'react'

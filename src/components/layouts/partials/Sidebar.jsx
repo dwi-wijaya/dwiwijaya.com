@@ -9,8 +9,8 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import Router, { useRouter } from 'next/router';
 import { usePathname } from 'next/navigation';
-import ThemeToggle from '../toggles/ThemeToggle';
-import CollabsToggle from '../toggles/CollabsToggle';
+import ThemeToggle from '../../toggles/ThemeToggle';
+import CollabsToggle from '../../toggles/CollabsToggle';
 import { useSwipeable } from 'react-swipeable';
 
 const Sidebar = ({ className, lastUpdate }) => {
@@ -47,7 +47,7 @@ const Sidebar = ({ className, lastUpdate }) => {
             }
         };
 
-        document.querySelector('main').classList.toggle('sidebar-expanded', toggle);
+        document.querySelector('.main').classList.toggle('sidebar-expanded', toggle);
         handleBodyScroll();
 
         document.addEventListener('mousedown', handleClickOutside);

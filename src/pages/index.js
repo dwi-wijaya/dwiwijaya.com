@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import Container from "@/components/layout/Container";
+import Container from "@/components/layouts/partials/Container";
 import Homepage from "@/components/views//home/Home";
 import { NextSeo } from "next-seo";
 import CollabsToggle from "@/components/toggles/CollabsToggle";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Overlay from "@/components/layouts/partials/Overlay";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,7 +32,7 @@ export default function Home() {
 export const getStaticProps = async () => {
 
   return {
-      props: {
-      },
+    props: {
+    },
   };
 };

@@ -1,5 +1,5 @@
 import PageHeading from '@/components/common/PageHeading';
-import Container from '@/components/layout/Container';
+import Container from '@/components/layouts/partials/Container';
 import Skill from '@/components/views/skill/Skill';
 import { fetcher } from '@/services/fetcher';
 import { NextSeo } from 'next-seo';
