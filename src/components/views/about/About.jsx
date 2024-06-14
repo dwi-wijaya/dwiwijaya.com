@@ -11,14 +11,14 @@ const About = () => {
         </p>
 
         <PageSubHeading icon={'fad fa-route'} title="My Journey" />
-        <p className='mb-3'>My career in web development began during my years at the High School,
+        <p className='mb-6'>My career in web development began during my years at the High School,
           where I majored in Software Engineering. My first job was at a small software house,
           where I learned the ropes of web development and discovered my passion for coding.
           Over the years, I have had the opportunity to work on numerous exciting projects.
           Each experience has contributed to my growth as a developer and has helped me hone my skills.</p>
 
         <PageSubHeading icon={'fad fa-lightbulb'} title="Values and Philosophy" />
-        <p className='mb-3'>I believe in continuous learning and improvement.
+        <p className='mb-6'>I believe in continuous learning and improvement.
           I am driven by a desire to create websites that are not only functional but also aesthetically pleasing.
           My work is guided by the principles of simplicity, usability, and accessibility.
           I strive to keep up with the latest trends and technologies in web development to ensure that my skills are always up to date.</p>
