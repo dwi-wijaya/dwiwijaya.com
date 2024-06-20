@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://dwiwijaya.vercel.app/
+Host: https://dwiwijaya.com/
 
 # Sitemaps
-Sitemap: https://dwiwijaya.vercel.app/sitemap.xml
+Sitemap: https://dwiwijaya.com/sitemap.xml
