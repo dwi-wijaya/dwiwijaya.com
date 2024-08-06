@@ -44,4 +44,9 @@ export const MENU_ITEMS = [
         iconClass: "fad fa-envelope",
         label: "Contact",
     },
+    {
+        href: "/guestbook",
+        iconClass: "fad fa-message-dots",
+        label: "Guestbook",
+    },
 ];
