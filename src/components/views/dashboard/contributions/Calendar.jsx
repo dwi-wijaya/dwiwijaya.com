@@ -1,8 +1,11 @@
 "use client"
 import clsx from "clsx";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 const Calendar = ({ style, data }) => {
+    const { locale } = useRouter();
+
     const [selectContribution, setSelectContribution] = useState({
         count: null,
         date: null,
@@ -48,7 +51,9 @@ const Calendar = ({ style, data }) => {
                             className={clsx(`${month.totalWeeks < 2 ? 'invisible' : ''}`)}
                             style={{ minWidth: 14.3 * month.totalWeeks }}
                         >
-                            {month.name}
+                            {new Date(month.firstDay).toLocaleDateString(locale, {
+                                month: 'short',
+                            })}
                         </li>
                     ))}
                 </ul>
@@ -97,7 +102,7 @@ const Calendar = ({ style, data }) => {
 
             <div className='flex flex-wrap items-center justify-between gap-2'>
                 <div className='flex items-center gap-2 text-sm'>
-                    <span className='dark:text-neutral-400'>Less</span>
+                    <span className='dark:text-neutral-400'>{locale === 'en' ? 'Less' : 'Kurang'}</span>
                     <ul className='flex gap-1'>
                         <motion.li className='h-[15px] w-[15px] rounded-[0.25rem] bg-[#d4d4d4] dark:bg-container' />
                         {contributionColors.map((item, index) => (
@@ -117,7 +122,7 @@ const Calendar = ({ style, data }) => {
                             />
                         ))}
                     </ul>
-                    <span>More</span>
+                    <span>{locale === 'en' ? 'More' : 'Lebih'}</span>
                 </div>
 
                 <div
@@ -126,7 +131,7 @@ const Calendar = ({ style, data }) => {
                         'rounded  px-2 text-sm bg-container border border-stroke'
                     )}
                 >
-                    <span className="text-green-500">{selectContribution?.count}</span> contributions on{' '}
+                    <span className="text-green-500">{selectContribution?.count}</span> { locale === 'en' ? 'contributions on' : 'kontribusi pada' + ' '}
                     {selectContribution?.date}
                 </div>
             </div>

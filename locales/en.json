@@ -52,6 +52,14 @@
     "Common" : {
         "comingsoon": "Coming Soon ....",
         "back": "Back"
+    },
+    "Dashboard": {
+        "title": "Dashboard",
+        "subtitle": "This is my personal website dashboard built with serverless function",
+        "pagespeedSubtitle": "Page Speed Index by Google API",
+        "githubSubtitle": "My contributions from last year on github.",
+        "leetcodeSubtitle": "My LeetCode statistics progress and performance."
+
     }
     
 }

@@ -1,7 +1,10 @@
+import { useRouter } from "next/router";
 import DashboardCard from "../DashboardCard";
 
 const Overview = ({ style, data }) => {
-  const totalContributions = data?.totalContributions || 0;
+    const { locale } = useRouter();
+
+    const totalContributions = data?.totalContributions || 0;
   const weeks = data?.weeks || [];
 
   const totalThisWeekContribution =
@@ -25,9 +28,9 @@ const Overview = ({ style, data }) => {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 mb-6 mt-4 gap-2">
       <DashboardCard title="Total" value={totalContributions} />
-      <DashboardCard title="This Week" value={totalThisWeekContribution} />
-      <DashboardCard title="Best Day" value={bestContribution} />
-      <DashboardCard title="Average" value={averageContribution} unit="/ day" />
+      <DashboardCard title={locale == "en" ? "This Week" : "Minggu Ini"} value={totalThisWeekContribution} />
+      <DashboardCard title={locale == "en" ? "Best Day" : "Hari Terbaik"} value={bestContribution} />
+      <DashboardCard title={locale == "en" ? "Average" : "Rata-rata"} value={averageContribution} unit={locale == "en" ? "/ day" : "/ hari"} />
     </div>
   );
 };

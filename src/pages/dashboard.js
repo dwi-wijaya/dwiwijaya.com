@@ -10,14 +10,17 @@ import Dashboard from '@/components/views/dashboard/Dashboard';
 import PageHeading from '@/components/common/PageHeading';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { useTranslations } from 'next-intl';
 
-const PAGE_TITLE = 'Dashboard';
-const PAGE_DESCRIPTION = "This is my personal dashboard portfolio.";
 
 const DashboardPage = ({ fallback }) => {
-
+    
+    const t = useTranslations();
     const router = useRouter();
     const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${router.asPath}`;
+
+    const PAGE_TITLE = t('Dashboard.title');
+    const PAGE_DESCRIPTION = t('Dashboard.subtitle');
 
     return (
         <>

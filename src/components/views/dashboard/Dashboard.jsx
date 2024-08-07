@@ -10,10 +10,13 @@ import PageSubHeading from "@/components/common/PageSubHeading";
 import Letcode from "./leetcode/Leetcode";
 import Overview from "./contributions/Overview";
 import Calendar from "./contributions/Calendar";
+import { useTranslations } from "next-intl";
 
 
 const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
-  const { data: leetcodeData } = useSWR(leetcodeEndpoint, fetcher);
+    const t = useTranslations();
+
+    const { data: leetcodeData } = useSWR(leetcodeEndpoint, fetcher);
   const { data: githubData } = useSWR(githubEndpoint, fetcher);
 
   const contributionCalendar = githubData?.contributionsCollection?.contributionCalendar;
@@ -22,7 +25,7 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
     <section>
       <PageSubHeading
         title="Pagespeed Insight"
-        description="My pagespeed index by google APIs"
+        description={t('Dashboard.pagespeedSubtitle')}
         icon="bx bx-tachometer"
         linkText='@pagespeed'
         link='https://pagespeed.web.dev/'
@@ -33,7 +36,7 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
       <hr className="hr" />
       <PageSubHeading
         title="Contributions"
-        description="My contributions from last year on github."
+        description={t('Dashboard.githubSubtitle')}
         icon="bx bxl-github"
         linkText='@dwi-wijaya'
         link='https://github.com/dwi-wijaya'
@@ -54,7 +57,7 @@ const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
       <hr className="hr" />
       <PageSubHeading
         title="LeetCode Statistics"
-        description="My LeetCode progress and performance."
+        description={t('Dashboard.leetcodeSubtitle')}
         icon="bx bx-code"
         linkText='@dwi-wijaya'
         link='https://leetcode.com/dwi-wijaya'

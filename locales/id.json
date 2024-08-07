@@ -52,5 +52,12 @@
     "Common" : {
         "comingsoon": "Segera Hadir ....",
         "back": "Kembali"
+    },
+    "Dashboard": {
+        "title": "Dasbor",
+        "subtitle": "Ini adalah dashboard personal website saya dibuat dengan serverless function.",
+        "pagespeedSubtitle": "Indeks kecepatan halaman saya oleh Google API",
+        "githubSubtitle": "Kontribusi saya dari tahun lalu di Github.",
+        "leetcodeSubtitle": "Statistik dan kinerja kemajuan LeetCode saya."
     }
 }
