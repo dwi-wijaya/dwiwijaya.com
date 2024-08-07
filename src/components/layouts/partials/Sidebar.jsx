@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic';
 import Router, { useRouter } from 'next/router';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from '../../toggles/ThemeToggle';
-import CollabsToggle from '../../toggles/CollabsToggle';
+import LanguageToggle from '../../toggles/LanguageToggle';
 import { useSwipeable } from 'react-swipeable';
 
 const Sidebar = ({ className, lastUpdate }) => {
@@ -99,7 +99,7 @@ const Sidebar = ({ className, lastUpdate }) => {
 
                         <div className="flex gap-2 flex-col">
                             <ThemeToggle />
-                            <CollabsToggle handleClick={() => setToggle(false)} />
+                            <LanguageToggle handleClick={() => setToggle(false)} />
                         </div>
                     </div>
                     <nav className="nav">
