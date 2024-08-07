@@ -1,11 +1,10 @@
-const { default: Guestbook } = require("@/components/views/guestbook/Guestbook");
-const { useRouter } = require("next/router");
-import PageHeading from '@/components/common/PageHeading';
-import Container from '@/components/layouts/partials/Container';
-import { useTranslations } from 'next-intl';
-import { NextSeo } from 'next-seo';
-import Head from 'next/head';
-import React from 'react'
+import PageHeading from "@/components/common/PageHeading"
+import Container from "@/components/layouts/partials/Container"
+import Guestbook from "@/components/views/Guestbook/Guestbook"
+import { useTranslations } from "next-intl";
+import { NextSeo } from "next-seo";
+import Head from "next/head";
+import { useRouter } from "next/router";
 
 
 const GuestbookPage = () => {
@@ -29,9 +28,17 @@ const GuestbookPage = () => {
                     title={PAGE_TITLE}
                     description={PAGE_DESCRIPTION}
                 />
-                <Guestbook/>
+                <Guestbook />
             </Container>
         </>
     )
 }
+
 export default GuestbookPage
+export const getStaticProps = async () => {
+
+    return {
+        props: {
+        },
+    };
+};
