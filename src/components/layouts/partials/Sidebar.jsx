@@ -21,11 +21,17 @@ const Sidebar = ({ className, lastUpdate }) => {
     const sidebarRef = useRef(null);
     const pathname = usePathname()
     const t = useTranslations();
-
+    const { locale } = useRouter();
     useEffect(() => {
         setMounted(true)
     }, [])
-
+    const formatDate = (date) => {
+        return new Intl.DateTimeFormat(locale, {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric',
+        }).format(date);
+    };
     useEffect(() => {
         const sidebarElement = document.querySelector('.sidebar');
 
@@ -91,7 +97,7 @@ const Sidebar = ({ className, lastUpdate }) => {
                         <div className="text-left mt-4 sm:mt-8">
                             <h2 className='text-2xl mb-2 leading-6 font-se'>{t('Sidebar.welcome')}</h2>
                             <span className="text-sm text-subtext">
-                                Last update, {new Date(lastUpdate).toLocaleDateString('en-GB', {
+                                {t("Sidebar.lastupdate")} : {new Date(lastUpdate).toLocaleDateString(locale, {
                                     day: 'numeric',
                                     month: 'short',
                                     year: 'numeric'
@@ -110,7 +116,7 @@ const Sidebar = ({ className, lastUpdate }) => {
                                 {MENU_ITEMS.map((item, index) => (
                                     <li key={index} className='nav__item w-full group py-2'>
                                         <Link onClick={() => setToggle(false)} href={item.href} title={item.label} className={`${pathname === item.href ? '!text-primary' : ''} hover:text-primary  text-text   h-full transition-300 flex items-center justify-between`}>
-                                            <span className='flex items-center gap-3'><i className={`${item.iconClass} min-w-5 flex justify-center items-center group-hover:-rotate-[8deg] duration-300 transition-all`}></i> {item.label}</span> {pathname === item.href && <i className="fad fa-arrow-right animate-pulse"></i>}
+                                            <span className='flex items-center gap-3'><i className={`${item.iconClass} min-w-5 flex justify-center items-center group-hover:-rotate-[8deg] duration-300 transition-all`}></i> {item.label[locale]}</span> {pathname === item.href && <i className="fad fa-arrow-right animate-pulse"></i>}
                                         </Link>
                                     </li>
                                 ))}

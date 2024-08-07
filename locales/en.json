@@ -1,5 +1,8 @@
 {
     "Sidebar": {
-        "welcome": "Welcome !"
+        "welcome": "Welcome !",
+        "lastupdate": "Updated on",
+        "dark": "Dark",
+        "light": "Light"
     }
 }

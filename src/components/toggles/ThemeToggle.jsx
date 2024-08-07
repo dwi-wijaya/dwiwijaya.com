@@ -1,9 +1,11 @@
+import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 const ThemeToggle = () => {
     const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
+    const t = useTranslations();
 
     const toggleTheme = () => {
         const newTheme = theme === "light" ? "dark" : "light";
@@ -35,8 +37,8 @@ const ThemeToggle = () => {
                         className={`absolute left-0 w-1/2 h-full bg-container border border-stroke rounded-xl transition-all duration-300 transform ${theme === "dark" ? 'translate-x-full' : ''}`}
                         style={{ content: '""', zIndex: 1 }}
                     />
-                    <p className={`z-10 p-3 justify-center leading-4 flex items-center gap-2 text-slate-500 ${theme == 'light' ? '!text-slate-800' : ''}`}><i className="fad fa-sun-bright"></i>Light</p>
-                    <p className={`z-10 p-3 justify-center leading-4 flex items-center gap-2 text-slate-500 ${theme == 'dark' ? '!text-slate-300' : ''}`}><i className="fad fa-moon"></i>Dark</p>
+                    <p className={`z-10 p-3 justify-center leading-4 flex items-center gap-2 text-slate-500 ${theme == 'light' ? '!text-slate-800' : ''}`}><i className="fad fa-sun-bright"></i>{t("Sidebar.light")}</p>
+                    <p className={`z-10 p-3 justify-center leading-4 flex items-center gap-2 text-slate-500 ${theme == 'dark' ? '!text-slate-300' : ''}`}><i className="fad fa-moon"></i>{t("Sidebar.dark")}</p>
                 </div>
             </label>
         </div>

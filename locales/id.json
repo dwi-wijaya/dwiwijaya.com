@@ -1,5 +1,8 @@
 {
     "Sidebar": {
-        "welcome": "Selamat Datang !"
+        "welcome": "Selamat Datang !",
+        "lastupdate": "Diperbarui pada",
+        "dark": "Gelap",
+        "light": "Terang"
     }
 }
