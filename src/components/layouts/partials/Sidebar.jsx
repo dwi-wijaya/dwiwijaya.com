@@ -104,9 +104,9 @@ const Sidebar = ({ className, lastUpdate }) => {
                     </div>
                     <nav className="nav">
                         <div className="nav__menu p-6 bg-background rounded-l-none rounded-2xl">
-                            <ul className="flex flex-col items-center gap-y-6">
+                            <ul className="flex flex-col items-center">
                                 {MENU_ITEMS.map((item, index) => (
-                                    <li key={index} className='nav__item w-full group'>
+                                    <li key={index} className='nav__item w-full group py-2'>
                                         <Link onClick={() => setToggle(false)} href={item.href} title={item.label} className={`${pathname === item.href ? '!text-primary' : ''} hover:text-primary  text-text   h-full transition-300 flex items-center justify-between`}>
                                             <span className='flex items-center gap-3'><i className={`${item.iconClass} min-w-5 flex justify-center items-center group-hover:-rotate-[8deg] duration-300 transition-all`}></i> {item.label}</span> {pathname === item.href && <i className="fad fa-arrow-right animate-pulse"></i>}
                                         </Link>
