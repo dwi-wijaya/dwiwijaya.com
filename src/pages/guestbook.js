@@ -1,6 +1,6 @@
 import PageHeading from "@/components/common/PageHeading"
 import Container from "@/components/layouts/partials/Container"
-import Guestbook from "@/components/views/Guestbook/Guestbook"
+import Guestbook from "@/components/views/guestbook/Guestbook"
 import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
