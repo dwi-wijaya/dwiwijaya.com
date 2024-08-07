@@ -65,6 +65,10 @@
         "subtitle": "Discover related my technical skills and professional tools.",
         "certificateTitle": "Certificates",
         "certificateSubtitle": "A showcase of my professional certificates."
+    },
+    "Experience": {
+        "title": "Experience",
+        "subtitle": "Find out my professional background and valuable experiences."
     }
     
 }
