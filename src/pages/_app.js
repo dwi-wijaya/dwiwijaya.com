@@ -15,7 +15,8 @@ import { DefaultSeo } from "next-seo";
 import defaultSEOConfig from '../../next-seo.config';
 import { getLastCommitDate } from "@/services/GithubServices";
 import Layout from "@/components/layouts/Layout";
-
+import { NextIntlClientProvider } from 'next-intl';
+import { useRouter } from "next/router";
 const onest = Onest({
   subsets: ['latin'],
 })
@@ -24,7 +25,8 @@ const ProgressBar = dynamic(
   { ssr: false }
 );
 
-export default function App({ Component, pageProps, lastCommitDate }) {
+export default function App({ Component, pageProps, lastCommitDate, messages }) {
+  const router = useRouter();
   useEffect(() => {
     Aos.init({
       duration: 800,
@@ -33,36 +35,46 @@ export default function App({ Component, pageProps, lastCommitDate }) {
   }, []);
 
   return <>
-  
-    <DefaultSeo {...defaultSEOConfig} />
+    <NextIntlClientProvider
+      locale={router.locale}
+      timeZone="Asia/Jakarta"
+      messages={messages}
+    >
 
-    <style jsx global>
-      {`
+
+      <DefaultSeo {...defaultSEOConfig} />
+
+      <style jsx global>
+        {`
           html {
             font-family: ${onest.style.fontFamily};
           }
         `}
-    </style>
+      </style>
 
-    <Toaster
-      toastOptions={{
-        style: {
-          background: "var(--container-color)",
-          color: "var(--text-color)",
-        },
-      }}
-      position="top-right"
-    />
+      <Toaster
+        toastOptions={{
+          style: {
+            background: "var(--container-color)",
+            color: "var(--text-color)",
+          },
+        }}
+        position="top-right"
+      />
 
-    <ThemeProvider attribute='class' enableSystem={false} disableTransitionOnChange={true}>
-      <Layout lastUpdate={lastCommitDate}>
-        <ProgressBar />
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
+      <ThemeProvider attribute='class' enableSystem={false} disableTransitionOnChange={true}>
+        <Layout lastUpdate={lastCommitDate}>
+          <ProgressBar />
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    </NextIntlClientProvider>
   </>
 }
-App.getInitialProps = async () => {
+App.getInitialProps = async ({ router }) => {
+  const { locale } = router;
   const lastCommitDate = await getLastCommitDate();
-  return { lastCommitDate };
+
+  const messages = (await import(`../../messages/${locale}.json`)).default
+  return { lastCommitDate, messages };
 };

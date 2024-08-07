@@ -12,6 +12,7 @@ import { usePathname } from 'next/navigation';
 import ThemeToggle from '../../toggles/ThemeToggle';
 import LanguageToggle from '../../toggles/LanguageToggle';
 import { useSwipeable } from 'react-swipeable';
+import { useTranslations } from 'next-intl';
 
 const Sidebar = ({ className, lastUpdate }) => {
     const [mounted, setMounted] = useState(false)
@@ -19,6 +20,7 @@ const Sidebar = ({ className, lastUpdate }) => {
     const { theme } = useTheme();
     const sidebarRef = useRef(null);
     const pathname = usePathname()
+    const t = useTranslations();
 
     useEffect(() => {
         setMounted(true)
@@ -87,7 +89,7 @@ const Sidebar = ({ className, lastUpdate }) => {
                             <Image width={70} src={theme == 'dark' ? LogoDark : LogoLight} alt="Dwi-logo" />
                         </button>
                         <div className="text-left mt-4 sm:mt-8">
-                            <h2 className='text-2xl mb-2 leading-6 font-se'>Welcome</h2>
+                            <h2 className='text-2xl mb-2 leading-6 font-se'>{t('Sidebar.welcome')}</h2>
                             <span className="text-sm text-subtext">
                                 Last update, {new Date(lastUpdate).toLocaleDateString('en-GB', {
                                     day: 'numeric',
