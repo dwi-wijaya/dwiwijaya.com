@@ -75,6 +75,6 @@ App.getInitialProps = async ({ router }) => {
   const { locale } = router;
   const lastCommitDate = await getLastCommitDate();
 
-  const messages = (await import(`../../messages/${locale}.json`)).default
+  const messages = (await import(`../../locales/${locale}.json`)).default
   return { lastCommitDate, messages };
 };
