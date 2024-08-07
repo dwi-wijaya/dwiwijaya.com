@@ -49,6 +49,10 @@
         "title": "Buku Tamu",
         "subtitle": "Tinggalkan apapun yang ingin kamu katakan, saran, pertanyaan atau apapun!"
     },
+    "Blog": {
+        "title": "Blog",
+        "subtitle": "Menjelajahi dunia kode, kreativitas, dan pembelajaran tanpa henti."
+    },
     "Common" : {
         "comingsoon": "Segera Hadir ....",
         "back": "Kembali"

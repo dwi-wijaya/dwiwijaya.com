@@ -49,6 +49,10 @@
         "title": "Guestbook",
         "subtitle": "Leave whatever you like to say, suggestions, questions or anything!"
     },
+    "Blog": {
+        "title": "Blog",
+        "subtitle": "Exploring the world of code, creativity, and constant learning."
+    },
     "Common" : {
         "comingsoon": "Coming Soon ....",
         "back": "Back"
