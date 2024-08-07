@@ -2,26 +2,41 @@ export const portfolioCategory = [
     {
         icon: 'fad fa-grid',
         slug: 'all',
-        label: 'All'
+        label: {
+            en: 'All',
+            id: 'Semua',
+        }
     },
     {
         icon: 'fad fa-code-simple',
         slug: 'code',
-        label: 'Code',
+        label: {
+            en: 'Code',
+            id: 'Kode',
+        }
     },
     {
         icon: 'fad fa-pen-nib',
         slug: 'uiux',
-        label: 'UI-UX',
+        label: {
+            en: 'UI/UX',
+            id: 'UI/UX',
+        }
     },
     {
         icon: 'fad fa-palette',
         slug: 'design',
-        label: 'Design',
+        label: {
+            en: 'Design',
+            id: 'Desain',
+        }
     },
     {
         icon: 'fad fa-grid-2-plus',
         slug: 'others',
-        label: 'Others',
+        label: {
+            en: 'Others',
+            id: 'Lainnya',
+        }
     }
 ];

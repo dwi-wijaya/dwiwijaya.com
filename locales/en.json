@@ -69,6 +69,10 @@
     "Experience": {
         "title": "Experience",
         "subtitle": "Find out my professional background and valuable experiences."
+    },
+    "Portfolio": {
+        "title": "Portfolio",
+        "subtitle": "Explore my latest projects and creations."
     }
     
 }

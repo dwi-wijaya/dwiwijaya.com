@@ -5,10 +5,12 @@ import PortfolioCategory from "./PortfolioCategory";
 import Link from "next/link";
 import { motion } from 'framer-motion';
 import Image from "@/components/elements/Image";
+import { useRouter } from "next/router";
 
 const Portfolio = ({ portfolios }) => {
   const [items, setItems] = useState(portfolios);
   const [activeCategory, setActiveCategory] = useState("all");
+  const { locale } = useRouter();
 
   const filterItems = (categoryItem) => {
     if (categoryItem === "all") {
@@ -58,7 +60,7 @@ const Portfolio = ({ portfolios }) => {
                         {isFeatured && (
                           <span className="flex items-center gap-1 px-2 py-1 bg-orange-300 text-black rounded-md z-10">
                             <Image src={Pin} alt="" srcSet="" />
-                            Featured{" "}
+                            {locale === "en" ? "Featured" : "Unggulan"}
                           </span>
                         )}
                         <div className="px-2 py-1 bg-orange-300 text-black rounded-md z-10">

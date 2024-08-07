@@ -69,5 +69,9 @@
     "Experience": {
         "title": "Pengalaman",
         "subtitle": "Temukan latar belakang profesional dan pengalaman berharga saya."
+    },
+    "Portfolio": {
+        "title": "Portofolio",
+        "subtitle": "Jelajahi proyek dan karya terbaru saya."
     }
 }

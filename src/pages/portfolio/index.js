@@ -2,17 +2,20 @@ import PageHeading from '@/components/common/PageHeading';
 import Container from '@/components/layouts/partials/Container'
 import Portfolio from '@/components/views/portfolio/Portfolio'
 import { fetcher } from '@/services/fetcher';
+import { useTranslations } from 'next-intl';
 import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-const PAGE_TITLE = 'My Works';
-const PAGE_DESCRIPTION = "Explore my latest projects and creations.";
 
 const PortfolioPage = ({ portfolios }) => {
-
+    
+    const t = useTranslations();
     const router = useRouter();
     const canonicalUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${router.asPath}`;
+    
+    const PAGE_TITLE = t('Portfolio.title');
+    const PAGE_DESCRIPTION = t('Portfolio.subtitle');
 
     return (
         <>
