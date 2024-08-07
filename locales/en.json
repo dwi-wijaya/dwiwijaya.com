@@ -4,5 +4,17 @@
         "lastupdate": "Updated on",
         "dark": "Dark",
         "light": "Light"
+    },
+    "Home": {
+        "greeting": "Hello everyone",
+        "iam": "I'm",
+        "based": "Based on Yogyakarta, ID",
+        "introduction": "I'm a Full-stack developer",
+        "passion": "Passionate about crafting seamless web experiences, I specialize in building efficient, scalable, and attractive web applications.",
+        "motto": "Bringing digital dreams to life.",
+        "collaboration": "Let's collaborate!",
+        "freelance": "I'm open for freelance work. Don't hesitate to contact me if you want to work together.",
+        "getInTouch": "Get in Touch",
+        "getResume": "Get Resume"
     }
 }

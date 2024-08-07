@@ -4,5 +4,17 @@
         "lastupdate": "Diperbarui pada",
         "dark": "Gelap",
         "light": "Terang"
+    },
+    "Home": {
+        "greeting": "Hai semuanya",
+        "iam": "Saya",
+        "based": "Berdomisili di Jogja, ID",
+        "introduction": "Saya seorang Full-stack developer",
+        "passion": "Saya bersemangat dalam menciptakan pengalaman web yang mulus. Saya mengkhususkan diri dalam membangun aplikasi web yang efisien, skalabel, dan menarik.",
+        "motto": "Mewujudkan impian digital.",
+        "collaboration": "Mari bekerja sama!",
+        "freelance": "Saya terbuka untuk proyek freelance, jangan ragu untuk mengirim email kepada saya untuk melihat bagaimana kita bisa berkolaborasi.",
+        "getInTouch": "Hubungi Saya",
+        "getResume": "Unduh Resume"
     }
 }
