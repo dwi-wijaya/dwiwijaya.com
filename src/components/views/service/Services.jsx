@@ -1,9 +1,11 @@
 import { ServicesData } from "@/constants/data/services";
 import PageHeading from "../../common/PageHeading";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const Services = () => {
-  return (
+    const {locale} = useRouter();
+    return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-4">
         {ServicesData.map(({ id, icon, title, description,  },index) => {
@@ -16,8 +18,8 @@ const Services = () => {
               key={id}
             >
               <i className={`text-5xl text-primary fad fa-${icon}`}></i>
-              <h3 className="mt-4 font-semibold">{title}</h3>
-              <p className="mt-1 text-sm font-light text-subtext">{description}</p>
+              <h3 className="mt-4 font-semibold">{title[locale]}</h3>
+              <p className="mt-1 text-sm font-light text-subtext">{description[locale]}</p>
             </motion.div>
           );
         })}
