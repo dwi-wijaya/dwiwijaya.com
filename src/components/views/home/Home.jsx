@@ -23,7 +23,7 @@ const Home = () => {
                     <i className="fad fa-location-dot text-primary"></i> {t('Home.based')}
                 </div>
             </div>
-            <h2 className='text-xl text-subtext mb-0 flex items-center gap-1 '>Hey there  <span className="">👋</span> </h2>
+            <h2 className='text-xl text-subtext mb-0 flex items-center gap-1 '>{t('Home.greeting')}  <span className="">👋</span> </h2>
             <div className="flex gap-2 self-center items-center">
                 <h1 className="font-bold text-3xl text-text">
                     {t('Home.iam')} <span className='text-primary'>Dwi Wijaya</span>
