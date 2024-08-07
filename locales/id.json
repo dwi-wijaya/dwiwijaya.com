@@ -16,5 +16,16 @@
         "freelance": "Saya terbuka untuk proyek freelance, jangan ragu untuk mengirim email kepada saya untuk melihat bagaimana kita bisa berkolaborasi.",
         "getInTouch": "Hubungi Saya",
         "getResume": "Unduh Resume"
+    },
+    "About": {
+        "title": "Tentang",
+        "subtitle": "Ayo, kenali saya lebih dekat dan temukan lebih banyak di balik CV saya.",
+        "journeyTitle": "Perjalanan Saya",
+        "valuesTitle": "Nilai dan Filosofi",
+        "funTitle": "Fakta Menarik",
+        "intro": "Hai, saya Dwi Wijaya, seorang pengembang web full-stack yang bersemangat dengan kecintaan dalam menciptakan situs web yang dinamis dan ramah pengguna. Dengan pengalaman lebih dari 2 tahun di industri ini, saya mengkhususkan diri dalam pengembangan front-end dan memiliki perhatian yang tajam terhadap desain dan detail. Tujuan saya adalah untuk menciptakan situs web yang sempurna secara pixel yang tidak hanya memenuhi kebutuhan klien tetapi juga melebihi harapan mereka.",
+        "journey": "Karier saya dalam pengembangan web dimulai selama tahun-tahun saya di Sekolah Menengah, di mana saya mengambil jurusan Teknik Perangkat Lunak. Pekerjaan pertama saya adalah di sebuah software-house kecil, di mana saya belajar dasar-dasar pengembangan web dan menemukan kecintaan saya terhadap coding. Selama bertahun-tahun, saya telah memiliki kesempatan untuk bekerja pada berbagai proyek yang menarik. Setiap pengalaman telah berkontribusi pada pertumbuhan saya sebagai pengembang dan telah membantu saya mengasah keterampilan saya.",
+        "values": "Saya percaya pada pembelajaran berkelanjutan dan pengembangan diri. Saya didorong oleh keinginan untuk menciptakan situs web yang tidak hanya fungsional tetapi juga estetis menyenangkan. Pekerjaan saya dipandu oleh prinsip kesederhanaan, kegunaan, dan aksesibilitas. Saya berusaha untuk mengikuti tren dan teknologi terbaru dalam pengembangan web untuk memastikan bahwa keterampilan saya selalu mutakhir.",
+        "funfact": "Saya belum memiliki fakta menarik 😭."
     }
 }
