@@ -59,7 +59,12 @@
         "pagespeedSubtitle": "Page Speed Index by Google API",
         "githubSubtitle": "My contributions from last year on github.",
         "leetcodeSubtitle": "My LeetCode statistics progress and performance."
-
+    },
+    "Skillset": {
+        "title": "Skillset",
+        "subtitle": "Discover related my technical skills and professional tools.",
+        "certificateTitle": "Certificates",
+        "certificateSubtitle": "A showcase of my professional certificates."
     }
     
 }

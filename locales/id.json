@@ -59,5 +59,11 @@
         "pagespeedSubtitle": "Indeks kecepatan halaman saya oleh Google API",
         "githubSubtitle": "Kontribusi saya dari tahun lalu di Github.",
         "leetcodeSubtitle": "Statistik dan kinerja kemajuan LeetCode saya."
+    },
+    "Skillset": {
+        "title": "Keahlian",
+        "subtitle": "Jelajahi terkait keahlian teknis dan alat profesional saya.",
+        "certificateTitle": "Sertifikasi",
+        "certificateSubtitle": "Beberapa showcase sertifikat professional saya."
     }
 }
