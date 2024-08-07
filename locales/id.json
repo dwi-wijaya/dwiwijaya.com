@@ -31,5 +31,18 @@
     "Services": {
         "title": "Layanan",
         "subtitle": "Temukan layanan khusus yang saya tawarkan untuk klien."
+    },
+    "Contact": {
+        "title": "Hubungi Saya",
+        "subtitle": "Ayo, hubungi saya dan mulailah percakapan tentang kemungkinan kerja sama atau pertanyaan Anda.",
+        "findSocial": "Temukan saya di media sosial",
+        "orsendMsg": "Atau kirimkan pesan kepada saya",
+        "name": "Nama",
+        "namePlaceholder": "Masukkan nama Anda *",
+        "mail": "Email",
+        "mailPlaceholder": "Masukkan email Anda *",
+        "projectDesc": "Deskripsi Proyek",
+        "descPlaceholder": "Ceritakan tentang proyek Anda *",
+        "sendMsg": "Kirim Pesan"
     }
 }

@@ -31,5 +31,19 @@
     "Services": {
         "title": "Services",
         "subtitle": "Learn about the specialized services I offer to clients."
+    },
+    "Contact": {
+        "title": "Get in Touch",
+        "subtitle": "Reach out and start a conversation about potential collaborations or inquiries.",
+        "findSocial": "Find me on social media",
+        "orsendMsg": "Or send me a message",
+        "name": "Name",
+        "namePlaceholder": "Insert your name *",
+        "mail": "Mail",
+        "mailPlaceholder": "Insert your email *",
+        "projectDesc": "Project Description",
+        "descPlaceholder": "Write me your project description *",
+        "sendMsg": "Send a Message"
     }
+    
 }

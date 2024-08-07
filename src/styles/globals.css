@@ -71,7 +71,7 @@ html {
   }
 
   .form-input {
-    @apply absolute top-0 left-0 w-full h-full border border-stroke bg-background text-text rounded-xl p-6 z-[1];
+    @apply absolute top-0 left-0 w-full h-full border border-slate-400 dark:border-stroke bg-background text-text rounded-xl p-6 z-[1];
   }
 
   .form-label {
