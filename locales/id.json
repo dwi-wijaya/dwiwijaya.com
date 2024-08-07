@@ -44,5 +44,13 @@
         "projectDesc": "Deskripsi Proyek",
         "descPlaceholder": "Ceritakan tentang proyek Anda *",
         "sendMsg": "Kirim Pesan"
+    },
+    "Guestbook": {
+        "title": "Buku Tamu",
+        "subtitle": "Tinggalkan apapun yang ingin kamu katakan, saran, pertanyaan atau apapun!"
+    },
+    "Common" : {
+        "comingsoon": "Segera Hadir ....",
+        "back": "Kembali"
     }
 }

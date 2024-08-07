@@ -44,6 +44,14 @@
         "projectDesc": "Project Description",
         "descPlaceholder": "Write me your project description *",
         "sendMsg": "Send a Message"
+    },
+    "Guestbook": {
+        "title": "Guestbook",
+        "subtitle": "Leave whatever you like to say, suggestions, questions or anything!"
+    },
+    "Common" : {
+        "comingsoon": "Coming Soon ....",
+        "back": "Back"
     }
     
 }
