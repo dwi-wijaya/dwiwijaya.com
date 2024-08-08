@@ -70,7 +70,7 @@ const Contact = () => {
                                 className="form-input resize-none "
                             ></textarea>
                         </div>
-                        <button data-data-umami-event='Send Contact Message' className="btn !w-full md:!w-fit text-center justify-center" >
+                        <button data-data-umami-event='Send Contact Message' disabled={loading} className={`${loading ? 'cursor-not-allowed' : ''} btn !w-full md:!w-fit text-center justify-center`} >
                             {loading ? (
                                 <i className="bx bx-loader bx-spin"></i>
                             ) : (
