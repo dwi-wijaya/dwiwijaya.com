@@ -1,14 +1,19 @@
 import { useRouter } from 'next/router';
-import { useTranslations } from 'next-intl';
-import { useEffect, useState } from "react";
+import { useState, useEffect } from 'react';
+import { setCookie } from 'cookies-next';
 
 const LanguageToggle = () => {
     const { locale, push, pathname, asPath, query } = useRouter();
     const [language, setLanguage] = useState(locale);
 
+    useEffect(() => {
+        setLanguage(locale);
+    }, [locale]);
+
     const toggleLanguage = () => {
-        const newLanguage = language === "id" ? "en" : "id";
+        const newLanguage = language === 'id' ? 'en' : 'id';
         setLanguage(newLanguage);
+        setCookie('NEXT_LOCALE', newLanguage); // Update the cookie
         push({ pathname, query }, asPath, { locale: newLanguage });
     };
 
