@@ -44,7 +44,7 @@ const Home = () => {
             <div className='card mb-6 !pb-4'>
                 <div className='flex gap-3 items-center'>
                     <i className='fad fa-rocket-launch text-primary'></i>
-                    <h2 className='text-xl font-medium'>{t('Home.collaboration')}</h2>
+                    <h2 className='text-xl text-title font-medium'>{t('Home.collaboration')}</h2>
                 </div>
                 <p className='text-subtext mt-2 mb-5'>
                     {t('Home.freelance')}

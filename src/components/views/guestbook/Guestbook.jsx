@@ -1,15 +1,49 @@
-import { useTranslations } from 'next-intl';
-import React from 'react'
+import { supabase } from '@/lib/supabase';
+import { useEffect, useState } from 'react';
+import { GuestbookForm } from './GuestbookForm';
+import { GuestbookMessages } from './GuestbookMessages';
 
-const Guestbook = () => {
-    const t = useTranslations();
+export default function Guestbook() {
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const session = supabase.auth.getSession();
+        setUser(session?.user ?? null);
+        console.log(user);
+        const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+            setUser(session?.user ?? null);
+        });
+
+        return () => {
+        };
+    }, []);
+
+    const signInWithGoogle = async () => {
+        await supabase.auth.signInWithOAuth({ provider: 'google' });
+    };
+
+    const signInWithGitHub = async () => {
+        await supabase.auth.signInWithOAuth({ provider: 'github' });
+    };
+
+    const signOut = async () => {
+        await supabase.auth.signOut();
+    };
+
     return (
-        <>
-            <div className="Guestbook__container">
-                <h3 className='flex gap-2 items-center'><i className='fad fa-clock text-primary'></i>{t('Common.comingsoon')}</h3>
-            </div>
-        </>
-    )
+        <div>
+            {!user ? (
+                <div>
+                    <button onClick={signInWithGoogle}>Login with Google</button>
+                    <button onClick={signInWithGitHub}>Login with GitHub</button>
+                </div>
+            ) : (
+                <div>
+                    <GuestbookMessages />
+                    <button onClick={signOut}>Logout</button>
+                    <GuestbookForm user={user} />
+                </div>
+            )}
+        </div>
+    );
 }
-
-export default Guestbook

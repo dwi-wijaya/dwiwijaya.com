@@ -1,6 +1,7 @@
 import PageHeading from "@/components/common/PageHeading"
 import Container from "@/components/layouts/partials/Container"
 import Guestbook from "@/components/views/guestbook/Guestbook"
+import { createClient } from "@/lib/server-supabase";
 import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
@@ -28,17 +29,26 @@ const GuestbookPage = () => {
                     title={PAGE_TITLE}
                     description={PAGE_DESCRIPTION}
                 />
-                <Guestbook />
+                <Guestbook  />
             </Container>
         </>
     )
 }
 
 export default GuestbookPage
-export const getStaticProps = async () => {
-
+export const getServerSideProps = async (context) => {
+    const supabase = createClient(context)
+    const { data, error } = await supabase.auth.getUser()
+    const { data: messages, error: messageError } = await supabase
+                .from('guestbook')
+                .select('*')
+                .order('created_at', { ascending: false })
+                ;
+    console.log(data);
+    console.log(messages);
     return {
         props: {
+            
         },
     };
 };
