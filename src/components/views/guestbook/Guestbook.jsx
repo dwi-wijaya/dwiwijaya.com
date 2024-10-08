@@ -2,9 +2,11 @@ import { supabase } from '@/lib/supabase';
 import { useEffect, useState } from 'react';
 import { GuestbookForm } from './GuestbookForm';
 import { GuestbookMessages } from './GuestbookMessages';
+import { useRouter } from 'next/router';
 
 export default function Guestbook() {
     const [user, setUser] = useState(null);
+    const router = useRouter();
 
     useEffect(() => {
         const session = supabase.auth.getSession();
@@ -18,24 +20,29 @@ export default function Guestbook() {
         };
     }, []);
 
-    const signInWithGoogle = async () => {
-        await supabase.auth.signInWithOAuth({ provider: 'google' });
-    };
-
-    const signInWithGitHub = async () => {
-        await supabase.auth.signInWithOAuth({ provider: 'github' });
+    const signInWithProvider = async (provider) => {
+        const { error } = await supabase.auth.signInWithOAuth({
+            provider, options: {
+                redirectTo: `${window.location.origin}/guestbook`, // pastikan ini menuju ke halaman guestbook
+            },
+        });
     };
 
     const signOut = async () => {
-        await supabase.auth.signOut();
+        const { error } = await supabase.auth.signOut();
+        if (error) {
+            console.error('Error during sign out:', error);
+        } else {
+            router.push('/guestbook');
+        }
     };
 
     return (
         <div>
             {!user ? (
                 <div>
-                    <button onClick={signInWithGoogle}>Login with Google</button>
-                    <button onClick={signInWithGitHub}>Login with GitHub</button>
+                    <button onClick={() => signInWithProvider('google')}>Login with Google</button>
+                    <button onClick={() => signInWithProvider('github')}>Login with GitHub</button>
                 </div>
             ) : (
                 <div>
