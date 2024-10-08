@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bun dev",
-    "build": "bun build",
-    "postbuild": "bun-sitemap",
-    "start": "bun start",
-    "lint": "bun lint"
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "next-sitemap",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
@@ -23,7 +23,7 @@
     "cookies-next": "^4.2.1",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^11.0.12",
-    "next": "14.2.5",
+    "next": "^14.2.14",
     "next-intl": "^3.17.2",
     "next-remove-imports": "^1.0.12",
     "next-seo": "^6.4.0",
