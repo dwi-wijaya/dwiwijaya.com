@@ -63,7 +63,7 @@ html {
   }
 
   .hr {
-    @apply border-stroke my-5;
+    @apply border-stroke mt-5 mb-6;
   }
 
   .dots {
