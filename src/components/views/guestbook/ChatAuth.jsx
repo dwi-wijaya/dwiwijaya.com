@@ -32,7 +32,7 @@ const ChatAuth = () => {
         <div className="flex flex-col border-t border-neutral-300 py-1 dark:border-neutral-900">
             <div className="mb-1 space-y-5 py-3 text-start text-neutral-700 dark:text-neutral-400">
                 <p className="text-sm ml-1 flex gap-1 item-center">
-                <SignInIcon size={16} className="cursor-pointer text-text mt-[2px]" />Please sign in to start. Don't worry, your data is safe. 
+                <SignInIcon size={16} className="cursor-pointer text-text mt-[2px]" />Please sign in to start. Don&apos;t worry, your data is safe. 
                 </p>
                 <div
                     className={
