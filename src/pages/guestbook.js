@@ -8,7 +8,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 
-const GuestbookPage = () => {
+const GuestbookPage = ({ messages, session }) => {
 
     const t = useTranslations();
     const router = useRouter();
@@ -29,7 +29,7 @@ const GuestbookPage = () => {
                     title={PAGE_TITLE}
                     description={PAGE_DESCRIPTION}
                 />
-                <Guestbook  />
+                <Guestbook messages={messages} session={session} />
             </Container>
         </>
     )
@@ -38,17 +38,16 @@ const GuestbookPage = () => {
 export default GuestbookPage
 export const getServerSideProps = async (context) => {
     const supabase = createClient(context)
-    const { data, error } = await supabase.auth.getUser()
+    const { data: session, error: sessionError } = await supabase.auth.getSession()
     const { data: messages, error: messageError } = await supabase
-                .from('guestbook')
-                .select('*')
-                .order('created_at', { ascending: false })
-                ;
-    console.log(data);
-    console.log(messages);
+        .from('guestbook')
+        .select('*')
+        .order('created_at', { ascending: false });
+    console.log(session)
+    console.log(messages)
     return {
         props: {
-            
+            messages, session:session.session
         },
     };
 };
