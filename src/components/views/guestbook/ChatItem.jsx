@@ -34,7 +34,7 @@ const ChatItem = ({
   };
 
   return (
-    <div className='flex items-start gap-3 px-3'>
+    <div className='flex items-start gap-3'>
       {avatar && (
         <Image
           src={avatar}
@@ -54,7 +54,7 @@ const ChatItem = ({
               <ChatTime datetime={created_at} />
             </div>
             {email === authorEmail && (
-              <div className='text-medium flex items-center gap-0.5 rounded-full bg-gradient-to-bl from-purple-800 via-violet-900 to-purple-800 px-1.5 py-0.5 text-violet-50'>
+              <div className='text-medium flex items-center gap-0.5 rounded-full bg-orange-600 dark:bg-orange-700 px-1.5 py-0.5 text-violet-50'>
                 <AdminIcon size={13} />
                 <span className=' text-[10px]'>Author</span>
               </div>
@@ -64,20 +64,20 @@ const ChatItem = ({
         <div className='group flex items-center gap-3'>
           <p
             className={
-              `w-fit rounded-xl rounded-tl-none bg-neutral-200 px-3 py-2 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200 group-hover:dark:bg-neutral-700`
+              `w-fit rounded-xl rounded-tl-none bg-container px-3 py-2 text-neutral-800 dark:text-neutral-200 group-hover:dark:bg-neutral-700`
             }
           >
             {modifiedMessage}
           </p>
           <div className='flex items-center gap-3'>
-            {(session?.user?.email === email ||
-              session?.user?.email === authorEmail) && (
-              <DeleteIcon
-                size={17}
-                className='hidden cursor-pointer text-red-500 group-hover:flex'
-                onClick={handleDeleteMessage}
-              />
-            )}
+            {(session?.email === email ||
+              session?.email === authorEmail) && (
+                <DeleteIcon
+                  size={17}
+                  className='hidden cursor-pointer text-red-500 group-hover:flex'
+                  onClick={handleDeleteMessage}
+                />
+              )}
           </div>
         </div>
         <div className='flex md:hidden'>

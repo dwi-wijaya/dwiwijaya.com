@@ -38,7 +38,7 @@ const ChatInput = ({ onSendMessage, session }) => {
                     value={message}
                     onChange={handleChange}
                     placeholder="Type a message..."
-                    className="flex-grow rounded-md border p-2 focus:outline-none dark:border-neutral-600"
+                    className="flex-grow bg-container rounded-md border p-2 focus:outline-none dark:border-stroke"
                     disabled={isSending}
                     autoFocus
                 />
