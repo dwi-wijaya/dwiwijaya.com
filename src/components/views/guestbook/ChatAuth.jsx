@@ -8,7 +8,7 @@ const Providers = [
     {
         id: "google",
         icon: <GoogleIcon size={18} />,
-        bgColor: "!bg-white border !border-stroke",
+        bgColor: "!bg-white border !border-stroke dark:border-none",
         textColor: "text-black",
         label: "Sign in with Google",
     },
@@ -29,21 +29,21 @@ const signIn = async (provider) => {
 };
 const ChatAuth = () => {
     return (
-        <div className="flex flex-col border-t border-neutral-300 py-1 dark:border-neutral-900">
-            <div className="mb-1 space-y-5 py-3 text-start text-neutral-700 dark:text-neutral-400">
-                <p className="text-sm ml-1 flex gap-1 item-center">
-                <SignInIcon size={16} className="cursor-pointer text-text mt-[2px]" />Please sign in to start. Don&apos;t worry, your data is safe. 
+        <div className="flex flex-col border-t border-stroke">
+            <div className="space-y-5 pt-3 text-start text-neutral-700 dark:text-neutral-400">
+                <p className=" text-xs sm:text-sm ml-1 flex gap-1 item-center">
+                <SignInIcon size={16} className="cursor-pointer  text-text mt-[2px]" />Please sign in to start. Don&apos;t worry, your data is safe. 
                 </p>
                 <div
                     className={
-                        `flex flex-col items-center justify-start gap-4 lg:flex-row lg:gap-5 !mt-3`
+                        `flex flex-col items-start sm:items-center justify-start gap-2 sm:gap-4 xs:flex-row lg:gap-5 !mt-3 `
                     }
                 >
                     {Providers?.map((button) => (
                         <button
                             key={button.id}
                             onClick={() => signIn(button.id)}
-                            className={`btn  !text-white ${button.bgColor
+                            className={`btn min-w-56  !text-white ${button.bgColor
                                 } `}
                             data-umami-event={`Sign In to Chat: ${button.label}`}
                         >
