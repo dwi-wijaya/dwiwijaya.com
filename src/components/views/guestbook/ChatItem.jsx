@@ -74,7 +74,7 @@ const ChatItem = ({
               session?.email === authorEmail) && (
                 <DeleteIcon
                   size={17}
-                  className='hidden cursor-pointer text-red-500 group-hover:flex'
+                  className='hidden cursor-pointer text-red-500 group-hover:flex mr-3'
                   onClick={handleDeleteMessage}
                 />
               )}
