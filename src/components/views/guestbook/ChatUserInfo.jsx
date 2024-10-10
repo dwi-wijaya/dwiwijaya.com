@@ -2,7 +2,6 @@ import { supabase } from "@/lib/supabase";
 import { HiOutlineLogout as SignOutIcon } from "react-icons/hi";
 
 const ChatUserInfo = ({ session }) => {
-console.log(session)
     const userName = session?.name ?? null;
     const userEmail = session?.email ?? null;
     const signOut = async () => {

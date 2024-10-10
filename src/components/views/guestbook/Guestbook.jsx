@@ -5,14 +5,15 @@ import { GuestbookMessages } from './GuestbookMessages';
 import { sessionouter, useRouter } from 'next/router';
 import ChatAuth from './ChatAuth';
 import ChatInput from './ChatInput';
+import { v4 as uuidv4 } from 'uuid';
 
+const uuid = uuidv4;
 export default function Guestbook({ messages }) {
     const [session, setSession] = useState(null);
 
     useEffect(() => {
         const session = supabase.auth.getSession();
         setSession(session?.session ?? null);
-        console.log(session);
         const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
             setSession(session?.user ?? null);
         });
@@ -21,15 +22,50 @@ export default function Guestbook({ messages }) {
         };
     }, []);
 
-    const handleSendMessage = (message) => {
+    // Handle send message
+    const handleSendMessage = async (message) => {
+        console.log(session);
+        console.log(message)
+        if (!message || !session) return;
 
+        // const { user } = session;
+
+        const { data, error } = await supabase
+            .from('guestbook')
+            .insert([
+                {
+                    id: uuidv4(),  // Assuming you import uuidv4 or you let Supabase auto-generate
+                    message: message,
+                    name: session.user_metadata.name || user.email,
+                    email: session.email,
+                    avatar: session.user_metadata.avatar_url,
+                    created_at: new Date(),
+                }
+            ]);
+
+        if (error) {
+            console.error("Error sending message:", error.message);
+        } else {
+            console.log("Message sent:", data);
+        }
     };
 
-    const handleDeleteMessage = (id) => {
+    // Handle delete message
+    const handleDeleteMessage = async (id) => {
+        if (!id) return;
 
+        const { data, error } = await supabase
+            .from('guestbook')
+            .delete()
+            .eq('id', id);
+
+        if (error) {
+            console.error("Error deleting message:", error.message);
+        } else {
+            console.log("Message deleted:", data);
+        }
     };
 
-    console.log(session)
     return (
         <>
             <GuestbookMessages
@@ -39,7 +75,7 @@ export default function Guestbook({ messages }) {
 
             />
             {session ? (
-                <ChatInput onSendMessage={handleSendMessage} session={session}/>
+                <ChatInput onSendMessage={handleSendMessage} session={session} />
             ) : (
                 <ChatAuth />
             )}

@@ -42,9 +42,7 @@ export const getServerSideProps = async (context) => {
     const { data: messages, error: messageError } = await supabase
         .from('guestbook')
         .select('*')
-        .order('created_at', { ascending: false });
-    console.log(session)
-    console.log(messages)
+        .order('created_at', { ascending: true });
     return {
         props: {
             messages, session:session.session
