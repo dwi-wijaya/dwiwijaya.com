@@ -8,10 +8,7 @@ const ChatUserInfo = ({ session }) => {
         const { error } = await supabase.auth.signOut();
     };
     return session ? (
-        <div
-            className={
-                `ml-1 flex flex-col items-start gap-2 pb-3 text-sm md:flex-row md:items-center`}
-        >
+        <div className={`ml-1 flex flex-col items-start gap-2 text-sm md:flex-row md:items-center`}>
             <div className="flex flex-wrap gap-1 text-neutral-500">
                 <p>Signed in as</p>
                 <p className="font-medium">{userName}</p>
