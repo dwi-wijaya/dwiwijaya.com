@@ -39,7 +39,6 @@ export default function Guestbook({ messages }) {
                     name: session.user_metadata.name || user.email,
                     email: session.email,
                     avatar: session.user_metadata.avatar_url,
-                    created_at: new Date(),
                 }
             ]);
 
@@ -69,7 +68,7 @@ export default function Guestbook({ messages }) {
     return (
         <>
             <GuestbookMessages
-                messages={messages}
+                initialMessages={messages}
                 onDeleteMessage={handleDeleteMessage}
                 session={session}
 
