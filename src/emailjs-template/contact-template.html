@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contact Message</title>
+</head>
+
+<body style="font-family: 'Arial', sans-serif; background-color: #f3f3f3; padding: 30px;">
+    <div
+        style="max-width: 600px; margin: 0 auto;margin-top: 24px; background-color: #ffffff; border-radius: 8px; padding: 20px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
+        <h2 style="color: #333333; text-align: center; font-size: 24px;">📧 New Project Inquiry Received</h2>
+        <p style="font-size: 16px; color: #555555; text-align: center;">You have received a new message from your
+            portfolio contact form.</p>
+
+        <div style="border-top: 1px solid #dddddd; margin: 20px 0;"></div>
+
+        <p style="font-size: 16px; color: #555555;">
+            <strong>Name:</strong> {{name}}
+        </p>
+        <p style="font-size: 16px; color: #555555;">
+            <strong>Email:</strong> <a href="mailto:{{email}}"
+                style="color: #6a67ce; text-decoration: none;">{{email}}</a>
+        </p>
+        <p style="font-size: 16px; color: #555555;">
+            <strong>Project Details:</strong> <br>
+            {{project}}
+        </p>
+
+        <div style="border-top: 1px solid #dddddd; margin: 20px 0;"></div>
+        <p
+            style="font-size: 14px; color: #333; line-height: 1.8;margin-bottom: 16px;margin-top: 0px !important;text-align: center;">
+            You can reply this message from your client by clicking the link below:
+        </p>
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="mailto:{{email}}"
+                style="background-color: #f7b8a4; color: #e04848; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-size: 16px;">Reply
+                to {{name}}</a>
+        </div>
+
+
+        <p style="font-size: 14px; color: #999999; text-align: center;">
+            Best regards,<br>
+            <a href="https://dwiwijaya.com" style="color: #e04848; text-decoration: none;">dwiwijaya.com</a>
+        </p>
+    </div>
+</body>
+
+</html>

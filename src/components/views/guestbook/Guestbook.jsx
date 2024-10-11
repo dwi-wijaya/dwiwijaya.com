@@ -2,12 +2,11 @@ import { supabase } from '@/lib/supabase';
 import { useEffect, useState } from 'react';
 import { GuestbookForm } from './GuestbookForm';
 import { GuestbookMessages } from './GuestbookMessages';
-import { sessionouter, useRouter } from 'next/router';
 import ChatAuth from './ChatAuth';
 import ChatInput from './ChatInput';
 import { v4 as uuidv4 } from 'uuid';
+import { sendEmailNotification } from '@/services/EmailService';
 
-const uuid = uuidv4;
 export default function Guestbook({ messages }) {
     const [session, setSession] = useState(null);
 
@@ -24,19 +23,15 @@ export default function Guestbook({ messages }) {
 
     // Handle send message
     const handleSendMessage = async (message) => {
-        console.log(session);
-        console.log(message)
         if (!message || !session) return;
-
-        // const { user } = session;
 
         const { data, error } = await supabase
             .from('guestbook')
             .insert([
                 {
-                    id: uuidv4(),  // Assuming you import uuidv4 or you let Supabase auto-generate
+                    id: uuidv4(),
                     message: message,
-                    name: session.user_metadata.name || user.email,
+                    name: session.user_metadata.name || session.email,
                     email: session.email,
                     avatar: session.user_metadata.avatar_url,
                 }
@@ -45,7 +40,14 @@ export default function Guestbook({ messages }) {
         if (error) {
             console.error("Error sending message:", error.message);
         } else {
-            console.log("Message sent:", data);
+            // console.log("Message sent");
+
+            // Kirim notifikasi email setelah pesan tersimpan
+            await sendEmailNotification({
+                name: session.user_metadata.name || session.email,
+                message: message,
+                email: session.email
+            });
         }
     };
 
@@ -71,7 +73,6 @@ export default function Guestbook({ messages }) {
                 initialMessages={messages}
                 onDeleteMessage={handleDeleteMessage}
                 session={session}
-
             />
             {session ? (
                 <ChatInput onSendMessage={handleSendMessage} session={session} />
