@@ -34,7 +34,7 @@ const ChatItem = ({
   };
 
   return (
-    <div className='flex items-start gap-3'>
+    <div className='group flex items-start gap-3'>
       {avatar && (
         <Image
           src={avatar}
@@ -59,26 +59,27 @@ const ChatItem = ({
                 <span className=' text-[10px]'>Author</span>
               </div>
             )}
+            <div className='flex items-center gap-3'>
+              {(session?.email === email ||
+                session?.email === authorEmail) && (
+                  <DeleteIcon
+                    size={17}
+                    className='hidden cursor-pointer text-red-500 group-hover:flex mr-3'
+                    onClick={handleDeleteMessage}
+                  />
+                )}
+            </div>
           </div>
         </div>
-        <div className='group flex items-center gap-3'>
+        <div className=' flex items-center gap-3'>
           <p
             className={
-              `w-fit rounded-xl rounded-tl-none bg-container px-3 py-2 text-neutral-800 dark:text-neutral-200 group-hover:dark:bg-neutral-700`
+              `w-fit rounded-xl rounded-tl-none bg-container border border-stroke dark:border-none px-3 py-2 text-neutral-800 dark:text-neutral-200 `
             }
           >
             {modifiedMessage}
           </p>
-          <div className='flex items-center gap-3'>
-            {(session?.email === email ||
-              session?.email === authorEmail) && (
-                <DeleteIcon
-                  size={17}
-                  className='hidden cursor-pointer text-red-500 group-hover:flex mr-3'
-                  onClick={handleDeleteMessage}
-                />
-              )}
-          </div>
+
         </div>
         <div className='flex md:hidden'>
           <ChatTime datetime={created_at} />
