@@ -4,11 +4,13 @@ import { useEffect, useState, useRef } from "react";
 
 export const GuestbookMessages = ({ initialMessages, onDeleteMessage, session }) => {
     const [messages, setMessages] = useState(initialMessages || []);
-    const messagesEndRef = useRef(null);  // Ref untuk elemen akhir pesan
+    const scrollableContainerRef = useRef(null);  // Ref untuk container yang di-scroll
 
     // Scroll ke bagian bawah hanya jika pesan berasal dari user yang sedang login
     const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        if (scrollableContainerRef.current) {
+            scrollableContainerRef.current.scrollTop = scrollableContainerRef.current.scrollHeight;
+        }
     };
 
     // Subscribe to changes in the "guestbook" table
@@ -37,12 +39,13 @@ export const GuestbookMessages = ({ initialMessages, onDeleteMessage, session })
 
     return (
         <div className="rounded-lg px-1">
-            <div className="space-y-5 overflow-y-auto pb-4 max-h-[50svh] scrollbar- sm:max-h-[55svh] overflow-auto">
+            <div 
+                ref={scrollableContainerRef}
+                className="space-y-5 overflow-y-auto pb-4 max-h-[50svh] scrollbar- sm:max-h-[55svh] overflow-auto"
+            >
                 {messages.map((msg, index) => (
                     <ChatItem key={index} onDelete={onDeleteMessage} {...msg} session={session} />
                 ))}
-                {/* Elemen kosong untuk referensi scroll */}
-                <div ref={messagesEndRef} />
             </div>
         </div>
     );
