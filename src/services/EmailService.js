@@ -18,7 +18,7 @@ const EmailService = () => {
                 }
             );
 
-            console.log("SUCCESS!", response);
+            // console.log("SUCCESS!", response);
 
             toast.success("Email sent successfully!");
             form.reset();
@@ -32,5 +32,22 @@ const EmailService = () => {
 
     return { sendEmail, loading };
 };
+export const sendEmailNotification = async (messageData) => {
+    const templateParams = {
+        name: messageData.name,
+        message: messageData.message,
+        email: messageData.email,
+    };
 
+    try {
+        const result = await emailjs.send(
+            `${process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID}`,
+            `${process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_GUESTBOOK_ID}`,
+            templateParams,
+            `${process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY}`             // Ganti dengan user ID dari EmailJS
+        );
+    } catch (error) {
+        console.error('Error sending notification:', error);
+    }
+};
 export default EmailService;

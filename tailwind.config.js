@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '480px', 
+      },
       colors: {
         background: 'var(--background-color)',
         container: 'var(--container-color)',

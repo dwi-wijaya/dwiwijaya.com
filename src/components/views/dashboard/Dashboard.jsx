@@ -14,58 +14,61 @@ import { useTranslations } from "next-intl";
 
 
 const Dashboard = ({ githubEndpoint, leetcodeEndpoint }) => {
-    const t = useTranslations();
+  const t = useTranslations();
 
-    const { data: leetcodeData } = useSWR(leetcodeEndpoint, fetcher);
+  const { data: leetcodeData } = useSWR(leetcodeEndpoint, fetcher);
   const { data: githubData } = useSWR(githubEndpoint, fetcher);
 
   const contributionCalendar = githubData?.contributionsCollection?.contributionCalendar;
 
   return (
-    <section>
-      <PageSubHeading
-        title="Pagespeed Insight"
-        description={t('Dashboard.pagespeedSubtitle')}
-        icon="bx bx-tachometer"
-        linkText='@pagespeed'
-        link='https://pagespeed.web.dev/'
-        tintIcon={false}
-      />
-      <PageSpeed />
-
-      <hr className="hr" />
-      <PageSubHeading
-        title="Contributions"
-        description={t('Dashboard.githubSubtitle')}
-        icon="bx bxl-github"
-        linkText='@dwi-wijaya'
-        link='https://github.com/dwi-wijaya'
-        tintIcon={false}
-      />
-      <section className="contribution__section">
-        {!githubData && <div className='dark:text-neutral-400'>No Github Data</div>}
-
-        {githubData && (
-          <div className='space-y-3'>
-            <Overview data={contributionCalendar} />
-            <Calendar data={contributionCalendar} />
-          </div>
-        )}
-
+    <div className="flex flex-col space-y-10">
+      <section>
+        <PageSubHeading
+          title="Pagespeed Insight"
+          description={t('Dashboard.pagespeedSubtitle')}
+          icon="bx bx-tachometer"
+          linkText='@pagespeed'
+          link='https://pagespeed.web.dev/'
+          tintIcon={false}
+        />
+        <PageSpeed />
       </section>
 
-      <hr className="hr" />
-      <PageSubHeading
-        title="LeetCode Statistics"
-        description={t('Dashboard.leetcodeSubtitle')}
-        icon="bx bx-code"
-        linkText='@dwi-wijaya'
-        link='https://leetcode.com/dwi-wijaya'
-        tintIcon={false}
-      />
-      <Letcode data={leetcodeData} />
+      <section>
+        <PageSubHeading
+          title="Contributions"
+          description={t('Dashboard.githubSubtitle')}
+          icon="bx bxl-github"
+          linkText='@dwi-wijaya'
+          link='https://github.com/dwi-wijaya'
+          tintIcon={false}
+        />
+        <>
+          {!githubData && <div className='dark:text-neutral-400'>No Github Data</div>}
 
-    </section>
+          {githubData && (
+            <div className='space-y-3'>
+              <Overview data={contributionCalendar} />
+              <Calendar data={contributionCalendar} />
+            </div>
+          )}
+        </>
+      </section>
+
+      <section>
+        <PageSubHeading
+          title="LeetCode Statistics"
+          description={t('Dashboard.leetcodeSubtitle')}
+          icon="bx bx-code"
+          linkText='@dwi-wijaya'
+          link='https://leetcode.com/dwi-wijaya'
+          tintIcon={false}
+        />
+        <Letcode data={leetcodeData} />
+      </section>
+
+    </div>
   );
 };
 

@@ -36,8 +36,8 @@ body {
 
 html {
   scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  /* -ms-overflow-style: none;
+  scrollbar-width: none; */
   letter-spacing: .3px;
 }
 
@@ -212,4 +212,16 @@ html {
 .btn:hover i {
   transform: rotate(-10deg);
   transition: all .3s;
+}
+
+::-webkit-scrollbar {
+  @apply w-1;
+}
+
+::-webkit-scrollbar-track {
+  @apply rounded-[3px] bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-[3px] border-2 border-stroke bg-slate-400 dark:bg-slate-500;
 }
