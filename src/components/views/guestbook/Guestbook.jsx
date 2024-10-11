@@ -63,7 +63,7 @@ export default function Guestbook({ messages }) {
         if (error) {
             console.error("Error deleting message:", error.message);
         } else {
-            console.log("Message deleted:", data);
+            // console.log("Message deleted:", data);
         }
     };
 
