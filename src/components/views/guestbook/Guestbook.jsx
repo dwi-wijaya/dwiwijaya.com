@@ -43,7 +43,7 @@ export default function Guestbook({ messages }) {
             // console.log("Message sent");
 
             // Kirim notifikasi email setelah pesan tersimpan
-            await sendEmailNotification({
+            session.email != 'dev.dwiwijaya@gmail.com' && await sendEmailNotification({
                 name: session.user_metadata.name || session.email,
                 message: message,
                 email: session.email
