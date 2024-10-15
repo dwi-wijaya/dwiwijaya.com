@@ -39,9 +39,8 @@ const GuestbookPage = ({ fallback }) => {
 
 export default GuestbookPage;
 
-export const getStaticProps = async (context) => {
-    const res = await fetcher(`${process.env.NEXT_PUBLIC_SITE_URL}/api/guestbook`);
-    const messages = res.messages || [];
+export const getStaticProps = async () => {
+    const messages = await fetcher(`${process.env.NEXT_PUBLIC_SITE_URL}/api/guestbook`);
 
     return {
         props: {
