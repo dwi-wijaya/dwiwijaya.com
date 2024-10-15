@@ -5,8 +5,11 @@ import { GuestbookMessages } from './GuestbookMessages';
 import ChatAuth from './ChatAuth';
 import ChatInput from './ChatInput';
 import { sendEmailNotification } from '@/services/EmailService';
+import { fetcher } from '@/services/fetcher';
+import useSWR from 'swr';
 
-export default function Guestbook({ messages }) {
+export default function Guestbook() {
+    const { data: messages } = useSWR('/api/guestbook', fetcher);
     const [session, setSession] = useState(null);
 
     useEffect(() => {
