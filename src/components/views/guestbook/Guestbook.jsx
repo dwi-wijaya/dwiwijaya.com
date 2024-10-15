@@ -4,7 +4,6 @@ import { GuestbookForm } from './GuestbookForm';
 import { GuestbookMessages } from './GuestbookMessages';
 import ChatAuth from './ChatAuth';
 import ChatInput from './ChatInput';
-import { v4 as uuidv4 } from 'uuid';
 import { sendEmailNotification } from '@/services/EmailService';
 
 export default function Guestbook({ messages }) {
@@ -29,7 +28,6 @@ export default function Guestbook({ messages }) {
             .from('guestbook')
             .insert([
                 {
-                    id: uuidv4(),
                     message: message,
                     name: session.user_metadata.name || session.email,
                     email: session.email,
