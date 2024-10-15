@@ -38,7 +38,10 @@ const GuestbookPage = ({ messages }) => {
 
 export default GuestbookPage
 export const getServerSideProps = async (context) => {
-    const messages = await fetcher(`${process.env.NEXT_PUBLIC_SITE_URL}/api/guestbook`);
+    
+    const res = await fetcher(`${process.env.NEXT_PUBLIC_SITE_URL}/api/guestbook`);
+    const messages = res.messages;
+
     return {
         props: {
             messages,
