@@ -11,7 +11,6 @@ import useSWR from 'swr';
 export default function Guestbook() {
     const { data: messages } = useSWR('/api/guestbook', fetcher);
     const [session, setSession] = useState(null);
-    console.log(messages)
 
     useEffect(() => {
         const session = supabase.auth.getSession();
