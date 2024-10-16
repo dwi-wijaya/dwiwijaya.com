@@ -173,7 +173,7 @@ const ChatItem = ({
               {/* Display existing reactions with count */}
               <div className='flex gap-1'>
                 {Object.keys(currentReactions).map((emoji) => (
-                  <div key={emoji} className='text-sm bg-slate-600 rounded-md px-1 py-[2px] border border-slate-600 flex items-center gap-1'>
+                  <div key={emoji} className='text-sm bg-slate-100  dark:bg-slate-600 rounded-md px-1 py-[2px] border border-slate-200 dark:border-slate-600 flex items-center gap-1'>
                     {emoji} {getReactionCount(emoji) > 1 && <span>{getReactionCount(emoji)}</span>}
                   </div>
                 ))}
