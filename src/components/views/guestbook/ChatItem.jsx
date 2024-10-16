@@ -23,6 +23,20 @@ const ChatItem = ({
 
   const popupRef = useRef();
 
+  const authorEmail = 'dev.dwiwijaya@gmail.com';
+
+  const pattern = /@([^:]+):/g;
+  const modifiedMessage = message?.split(pattern).map((part, index) => {
+    if (index % 2 === 1) {
+      return (
+        <span key={index} className='text-yellow-600 dark:text-yellow-400'>
+          @{part}
+        </span>
+      );
+    }
+    return part;
+  });
+
   const handleReaction = async (emoji) => {
     const userEmail = session?.email;
     if (!userEmail) return;
@@ -80,14 +94,14 @@ const ChatItem = ({
             <div className='hidden md:flex'>
               <ChatTime datetime={created_at} />
             </div>
-            {email === 'dev.dwiwijaya@gmail.com' && (
+            {email === authorEmail && (
               <div className='text-medium flex items-center gap-0.5 rounded-full bg-orange-600 dark:bg-orange-700 px-1.5 py-0.5 text-violet-50'>
                 <AdminIcon size={13} />
                 <span className=' text-[10px]'>Author</span>
               </div>
             )}
             <div className='flex items-center gap-3'>
-              {(session?.email === email || session?.email === 'dev.dwiwijaya@gmail.com') && (
+              {(session?.email === email || session?.email === authorEmail) && (
                 <DeleteIcon
                   size={17}
                   className='hidden cursor-pointer text-red-500 group-hover:flex mr-3'
@@ -99,11 +113,11 @@ const ChatItem = ({
         </div>
         <div className='flex items-center gap-3'>
           <div className='w-fit rounded-xl rounded-tl-none bg-container border border-stroke dark:border-none px-3 py-2 text-neutral-800 dark:text-neutral-200'>
-            <p>{message}</p>
+            <p className='leading-5'>{modifiedMessage}</p>
 
             {/* Reactions Section */}
 
-            <div className={`hidden group-hover:flex ${Object.keys(currentReactions).length !== 0 && '!flex'} items-center gap-2 mt-1`}>
+            <div className={`hidden group-hover:flex ${session && 'mt-2'} ${Object.keys(currentReactions).length !== 0 && '!flex mt-2 mb-1'} items-center gap-2`}>
               {session &&
                 <div className='relative'>
                   <button className="text-sm text-subtext flex item-center justify-center" onClick={toggleEmojiPopup}>

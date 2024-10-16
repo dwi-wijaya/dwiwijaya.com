@@ -48,7 +48,7 @@ export const GuestbookMessages = ({ initialMessages, onDeleteMessage, session })
         <div className="rounded-lg px-1">
             <div
                 ref={scrollableContainerRef}
-                className="space-y-6 overflow-y-auto pb-4 max-h-[50svh] scrollbar- sm:max-h-[55svh] overflow-auto"
+                className="space-y-6 overflow-y-auto pb-4 max-h-[50svh] scrollbar- sm:max-h-[55svh] overflow-auto pr-2"
             >
                 {messages.map((msg, index) => (
                     <ChatItem key={index} onDelete={onDeleteMessage} {...msg} session={session} />
