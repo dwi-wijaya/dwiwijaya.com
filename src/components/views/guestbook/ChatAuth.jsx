@@ -9,14 +9,14 @@ const Providers = [
     {
         id: "google",
         icon: <GoogleIcon size={18} />,
-        bgColor: "!bg-white border !border-stroke dark:border-none",
+        bgColor: "!bg-white outline outline-stroke outline-1",
         textColor: "text-black",
         label: "Sign in with Google",
     },
     {
         id: "github",
         icon: <GithubIcon size={18} />,
-        bgColor: "!bg-black !border-none",
+        bgColor: "!bg-black",
         textColor: "text-white ",
         label: "Sign in with Github",
     },
@@ -37,7 +37,7 @@ const ChatAuth = () => {
                         <SignInIcon size={16} className="min-w-4 text-start mr-[2px] sm:mb-[2px]" />
                     </span>
                     <span className="">
-                        Please sign in to begin. Dont worry your data is safe—learn more in our <Link className="text-primary underline underline-offset-2" target="_blank" href="/privacy-policy">Privacy Policy</Link>.
+                        Please sign in to send message. Dont worry your data is safe—learn more in our <Link className="text-primary underline underline-offset-2" target="_blank" href="/privacy-policy">Privacy Policy</Link>.
                     </span>
                 </p>
 
@@ -50,7 +50,7 @@ const ChatAuth = () => {
                         <button
                             key={button.id}
                             onClick={() => signIn(button.id)}
-                            className={`btn min-w-56  !text-white ${button.bgColor
+                            className={`btn !border-none min-w-56  !text-white ${button.bgColor
                                 } `}
                             data-umami-event={`Sign In to Chat: ${button.label}`}
                         >
