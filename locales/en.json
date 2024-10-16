@@ -53,7 +53,7 @@
         "title": "Blog",
         "subtitle": "Exploring the world of code, creativity, and constant learning."
     },
-    "Common" : {
+    "Common": {
         "comingsoon": "Coming Soon ....",
         "back": "Back"
     },
@@ -77,6 +77,19 @@
     "Portfolio": {
         "title": "Portfolio",
         "subtitle": "Explore my latest projects and creations."
+    },
+    "Privacy": {
+        "title": "Privacy Policy",
+        "subtitle": "This privacy policy explains how we collect, use, and protect your information.",
+        "information_collected": "We collect information that you provide to us directly, such as your name and email address.",
+        "usage": "We use this information to improve our services and communicate with you.",
+        "security": "We take the security of your information seriously and implement measures to protect it.",
+        "contact": "If you have any questions, please contact us at dev.dwiwijaya@gmail.com.",
+        "subtitles": {
+            "information_collected": "Information We Collect",
+            "usage": "Usage of Information",
+            "security": "Security of Your Information",
+            "contact": "Contact Us"
+        }
     }
-    
 }

@@ -53,7 +53,7 @@
         "title": "Blog",
         "subtitle": "Menjelajahi dunia kode, kreativitas, dan pembelajaran tanpa henti."
     },
-    "Common" : {
+    "Common": {
         "comingsoon": "Segera Hadir ....",
         "back": "Kembali"
     },
@@ -77,5 +77,19 @@
     "Portfolio": {
         "title": "Portofolio",
         "subtitle": "Jelajahi proyek dan karya terbaru saya."
+    },
+    "Privacy": {
+        "title": "Kebijakan Privasi",
+        "introduction": "Kebijakan privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda.",
+        "information_collected": "Kami mengumpulkan informasi yang Anda berikan kepada kami secara langsung, seperti nama dan alamat email Anda.",
+        "usage": "Kami menggunakan informasi ini untuk meningkatkan layanan kami dan berkomunikasi dengan Anda.",
+        "security": "Kami sangat memperhatikan keamanan informasi Anda dan menerapkan langkah-langkah untuk melindunginya.",
+        "contact": "Jika Anda memiliki pertanyaan, silakan hubungi kami di dev.dwiwijaya@gmail.com.",
+        "subtitles": {
+            "information_collected": "Informasi yang Kami Kumpulkan",
+            "usage": "Penggunaan Informasi",
+            "security": "Keamanan Informasi Anda",
+            "contact": "Hubungi Kami"
+        }
     }
 }
