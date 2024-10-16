@@ -1,4 +1,5 @@
 import { supabase } from "@/lib/supabase";
+import Link from "next/link";
 import { BsGithub as GithubIcon } from "react-icons/bs";
 import { FcGoogle as GoogleIcon } from "react-icons/fc";
 import { HiOutlineLogin as SignInIcon } from "react-icons/hi";
@@ -31,9 +32,15 @@ const ChatAuth = () => {
     return (
         <div className="flex flex-col border-t border-stroke">
             <div className="space-y-5 pt-3 text-start text-neutral-700 dark:text-neutral-400">
-                <p className=" text-xs sm:text-sm ml-1 flex gap-1 item-center">
-                <SignInIcon size={16} className="cursor-pointer  text-text mt-[1px]" />Please sign in to start. Don&apos;t worry, your data is safe. 
+                <p className="text-xs sm:text-sm ml-1">
+                    <span className="inline-block align-middle">
+                        <SignInIcon size={16} className="min-w-4 text-start mr-[2px] sm:mb-[2px]" />
+                    </span>
+                    <span className="">
+                        Please sign in to begin. Dont worry your data is safe—learn more in our <Link className="text-primary underline underline-offset-2" target="_blank" href="/privacy-policy">Privacy Policy</Link>.
+                    </span>
                 </p>
+
                 <div
                     className={
                         `flex flex-col items-start sm:items-center justify-start gap-2 sm:gap-4 xs:flex-row lg:gap-5 !mt-3 `
