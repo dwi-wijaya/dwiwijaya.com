@@ -80,7 +80,7 @@
     },
     "Privacy": {
         "title": "Kebijakan Privasi",
-        "introduction": "Kebijakan privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda.",
+        "subtitle": "Kebijakan privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda.",
         "information_collected": "Kami mengumpulkan informasi yang Anda berikan kepada kami secara langsung, seperti nama dan alamat email Anda.",
         "usage": "Kami menggunakan informasi ini untuk meningkatkan layanan kami dan berkomunikasi dengan Anda.",
         "security": "Kami sangat memperhatikan keamanan informasi Anda dan menerapkan langkah-langkah untuk melindunginya.",
