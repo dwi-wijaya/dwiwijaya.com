@@ -30,6 +30,13 @@ export const GuestbookMessages = ({ initialMessages, onDeleteMessage, session })
                     currentMessages.filter((msg) => msg.id !== payload.old.id)
                 );
             })
+            .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'guestbook' }, (payload) => {
+                setMessages((currentMessages) =>
+                    currentMessages.map((msg) =>
+                        msg.id === payload.new.id ? payload.new : msg
+                    )
+                );
+            })
             .subscribe();
 
         return () => {
@@ -39,9 +46,9 @@ export const GuestbookMessages = ({ initialMessages, onDeleteMessage, session })
 
     return (
         <div className="rounded-lg px-1">
-            <div 
+            <div
                 ref={scrollableContainerRef}
-                className="space-y-5 overflow-y-auto pb-4 max-h-[50svh] scrollbar- sm:max-h-[55svh] overflow-auto"
+                className="space-y-6 overflow-y-auto pb-4 max-h-[50svh] scrollbar- sm:max-h-[55svh] overflow-auto"
             >
                 {messages.map((msg, index) => (
                     <ChatItem key={index} onDelete={onDeleteMessage} {...msg} session={session} />
