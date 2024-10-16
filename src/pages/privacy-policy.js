@@ -25,23 +25,23 @@ const PrivacyPolicyPage = () => {
                     description={t('subtitle')}
                     className="text-center mb-8"
                 />
-                <div className='flex flex-col gap-8'>
+                <div className='flex flex-col gap-4'>
                     <div>
-                        <div className="flex items-center space-x-2 mb-2">
+                        <div className="flex items-center space-x-2 mb-1">
                             <HiShieldCheck className="text-green-500 text-xl" />
                             <h2 className="text-xl text-text font-semibold">{t('subtitles.information_collected')}</h2>
                         </div>
                         <p className="text-subtext-700">{t('information_collected')}</p>
                     </div>
                     <div>
-                        <div className="flex items-center space-x-2 mb-2">
+                        <div className="flex items-center space-x-2 mb-1">
                             <HiShieldCheck className="text-blue-500 text-xl" />
                             <h2 className="text-xl text-text font-semibold">{t('subtitles.usage')}</h2>
                         </div>
                         <p className="text-subtext-700">{t('usage')}</p>
                     </div>
                     <div>
-                        <div className="flex items-center space-x-2 mb-2">
+                        <div className="flex items-center space-x-2 mb-1">
                             <HiShieldCheck className="text-yellow-500 text-xl" />
                             <h2 className="text-xl text-text font-semibold">{t('subtitles.security')}</h2>
                         </div>
@@ -49,11 +49,11 @@ const PrivacyPolicyPage = () => {
                     </div>
 
                     <div>
-                        <div className="flex items-center space-x-2 mb-2">
+                        <div className="flex items-center space-x-2 mb-1">
                             <HiShieldCheck className="text-red-500 text-xl" />
-                            <h2 className="text-xl text-text font-semibold">{t('subtitles.contact')}</h2>
+                            <h2 className="text-xl text-text font-semibold">{t('subtitles.contact')}  </h2>
                         </div>
-                        <p className="text-subtext-700">{t('contact')}</p>
+                        <p className="text-subtext-700">{t('contact')} <a href='mailto:dev.dwiwijaya@gmail.com' className='text-primary'>dev.dwiwijaya@gmail.com</a>. </p>
                     </div>
                 </div>
             </Container>
