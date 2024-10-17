@@ -5,8 +5,11 @@ import { useEffect, useState, useRef } from "react";
 export const GuestbookMessages = ({ initialMessages, onDeleteMessage, session }) => {
     const [messages, setMessages] = useState(initialMessages || []);
     const scrollableContainerRef = useRef(null);  // Ref untuk container yang di-scroll
+    const [activePopup, setActivePopup] = useState(null);
+    const handlePopupToggle = (id) => {
+        setActivePopup(activePopup === id ? null : id);
+    };
 
-    // Scroll ke bagian bawah hanya jika pesan berasal dari user yang sedang login
     const scrollToBottom = () => {
         if (scrollableContainerRef.current) {
             scrollableContainerRef.current.scrollTop = scrollableContainerRef.current.scrollHeight;
@@ -51,7 +54,12 @@ export const GuestbookMessages = ({ initialMessages, onDeleteMessage, session })
                 className="space-y-6 overflow-y-auto pb-4 max-h-[50svh] scrollbar- sm:max-h-[55svh] overflow-auto pr-2"
             >
                 {messages.map((msg, index) => (
-                    <ChatItem key={index} onDelete={onDeleteMessage} {...msg} session={session} />
+                    <ChatItem
+                        key={index}
+                        onDelete={onDeleteMessage} {...msg}
+                        session={session}
+                        onPopupToggle={handlePopupToggle}
+                        isActivePopup={activePopup === msg.id} />
                 ))}
             </div>
         </div>

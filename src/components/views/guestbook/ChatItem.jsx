@@ -1,11 +1,10 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import Image from 'next/image';
 import { FiTrash2 as DeleteIcon } from 'react-icons/fi';
 import { MdAdminPanelSettings as AdminIcon } from 'react-icons/md';
 import ChatTime from './ChatTime';
 import { motion, AnimatePresence } from 'framer-motion'; // Import framer-motion
-
 
 const ChatItem = ({
   id,
@@ -16,10 +15,12 @@ const ChatItem = ({
   created_at,
   reactions,
   onDelete,
-  session
+  session,
+  onPopupToggle,
+  isActivePopup,
 }) => {
 
-const availableReactions = ['👍', '❤️', '😄', '😕', '👀', '🚀', '🔥'];
+  const availableReactions = ['👍', '❤️', '😄', '😕', '👀', '🚀', '🔥'];
 
   const [showEmojiPopup, setShowEmojiPopup] = useState(false);
   const [currentReactions, setCurrentReactions] = useState(reactions || {});
@@ -59,7 +60,7 @@ const availableReactions = ['👍', '❤️', '😄', '😕', '👀', '🚀', '�
     }
 
     setCurrentReactions(newReactions);
-    setShowEmojiPopup(false);
+    onPopupToggle(null);
 
     await supabase
       .from('guestbook')
@@ -68,8 +69,33 @@ const availableReactions = ['👍', '❤️', '😄', '😕', '👀', '🚀', '�
   };
 
   const toggleEmojiPopup = () => {
-    setShowEmojiPopup(!showEmojiPopup);
+
+    if (showEmojiPopup) {
+      onPopupToggle(null);
+    } else {
+      onPopupToggle(id);
+    }
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        setShowEmojiPopup(false); 
+      }
+    };
+
+    if (showEmojiPopup) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showEmojiPopup]);
+
+  useEffect(() => {
+    !isActivePopup ? setShowEmojiPopup(false) : setShowEmojiPopup(true);
+  }, [isActivePopup]);
 
   const getReactionCount = (emoji) => {
     return currentReactions[emoji]?.length || 0;
@@ -117,10 +143,10 @@ const availableReactions = ['👍', '❤️', '😄', '😕', '👀', '🚀', '�
             <p className='leading-5'>{modifiedMessage}</p>
 
             {/* Reactions Section */}
-            <div className={`hidden group-hover:flex ${session && 'mt-2'} ${Object.keys(currentReactions).length !== 0 && '!flex mt-2 mb-1'} items-center gap-2`}>
+            <div className={`hidden group-hover:flex ${session && 'mt-2'} ${showEmojiPopup && '!flex mb-1'} ${Object.keys(currentReactions).length !== 0 && '!flex mt-2 mb-1'} items-center gap-2`}>
               {session &&
                 <div className='relative'>
-                  <button className="text-sm text-subtext h-[24px] flex item-center justify-center" onClick={toggleEmojiPopup}>
+                  <motion.button whileTap={{ scale: 1.05 }} className="text-sm text-subtext h-[24px] flex item-center justify-center" onClick={toggleEmojiPopup}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -138,22 +164,22 @@ const availableReactions = ['👍', '❤️', '😄', '😕', '👀', '🚀', '�
                         d="M8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6Z"
                       />
                       <path
-                        d="M7.03441 12.1344C7.51247 11.8578 8.1242 12.0212 8.40075 12.4993C8.92097 13.3986 9.89085 14 11 14C12.1092 14 13.0791 13.3986 13.5993 12.4993C13.8758 12.0212 14.4875 11.8578 14.9656 12.1344C15.4437 12.4109 15.607 13.0227 15.3305 13.5007C14.4675 14.9926 12.852 16 11 16C9.14805 16 7.53255 14.9926 6.66953 13.5007C6.39299 13.0227 6.55635 12.4109 7.03441 12.1344Z"
+                        d="M7.03441 12.1344C7.51247 11.8578 8.1242 12.0212 8.40075 12.4993C8.92097 13.3986 9.89085 14 11 14C12.1092 14 13.0791 13.3986 13.5993 12.4993C13.8759 12.0212 14.4875 11.8578 14.9656 12.1344C15.4437 12.411 15.6071 13.0228 15.3306 13.5009C14.4526 15.0617 12.7981 16 11 16C9.2019 16 7.54741 15.0617 6.66938 13.5009C6.39283 13.0228 6.55627 12.411 7.03441 12.1344Z"
                       />
                       <path
-                        d="M14 6C12.8954 6 12 6.89543 12 8C12 9.10457 12.8954 10 14 10C15.1046 10 16 9.10457 16 8C16 6.89543 15.1046 6 14 6Z"
+                        d="M16 8C16 6.89543 16.8954 6 18 6C19.1046 6 20 6.89543 20 8C20 9.10457 19.1046 10 18 10C16.8954 10 16 9.10457 16 8Z"
                       />
                     </svg>
-                  </button>
+                  </motion.button>
 
                   <AnimatePresence>
                     {showEmojiPopup && (
                       <motion.div
-                      className='absolute h-10 z-10 -top-12 -left-1  p-1 bg-slate-100 dark:bg-slate-600 border border-stroke shadow-sm rounded-md flex gap-1'
+                        className='popup-element absolute h-10 z-10 -top-12 -left-1  p-1 bg-slate-100 dark:bg-slate-600 border border-stroke shadow-sm rounded-md flex gap-1'
                         initial={{ opacity: 0, y: 20 }} // Animation from top with opacity
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 20 }}
-                        transition={{ duration: 0.2 }}
+                        transition={{ duration: 0.1 }}
                         ref={popupRef}
                       >
                         {availableReactions.map((emoji) => (
@@ -162,7 +188,7 @@ const availableReactions = ['👍', '❤️', '😄', '😕', '👀', '🚀', '�
                             key={emoji}
                             className={`text-sm hover:text-base transition-all duration-75 ease-out hover:bg-container p-1 rounded-md ${currentReactions[emoji]?.includes(session?.email)
                               && 'bg-container'
-                            }`}
+                              }`}
                             onClick={() => handleReaction(emoji)}
                           >
                             {emoji}
@@ -192,7 +218,7 @@ const availableReactions = ['👍', '❤️', '😄', '😕', '👀', '🚀', '�
         </div>
         <div className='flex md:hidden'>
           <ChatTime datetime={created_at} />
-          </div>
+        </div>
       </div>
     </div>
   );
