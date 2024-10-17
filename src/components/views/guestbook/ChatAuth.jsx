@@ -37,7 +37,7 @@ const ChatAuth = () => {
                         <SignInIcon size={16} className="min-w-4 text-start mr-[2px] sm:mb-[2px]" />
                     </span>
                     <span className="">
-                        Please sign in to send message. Dont worry your data is safe—learn more in our <Link className="text-primary underline underline-offset-2" target="_blank" href="/privacy-policy">Privacy Policy</Link>.
+                    Please sign in to send a message to the guestbook. Don’t worry, your data is safe—learn more in our <Link className="text-primary underline underline-offset-2" target="_blank" href="/privacy-policy">Privacy Policy</Link>.
                     </span>
                 </p>
 
