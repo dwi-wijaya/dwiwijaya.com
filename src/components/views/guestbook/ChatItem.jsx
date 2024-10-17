@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { FiTrash2 as DeleteIcon } from 'react-icons/fi';
 import { MdAdminPanelSettings as AdminIcon } from 'react-icons/md';
 import ChatTime from './ChatTime';
-// Daftar emoji yang tersedia untuk reaksi
-const availableReactions = ['👍', '❤️', '😄', '😕', '👀', '🎉', '👏', '🔥'];
+import { motion, AnimatePresence } from 'framer-motion'; // Import framer-motion
+
 
 const ChatItem = ({
   id,
@@ -18,11 +18,12 @@ const ChatItem = ({
   onDelete,
   session
 }) => {
+
+const availableReactions = ['👍', '❤️', '😄', '😕', '👀', '🚀', '🔥'];
+
   const [showEmojiPopup, setShowEmojiPopup] = useState(false);
   const [currentReactions, setCurrentReactions] = useState(reactions || {});
-
   const popupRef = useRef();
-
   const authorEmail = 'dev.dwiwijaya@gmail.com';
 
   const pattern = /@([^:]+):/g;
@@ -58,7 +59,7 @@ const ChatItem = ({
     }
 
     setCurrentReactions(newReactions);
-    setShowEmojiPopup(false); // Tutup popup setelah emoji dipilih
+    setShowEmojiPopup(false);
 
     await supabase
       .from('guestbook')
@@ -116,11 +117,10 @@ const ChatItem = ({
             <p className='leading-5'>{modifiedMessage}</p>
 
             {/* Reactions Section */}
-
             <div className={`hidden group-hover:flex ${session && 'mt-2'} ${Object.keys(currentReactions).length !== 0 && '!flex mt-2 mb-1'} items-center gap-2`}>
               {session &&
                 <div className='relative'>
-                  <button className="text-sm text-subtext flex item-center justify-center" onClick={toggleEmojiPopup}>
+                  <button className="text-sm text-subtext h-[24px] flex item-center justify-center" onClick={toggleEmojiPopup}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -146,37 +146,45 @@ const ChatItem = ({
                     </svg>
                   </button>
 
-
-                  {/* Popup untuk memilih emoji */}
-                  {showEmojiPopup && (
-                    <div
-                      ref={popupRef}
-                      className='absolute z-10 mt-4 -left-3  p-1  bg-container border border-stroke shadow-lg rounded-md flex gap-1'
-                    >
-                      {availableReactions.map((emoji) => (
-                        <button
-                          key={emoji}
-                          className={`text-sm hover:bg-slate-100 dark:hover:bg-slate-600 p-1 rounded-md ${currentReactions[emoji]?.includes(session?.email)
-                            ? 'bg-slate-100 dark:bg-slate-600'
-                            : ''
+                  <AnimatePresence>
+                    {showEmojiPopup && (
+                      <motion.div
+                      className='absolute h-10 z-10 -top-12 -left-1  p-1 bg-slate-100 dark:bg-slate-600 border border-stroke shadow-sm rounded-md flex gap-1'
+                        initial={{ opacity: 0, y: 20 }} // Animation from top with opacity
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 20 }}
+                        transition={{ duration: 0.2 }}
+                        ref={popupRef}
+                      >
+                        {availableReactions.map((emoji) => (
+                          <motion.button
+                            whileTap={{ scale: 1.2 }} // Add scale animation on click
+                            key={emoji}
+                            className={`text-sm hover:text-base transition-all duration-75 ease-out hover:bg-container p-1 rounded-md ${currentReactions[emoji]?.includes(session?.email)
+                              && 'bg-container'
                             }`}
-                          onClick={() => handleReaction(emoji)}
-                        >
-                          {emoji}
-                        </button>
-                      ))}
-                    </div>
-                  )}
+                            onClick={() => handleReaction(emoji)}
+                          >
+                            {emoji}
+                          </motion.button>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               }
-
-              {/* Display existing reactions with count */}
               <div className='flex gap-1'>
-                {Object.keys(currentReactions).map((emoji) => (
-                  <div key={emoji} className='text-sm bg-slate-100  dark:bg-slate-600 rounded-md px-1 py-[2px] border border-slate-200 dark:border-slate-600 flex items-center gap-1'>
-                    {emoji} {getReactionCount(emoji) > 1 && <span>{getReactionCount(emoji)}</span>}
-                  </div>
-                ))}
+                {Object.keys(currentReactions)
+                  .sort((a, b) => getReactionCount(b) - getReactionCount(a)) // Sort by reaction count
+                  .map((emoji) => (
+                    <motion.div
+                      key={emoji}
+                      className='text-sm bg-slate-100 dark:bg-slate-600 rounded-md px-1 py-[2px] border border-slate-200 dark:border-slate-600 flex items-center gap-1'
+                      whileTap={{ scale: 1.2 }} // Add scale animation on reaction click
+                    >
+                      {emoji} {getReactionCount(emoji) > 1 && <span>{getReactionCount(emoji)}</span>}
+                    </motion.div>
+                  ))}
               </div>
             </div>
           </div>
@@ -184,7 +192,7 @@ const ChatItem = ({
         </div>
         <div className='flex md:hidden'>
           <ChatTime datetime={created_at} />
-        </div>
+          </div>
       </div>
     </div>
   );
