@@ -19,8 +19,14 @@ const ChatItem = ({
   onPopupToggle,
   isActivePopup,
 }) => {
-
-  const availableReactions = ['👍', '❤️', '😄', '😕', '👀', '🚀', '🔥'];
+  const availableReactions = [
+    { emoji: '😄', label: 'Thanks!' },
+    { emoji: '💪', label: 'Stay Strong!' },
+    { emoji: '👏', label: 'Nice One!' },
+    { emoji: '❤️', label: 'Loved it!' },
+    { emoji: '🔥', label: 'So Cool!' },
+    { emoji: '✨', label: 'Inspiring!' },
+  ];
 
   const [showEmojiPopup, setShowEmojiPopup] = useState(false);
   const [currentReactions, setCurrentReactions] = useState(reactions || {});
@@ -69,7 +75,6 @@ const ChatItem = ({
   };
 
   const toggleEmojiPopup = () => {
-
     if (showEmojiPopup) {
       onPopupToggle(null);
     } else {
@@ -80,7 +85,7 @@ const ChatItem = ({
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (popupRef.current && !popupRef.current.contains(event.target)) {
-        setShowEmojiPopup(false); 
+        setShowEmojiPopup(false);
       }
     };
 
@@ -144,7 +149,7 @@ const ChatItem = ({
 
             {/* Reactions Section */}
             <div className={`hidden group-hover:flex ${session && 'mt-2'} ${showEmojiPopup && '!flex mb-1'} ${Object.keys(currentReactions).length !== 0 && '!flex mt-2 mb-1'} items-center gap-2`}>
-              {session &&
+              {session && (
                 <div className='relative'>
                   <motion.button whileTap={{ scale: 1.05 }} className="text-sm text-subtext h-[24px] flex item-center justify-center" onClick={toggleEmojiPopup}>
                     <svg
@@ -182,39 +187,46 @@ const ChatItem = ({
                         transition={{ duration: 0.1 }}
                         ref={popupRef}
                       >
-                        {availableReactions.map((emoji) => (
+                        {availableReactions.map(({ emoji, label }) => (
                           <motion.button
                             whileTap={{ scale: 1.2 }} // Add scale animation on click
                             key={emoji}
-                            className={`text-sm hover:text-base transition-all duration-75 ease-out hover:bg-container p-1 rounded-md ${currentReactions[emoji]?.includes(session?.email)
+                            className={`group/emoji text-sm transition-all duration-75 ease-out hover:bg-container p-1 rounded-md ${currentReactions[emoji]?.includes(session?.email)
                               && 'bg-container'
                               }`}
                             onClick={() => handleReaction(emoji)}
                           >
-                            {emoji}
+                            <span className='flex items-center'>
+                              {emoji}
+                              <span className='hidden group-hover/emoji:flex transition-all duration-100 text-xs text-subtext whitespace-nowrap'>
+                                {label}
+                              </span>
+                            </span>
                           </motion.button>
                         ))}
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
-              }
+              )}
               <div className='flex gap-1'>
                 {Object.keys(currentReactions)
                   .sort((a, b) => getReactionCount(b) - getReactionCount(a)) // Sort by reaction count
                   .map((emoji) => (
                     <motion.div
                       key={emoji}
-                      className='text-sm bg-slate-100 dark:bg-slate-600 rounded-md px-1 py-[2px] border border-slate-200 dark:border-slate-600 flex items-center gap-1'
+                      className='group/emoji relative text-sm bg-slate-100 dark:bg-slate-600 rounded-md px-1 py-[2px] border border-slate-200 dark:border-slate-600 flex items-center gap-1'
                       whileTap={{ scale: 1.2 }} // Add scale animation on reaction click
                     >
                       {emoji} {getReactionCount(emoji) > 1 && <span>{getReactionCount(emoji)}</span>}
+                      <span className='hidden text-xs group-hover/emoji:flex transition-all duration-100 text-subtext'>
+                        {availableReactions.find(({ emoji: availabelEmoji }) => availabelEmoji === emoji)?.label}
+                      </span>
                     </motion.div>
                   ))}
               </div>
             </div>
           </div>
-
         </div>
         <div className='flex md:hidden'>
           <ChatTime datetime={created_at} />
