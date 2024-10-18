@@ -83,7 +83,7 @@ const Sidebar = ({ className, lastUpdate }) => {
 
     return (
         <>
-            <aside {...handlers} className={`sidebar ${className} ${toggle && '!left-0'} max-h-[100svh] scrollbar-hide overflow-x-auto fixed -left-64 lg:left-0 top-0 bg-container border border-stroke pl-0 p-6 w-64 min-h-[100svh] flex flex-col gap-8 justify-between text-center transition-3s z-10 shadow-sm`}>
+            <aside {...handlers} className={`sidebar ${className} ${toggle && '!left-0'} max-h-[100dvh] min-h-[100dvh] scrollbar-hide overflow-x-auto fixed -left-64 lg:left-0 top-0 bg-container border border-stroke pl-0 p-6 w-64 flex flex-col gap-8 justify-between text-center transition-3s z-10 shadow-sm`}>
                 <div className="flex flex-col gap-8">
                     <div className="ml-6 flex flex-col gap-8">
                         <button
