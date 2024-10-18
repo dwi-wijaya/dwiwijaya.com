@@ -12,7 +12,7 @@ const Providers = [
         bgColor: "!bg-white",
         iconColor: "text-black",
         textColor: "text-black",
-        label: "Sign in with Google",
+        label: "Login with Google",
     },
     {
         id: "github",
@@ -20,7 +20,7 @@ const Providers = [
         bgColor: "!bg-white",
         iconColor: "!text-black",
         textColor: "text-black",
-        label: "Sign in with Github",
+        label: "Login with Github",
     },
 ];
 const signIn = async (provider) => {
@@ -43,16 +43,12 @@ const ChatAuth = () => {
                     </span>
                 </p>
 
-                <div
-                    className={
-                        `flex items-start sm:items-center justify-start gap-2 sm:gap-4 lg:gap-5 !mt-3 `
-                    }
-                >
+                <div className={`flex items-start sm:items-center justify-start gap-2 sm:gap-4 !mt-3`}>
                     {Providers?.map((button) => (
                         <button
                             key={button.id}
                             onClick={() => signIn(button.id)}
-                            className={`btn flex justify-center whitespace-nowrap text-sm xs:text-base flex-1 !px-3 !py-2 outline outline-stroke outline-1 !border-none ${button.bgColor} ${button.iconColor} `}
+                            className={`btn flex justify-center whitespace-nowrap text-sm xs:text-base flex-1 xs:flex-none !p-2 outline outline-stroke outline-1 !border-none ${button.bgColor} ${button.iconColor} `}
                             data-umami-event={`Sign In to Chat: ${button.label}`}
                         >
                             {button.icon}
