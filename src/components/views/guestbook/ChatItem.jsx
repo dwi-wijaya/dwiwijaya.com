@@ -169,7 +169,7 @@ const ChatItem = ({
                   <AnimatePresence>
                     {showEmojiPopup && (
                       <motion.div
-                        className='popup-element absolute h-fit z-10 -top-[46px] -left-1  p-[3px] bg-slate-100 dark:bg-slate-600 border border-stroke dark:border-[#596b85] shadow-sm rounded-md flex gap-1'
+                        className='popup-element absolute h-fit z-10 -top-[46px] -left-1  p-[3px] bg-slate-100 dark:bg-slate-600 border border-slate-200 dark:border-[#596b85] shadow-sm rounded-md flex gap-1'
                         initial={{ opacity: 0, y: 20 }} // Animation from top with opacity
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 20 }}
@@ -194,6 +194,7 @@ const ChatItem = ({
                             </span>
                           </motion.button>
                         ))}
+                        <span className="absolute -bottom-[6px] left-[.45rem] w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-slate-200 dark:border-t-[#596b85]"></span>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -211,7 +212,7 @@ const ChatItem = ({
                       {emoji} {getReactionCount(emoji) > 1 && <span>{getReactionCount(emoji)}</span>}
                       <span className={`hidden ${!showEmojiPopup && 'group-hover/emoji:flex'} absolute -top-[35px] left-1/2 transform -translate-x-1/2 px-2 py-1 bg-slate-200 dark:bg-slate-600 text-xs text-title rounded-md whitespace-nowrap`}>
                         {availableReactions.find(({ emoji: availabelEmoji }) => availabelEmoji === emoji)?.label}
-                        <span className="absolute bottom-[-4px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-slate-200 dark:border-t-slate-600"></span>
+                        <span className="absolute bottom-[-6px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-slate-200 dark:border-t-slate-600"></span>
                       </span>
                     </motion.div>
                   ))}
