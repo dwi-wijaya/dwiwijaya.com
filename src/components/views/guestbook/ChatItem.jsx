@@ -20,11 +20,11 @@ const ChatItem = ({
   isActivePopup,
 }) => {
   const availableReactions = [
-    { emoji: '😄', label: 'Thanks!' },
+    { emoji: '😄', label: 'Great!' },
     { emoji: '💪', label: 'Stay Strong!' },
-    { emoji: '👏', label: 'Nice One!' },
+    { emoji: '👏', label: 'Well Done!' },
     { emoji: '❤️', label: 'Loved it!' },
-    { emoji: '🔥', label: 'So Cool!' },
+    { emoji: '🔥', label: 'Awesome!' },
     { emoji: '✨', label: 'Inspiring!' },
   ];
 
@@ -145,7 +145,7 @@ const ChatItem = ({
         </div>
         <div className='flex items-center gap-3'>
           <div className='w-fit rounded-xl rounded-tl-none bg-container border border-stroke dark:border-none px-3 py-2 text-neutral-800 dark:text-neutral-200'>
-            <p className='leading-5'>{modifiedMessage}</p>
+            <p className='leading-5 text-sm xs:text-base'>{modifiedMessage}</p>
 
             {/* Reactions Section */}
             <div className={`hidden group-hover:flex ${session && 'mt-2'} ${showEmojiPopup && '!flex mb-1'} ${Object.keys(currentReactions).length !== 0 && '!flex mt-2 mb-1'} items-center gap-2`}>

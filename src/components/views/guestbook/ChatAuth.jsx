@@ -45,14 +45,14 @@ const ChatAuth = () => {
 
                 <div
                     className={
-                        `flex flex-col items-start sm:items-center justify-start gap-2 sm:gap-4 xs:flex-row lg:gap-5 !mt-3 `
+                        `flex items-start sm:items-center justify-start gap-2 sm:gap-4 lg:gap-5 !mt-3 `
                     }
                 >
                     {Providers?.map((button) => (
                         <button
                             key={button.id}
                             onClick={() => signIn(button.id)}
-                            className={`btn outline outline-stroke outline-1 !border-none min-w-56 ${button.bgColor} ${button.iconColor} `}
+                            className={`btn flex justify-center whitespace-nowrap text-sm xs:text-base flex-1 !px-3 !py-2 outline outline-stroke outline-1 !border-none ${button.bgColor} ${button.iconColor} `}
                             data-umami-event={`Sign In to Chat: ${button.label}`}
                         >
                             {button.icon}
