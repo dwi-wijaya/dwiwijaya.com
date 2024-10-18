@@ -169,7 +169,7 @@ const ChatItem = ({
                   <AnimatePresence>
                     {showEmojiPopup && (
                       <motion.div
-                        className='popup-element absolute h-10 z-10 -top-12 -left-1  p-1 bg-slate-100 dark:bg-slate-600 border border-stroke shadow-sm rounded-md flex gap-1'
+                        className='popup-element absolute h-fit z-10 -top-[46px] -left-1  p-[3px] bg-slate-100 dark:bg-slate-600 border border-stroke dark:border-[#596b85] shadow-sm rounded-md flex gap-1'
                         initial={{ opacity: 0, y: 20 }} // Animation from top with opacity
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 20 }}
@@ -180,15 +180,16 @@ const ChatItem = ({
                           <motion.button
                             whileTap={{ scale: 1.2 }} // Add scale animation on click
                             key={emoji}
-                            className={`group/emoji text-sm transition-all duration-75 ease-out hover:bg-container p-1 rounded-md ${currentReactions[emoji]?.includes(session?.email)
+                            className={`relative group/emoji text-sm transition-all duration-75 ease-out hover:bg-container p-1 rounded-[3px] ${currentReactions[emoji]?.includes(session?.email)
                               && 'bg-container'
                               }`}
                             onClick={() => handleReaction(emoji)}
                           >
                             <span className='flex items-center'>
                               {emoji}
-                              <span className='hidden group-hover/emoji:flex transition-all duration-100 text-xs text-subtext whitespace-nowrap'>
+                              <span className='hidden group-hover/emoji:flex absolute -top-[35px] left-1/2 transform -translate-x-1/2 px-2 py-1 bg-slate-200 dark:bg-slate-600 text-xs text-title rounded-md whitespace-nowrap'>
                                 {label}
+                                <span className="absolute bottom-[-4px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-slate-200 dark:border-t-slate-600"></span>
                               </span>
                             </span>
                           </motion.button>
@@ -204,12 +205,13 @@ const ChatItem = ({
                   .map((emoji) => (
                     <motion.div
                       key={emoji}
+                      title={availableReactions.find(({ emoji: availabelEmoji }) => availabelEmoji === emoji)?.label}
                       className='group/emoji relative text-sm bg-slate-100 dark:bg-slate-600 rounded-md px-1 py-[2px] border border-slate-200 dark:border-slate-600 flex items-center gap-1'
-                      whileTap={{ scale: 1.2 }} // Add scale animation on reaction click
                     >
                       {emoji} {getReactionCount(emoji) > 1 && <span>{getReactionCount(emoji)}</span>}
-                      <span className='hidden text-xs group-hover/emoji:flex transition-all duration-100 text-subtext'>
+                      <span className={`hidden ${!showEmojiPopup && 'group-hover/emoji:flex'} absolute -top-[35px] left-1/2 transform -translate-x-1/2 px-2 py-1 bg-slate-200 dark:bg-slate-600 text-xs text-title rounded-md whitespace-nowrap`}>
                         {availableReactions.find(({ emoji: availabelEmoji }) => availabelEmoji === emoji)?.label}
+                        <span className="absolute bottom-[-4px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-slate-200 dark:border-t-slate-600"></span>
                       </span>
                     </motion.div>
                   ))}
