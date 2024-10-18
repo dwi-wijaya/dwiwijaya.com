@@ -34,10 +34,10 @@ const ChatAuth = () => {
             <div className="space-y-5 pt-3 text-start text-neutral-700 dark:text-neutral-400">
                 <p className="text-xs sm:text-sm ml-1">
                     <span className="inline-block align-middle">
-                        <SignInIcon size={16} className="min-w-4 text-start mr-[2px] sm:mb-[2px]" />
+                        <SignInIcon size={16} className="min-w-4 text-start mr-[2px] mb-[2px]" />
                     </span>
                     <span className="">
-                    Please sign in to send a message to the guestbook. Don’t worry, your data is safe—learn more in our <Link className="text-primary underline underline-offset-2" target="_blank" href="/privacy-policy">Privacy Policy</Link>.
+                        Please sign in to send a message. Don’t worry, your data is safe—learn more in our <Link className="text-primary underline underline-offset-2" target="_blank" href="/privacy-policy">Privacy Policy</Link>.
                     </span>
                 </p>
 
